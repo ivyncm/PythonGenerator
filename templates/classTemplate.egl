@@ -1,0 +1,116 @@
+# -*- coding: utf-8 -*-
+[*IMPORTS*]
+import qiskit, qiskit.circuit, qiskit_finance.circuit
+
+[%for(dependency in Dependency){
+	if(dependency.client.get(0) == aClass){%]
+from [%=generarRuta(dependency.supplier.get(0))%] import [%=dependency.supplier.get(0).name%]
+	[%}}
+for(anAttribute in aClass.attributes){
+	if(not(anAttribute.association == null)){%]
+from [%=generarRuta(anAttribute.type)%] import [%=anAttribute.type.name%]
+	[%}else if(anAttribute.type.name == "qiskit.circuit.QuantumCircuit"){
+		for(activity in activities.substring(1, activities.length -1).split(', ')){
+			if(activity.toLowerCase().replace(' ', '_').replace('-', '_') == anAttribute.name.toLowerCase().replace(' ', '_').replace('-', '_')){%]
+from quantumCircuits.[%=anAttribute.name%] import [%=anAttribute.name%]
+	[%}}}
+}%]
+
+[*CLASE*]
+class [%=aClass.name%]():
+	
+	[*CONSTRUCTOR*]
+	def __init__(self):
+		[%if(not(aClass.attributes.isEmpty())){%]
+			[*ATRIBUTOS*]
+			[%for(anAttribute in aClass.attributes) {%]
+		self.[%=anAttribute.name%] = [%=getAttributeType(anAttribute)%][%=getDefaultValue(anAttribute)%]
+			[%}%]
+		[%}else{%]
+		pass
+		[%}%]
+	
+	[*OPERACIONES*]
+		[%for(anOperation in aClass.operations){%]
+		[*OPERACION*]
+	def [%=anOperation.name%](self[%=getParameters(anOperation)%])[%=getReturn(anOperation)%]:
+		pass
+	
+		[%}%]
+	[*GETTERS & SETTERS*]
+		[%for(anAttribute in aClass.attributes) {%]
+		[*GET*]
+	def get[%=anAttribute.name%](self):
+		return self.[%=anAttribute.name%]
+	
+		[*SET*]
+	def set[%=anAttribute.name%](self, value):
+		self.[%=anAttribute.name%] = value
+	
+		[%}%]
+
+[%function getAttributeType(attribute) : String{
+	if(attribute.type.name == null)
+		return getDataType(attribute.type.eProxyURI.toString().split('#').get(1));
+	else if(attribute.type.name == "qiskit.circuit.QuantumCircuit")
+		for(activity in activities.substring(1, activities.length -1).split(', '))
+			if(not(attribute.name == null))
+				if((activity.replace(' ', '_').replace('-', '_')) == (attribute.name.replace(' ', '_').replace('-', '_').toLowerCase()))
+					return attribute.name;
+	return getDataType(attribute.type.name);
+}
+function getDataType(type) : String{
+	if(not(dataTypes.indexOf(type) == -1))
+		return pythonDataTypes.get(dataTypes.indexOf(type));
+	return type;
+}
+function getDefaultValue(attribute) : String{
+	if(not(attribute.defaultValue == null))
+		return "(" + attribute.defaultValue.value + ")";
+	else if(attribute.type.toString().split('@').get(0) == "org.eclipse.uml2.uml.internal.impl.ClassImpl"){
+		return "";
+	}
+	return "()";
+}
+function getParameters(anOperation) : String{
+	var params = "";
+	var paramType = "";
+	if(not(anOperation.ownedParameter == null)){
+		for(param in anOperation.ownedParameter){
+			if(param.direction.name == "in"){
+				if(param.type.name == null)
+					paramType = param.type.eProxyURI.toString().split('#').get(1);
+				else
+					paramType = param.type.name;
+				params += ", " + param.name + ": " + getDataType(paramType);
+			}
+		}
+	}
+	return params;
+}
+function getReturn(anOperation) : String{
+	var ret = " -> ";
+	for(param in anOperation.ownedParameter)
+		if(param.direction.name == "return")
+			ret += getAttributeType(param) + ", ";
+	if(ret.length == 4)
+		return "";
+	return ret.substring(0, ret.length -2);
+}
+function generarRuta(aClass) : String{
+	var ruta = "";
+	for (p in Package.all)
+		if (p.type.name == "Package")
+			if (isParent(p, aClass))
+				ruta += p.name + ".";
+  	return ruta.substring(0, ruta.length -1);
+}
+function isParent(package, aClass) : Boolean{
+	for(element in package.packagedElement){
+		if((element.type.name == "Package") and (isParent(element, aClass)))
+				return true;
+		else if((element.type.name == "Class") and (element.name == aClass.name))
+			return true;
+	}
+	return false;
+}%]

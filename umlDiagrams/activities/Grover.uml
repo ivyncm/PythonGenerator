@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:QuantumUMLProfile="http://QuantumUMLProfile/schemas/QuantumUMLProfile/_zeqykL6NEe24U6R9ykQTQA/15" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://QuantumUMLProfile/schemas/QuantumUMLProfile/_zeqykL6NEe24U6R9ykQTQA/15 /QuantumUMLProfile/QuantumUMLProfile.profile.uml#_zetO0L6NEe24U6R9ykQTQA">
+  <uml:Model xmi:id="_UgV-gLgREe2XO52FycrssA" name="Grover">
+    <packageImport xmi:id="_Uj3zoLgREe2XO52FycrssA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Activity" xmi:id="_UhywALgREe2XO52FycrssA" name="Grover" node="_f33QYLgREe2XO52FycrssA _nfZCcLgREe2XO52FycrssA _sC9UQLgREe2XO52FycrssA _s2IdoLgREe2XO52FycrssA _2qNm0LgREe2XO52FycrssA _3Dx9YLgREe2XO52FycrssA _3EAm4rgREe2XO52FycrssA _85dXULgREe2XO52FycrssA _85i24LgREe2XO52FycrssA __7u1gLgREe2XO52FycrssA __7zuALgREe2XO52FycrssA _DF4dULgSEe2XO52FycrssA _EGSxcLgSEe2XO52FycrssA _JpVjQLgSEe2XO52FycrssA _JpabwrgSEe2XO52FycrssA _Uh_H0LgSEe2XO52FycrssA _UiEnYLgSEe2XO52FycrssA _YTeccLgSEe2XO52FycrssA _YTj8ALgSEe2XO52FycrssA _bFClILgSEe2XO52FycrssA _cof78LgSEe2XO52FycrssA _fxcp4LgSEe2XO52FycrssA _rhkB8LgSEe2XO52FycrssA" group="_ZPGzsLgREe2XO52FycrssA _ZPGzsbgREe2XO52FycrssA">
+      <ownedRule xmi:id="_3EAm4LgREe2XO52FycrssA" name="CZ(q0-q1)" constrainedElement="_3Dx9YLgREe2XO52FycrssA _3EAm4rgREe2XO52FycrssA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3EAm4bgREe2XO52FycrssA" name="constraintSpec">
+          <language>Natural language</language>
+          <body>CZ</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_JpabwLgSEe2XO52FycrssA" name="CZ(q0-q1)_2" constrainedElement="_JpVjQLgSEe2XO52FycrssA _JpabwrgSEe2XO52FycrssA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_JpabwbgSEe2XO52FycrssA" name="constraintSpec">
+          <language>Natural language</language>
+          <body>CZ</body>
+        </specification>
+      </ownedRule>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_hGSV4LgSEe2XO52FycrssA" target="_f33QYLgREe2XO52FycrssA" source="_fxcp4LgSEe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_h2HQULgSEe2XO52FycrssA" target="_nfZCcLgREe2XO52FycrssA" source="_f33QYLgREe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_iZzMMLgSEe2XO52FycrssA" target="_sC9UQLgREe2XO52FycrssA" source="_nfZCcLgREe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_jTTnELgSEe2XO52FycrssA" target="_s2IdoLgREe2XO52FycrssA" source="_sC9UQLgREe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_kAby0LgSEe2XO52FycrssA" target="_3Dx9YLgREe2XO52FycrssA" source="_s2IdoLgREe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_klrN4LgSEe2XO52FycrssA" inPartition="_ZPGzsbgREe2XO52FycrssA" target="_85i24LgREe2XO52FycrssA" source="_3Dx9YLgREe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_lKYdcLgSEe2XO52FycrssA" target="_85dXULgREe2XO52FycrssA" source="_85i24LgREe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_lsOmQLgSEe2XO52FycrssA" target="__7zuALgREe2XO52FycrssA" source="_85dXULgREe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_mML4sLgSEe2XO52FycrssA" target="__7u1gLgREe2XO52FycrssA" source="__7zuALgREe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_mwbOMLgSEe2XO52FycrssA" target="_DF4dULgSEe2XO52FycrssA" source="__7u1gLgREe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_nodpcLgSEe2XO52FycrssA" target="_EGSxcLgSEe2XO52FycrssA" source="_DF4dULgSEe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_oS8w4LgSEe2XO52FycrssA" target="_JpVjQLgSEe2XO52FycrssA" source="_EGSxcLgSEe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_o3UpQLgSEe2XO52FycrssA" inPartition="_ZPGzsbgREe2XO52FycrssA" target="_Uh_H0LgSEe2XO52FycrssA" source="_JpVjQLgSEe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_pT4pcLgSEe2XO52FycrssA" target="_UiEnYLgSEe2XO52FycrssA" source="_Uh_H0LgSEe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_pw1rMLgSEe2XO52FycrssA" target="_YTj8ALgSEe2XO52FycrssA" source="_UiEnYLgSEe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_qaqEQLgSEe2XO52FycrssA" target="_bFClILgSEe2XO52FycrssA" source="_YTj8ALgSEe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_sgDDcLgSEe2XO52FycrssA" target="_rhkB8LgSEe2XO52FycrssA" source="_bFClILgSEe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_4p8NcLgSEe2XO52FycrssA" target="_YTeccLgSEe2XO52FycrssA" source="_YTj8ALgSEe2XO52FycrssA"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_5L6SELgSEe2XO52FycrssA" target="_cof78LgSEe2XO52FycrssA" source="_bFClILgSEe2XO52FycrssA"/>
+      <group xmi:type="uml:ActivityPartition" xmi:id="_ZPGzsLgREe2XO52FycrssA" name="q1" node="_nfZCcLgREe2XO52FycrssA _s2IdoLgREe2XO52FycrssA _3EAm4rgREe2XO52FycrssA _85dXULgREe2XO52FycrssA __7u1gLgREe2XO52FycrssA _EGSxcLgSEe2XO52FycrssA _JpabwrgSEe2XO52FycrssA _UiEnYLgSEe2XO52FycrssA _bFClILgSEe2XO52FycrssA"/>
+      <group xmi:type="uml:ActivityPartition" xmi:id="_ZPGzsbgREe2XO52FycrssA" name="q0" node="_f33QYLgREe2XO52FycrssA _sC9UQLgREe2XO52FycrssA _2qNm0LgREe2XO52FycrssA _3Dx9YLgREe2XO52FycrssA _85i24LgREe2XO52FycrssA __7zuALgREe2XO52FycrssA _DF4dULgSEe2XO52FycrssA _JpVjQLgSEe2XO52FycrssA _Uh_H0LgSEe2XO52FycrssA _YTj8ALgSEe2XO52FycrssA" edge="_klrN4LgSEe2XO52FycrssA _o3UpQLgSEe2XO52FycrssA"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_f33QYLgREe2XO52FycrssA" name="H" incoming="_hGSV4LgSEe2XO52FycrssA" outgoing="_h2HQULgSEe2XO52FycrssA" inPartition="_ZPGzsbgREe2XO52FycrssA"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_nfZCcLgREe2XO52FycrssA" name="H" incoming="_h2HQULgSEe2XO52FycrssA" outgoing="_iZzMMLgSEe2XO52FycrssA" inPartition="_ZPGzsLgREe2XO52FycrssA"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_sC9UQLgREe2XO52FycrssA" name="NOT" incoming="_iZzMMLgSEe2XO52FycrssA" outgoing="_jTTnELgSEe2XO52FycrssA" inPartition="_ZPGzsbgREe2XO52FycrssA"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_s2IdoLgREe2XO52FycrssA" name="NOT" incoming="_jTTnELgSEe2XO52FycrssA" outgoing="_kAby0LgSEe2XO52FycrssA" inPartition="_ZPGzsLgREe2XO52FycrssA"/>
+      <node xmi:type="uml:AcceptEventAction" xmi:id="_2qNm0LgREe2XO52FycrssA" name="Z" inPartition="_ZPGzsbgREe2XO52FycrssA"/>
+      <node xmi:type="uml:SendSignalAction" xmi:id="_3Dx9YLgREe2XO52FycrssA" name="C" incoming="_kAby0LgSEe2XO52FycrssA" outgoing="_klrN4LgSEe2XO52FycrssA" inPartition="_ZPGzsbgREe2XO52FycrssA"/>
+      <node xmi:type="uml:AcceptEventAction" xmi:id="_3EAm4rgREe2XO52FycrssA" name="Z" inPartition="_ZPGzsLgREe2XO52FycrssA"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_85dXULgREe2XO52FycrssA" name="NOT" incoming="_lKYdcLgSEe2XO52FycrssA" outgoing="_lsOmQLgSEe2XO52FycrssA" inPartition="_ZPGzsLgREe2XO52FycrssA"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_85i24LgREe2XO52FycrssA" name="NOT" incoming="_klrN4LgSEe2XO52FycrssA" outgoing="_lKYdcLgSEe2XO52FycrssA" inPartition="_ZPGzsbgREe2XO52FycrssA"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="__7u1gLgREe2XO52FycrssA" name="H" incoming="_mML4sLgSEe2XO52FycrssA" outgoing="_mwbOMLgSEe2XO52FycrssA" inPartition="_ZPGzsLgREe2XO52FycrssA"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="__7zuALgREe2XO52FycrssA" name="H" incoming="_lsOmQLgSEe2XO52FycrssA" outgoing="_mML4sLgSEe2XO52FycrssA" inPartition="_ZPGzsbgREe2XO52FycrssA"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_DF4dULgSEe2XO52FycrssA" name="Z" incoming="_mwbOMLgSEe2XO52FycrssA" outgoing="_nodpcLgSEe2XO52FycrssA" inPartition="_ZPGzsbgREe2XO52FycrssA"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_EGSxcLgSEe2XO52FycrssA" name="Z" incoming="_nodpcLgSEe2XO52FycrssA" outgoing="_oS8w4LgSEe2XO52FycrssA" inPartition="_ZPGzsLgREe2XO52FycrssA"/>
+      <node xmi:type="uml:SendSignalAction" xmi:id="_JpVjQLgSEe2XO52FycrssA" name="C" incoming="_oS8w4LgSEe2XO52FycrssA" outgoing="_o3UpQLgSEe2XO52FycrssA" inPartition="_ZPGzsbgREe2XO52FycrssA"/>
+      <node xmi:type="uml:AcceptEventAction" xmi:id="_JpabwrgSEe2XO52FycrssA" name="Z" inPartition="_ZPGzsLgREe2XO52FycrssA"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_Uh_H0LgSEe2XO52FycrssA" name="H" incoming="_o3UpQLgSEe2XO52FycrssA" outgoing="_pT4pcLgSEe2XO52FycrssA" inPartition="_ZPGzsbgREe2XO52FycrssA"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_UiEnYLgSEe2XO52FycrssA" name="H" incoming="_pT4pcLgSEe2XO52FycrssA" outgoing="_pw1rMLgSEe2XO52FycrssA" inPartition="_ZPGzsLgREe2XO52FycrssA"/>
+      <node xmi:type="uml:DataStoreNode" xmi:id="_YTeccLgSEe2XO52FycrssA" name="register1" incoming="_4p8NcLgSEe2XO52FycrssA" isControlType="true">
+        <upperBound xmi:type="uml:LiteralInteger" xmi:id="_YTeccbgSEe2XO52FycrssA" value="1"/>
+      </node>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_YTj8ALgSEe2XO52FycrssA" name="M" incoming="_pw1rMLgSEe2XO52FycrssA" outgoing="_qaqEQLgSEe2XO52FycrssA _4p8NcLgSEe2XO52FycrssA" inPartition="_ZPGzsbgREe2XO52FycrssA"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_bFClILgSEe2XO52FycrssA" name="M" incoming="_qaqEQLgSEe2XO52FycrssA" outgoing="_sgDDcLgSEe2XO52FycrssA _5L6SELgSEe2XO52FycrssA" inPartition="_ZPGzsLgREe2XO52FycrssA"/>
+      <node xmi:type="uml:DataStoreNode" xmi:id="_cof78LgSEe2XO52FycrssA" name="register2" incoming="_5L6SELgSEe2XO52FycrssA" isControlType="true">
+        <upperBound xmi:type="uml:LiteralInteger" xmi:id="_cof78bgSEe2XO52FycrssA" value="1"/>
+      </node>
+      <node xmi:type="uml:InitialNode" xmi:id="_fxcp4LgSEe2XO52FycrssA" name="" outgoing="_hGSV4LgSEe2XO52FycrssA"/>
+      <node xmi:type="uml:ActivityFinalNode" xmi:id="_rhkB8LgSEe2XO52FycrssA" name="ActivityFinalNode43" incoming="_sgDDcLgSEe2XO52FycrssA"/>
+    </packagedElement>
+    <profileApplication xmi:id="_itXd4LgREe2XO52FycrssA">
+      <eAnnotations xmi:id="_fVd-cMc6Ee2zlr0bEl8blw" source="PapyrusVersion">
+        <details xmi:id="_fVd-ccc6Ee2zlr0bEl8blw" key="Version" value="0.1.6"/>
+        <details xmi:id="_fVd-csc6Ee2zlr0bEl8blw" key="Comment" value=""/>
+        <details xmi:id="_fVd-c8c6Ee2zlr0bEl8blw" key="Copyright" value=""/>
+        <details xmi:id="_fVd-dMc6Ee2zlr0bEl8blw" key="Date" value="2023-03-09"/>
+        <details xmi:id="_fVd-dcc6Ee2zlr0bEl8blw" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:id="_itc9cLgREe2XO52FycrssA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_zel6EL6NEe24U6R9ykQTQA"/>
+      </eAnnotations>
+      <appliedProfile href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_TU1zcOP7EeubK-rnJ_MIxA"/>
+    </profileApplication>
+    <profileApplication xmi:id="_itc9cbgREe2XO52FycrssA">
+      <eAnnotations xmi:id="_fWxmAMc6Ee2zlr0bEl8blw" source="PapyrusVersion">
+        <details xmi:id="_fWxmAcc6Ee2zlr0bEl8blw" key="Version" value="0.1.6"/>
+        <details xmi:id="_fWxmAsc6Ee2zlr0bEl8blw" key="Comment" value=""/>
+        <details xmi:id="_fWxmA8c6Ee2zlr0bEl8blw" key="Copyright" value=""/>
+        <details xmi:id="_fWxmBMc6Ee2zlr0bEl8blw" key="Date" value="2023-03-09"/>
+        <details xmi:id="_fWxmBcc6Ee2zlr0bEl8blw" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:id="_itc9crgREe2XO52FycrssA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_zetO0L6NEe24U6R9ykQTQA"/>
+      </eAnnotations>
+      <appliedProfile href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_UyBjIOP7EeubK-rnJ_MIxA"/>
+    </profileApplication>
+  </uml:Model>
+  <QuantumUMLProfile:QuantumCircuit xmi:id="_ko7ysLgREe2XO52FycrssA" base_Activity="_UhywALgREe2XO52FycrssA"/>
+  <QuantumUMLProfile:Qubit xmi:id="_lVwccLgREe2XO52FycrssA" base_ActivityPartition="_ZPGzsbgREe2XO52FycrssA"/>
+  <QuantumUMLProfile:Qubit xmi:id="_l9cukLgREe2XO52FycrssA" base_ActivityPartition="_ZPGzsLgREe2XO52FycrssA"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_mroqQLgREe2XO52FycrssA" base_Action="_f33QYLgREe2XO52FycrssA"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_nflPsLgREe2XO52FycrssA" base_Action="_nfZCcLgREe2XO52FycrssA"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_sDHFQbgREe2XO52FycrssA" base_Action="_sC9UQLgREe2XO52FycrssA"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_s2N9NrgREe2XO52FycrssA" base_Action="_s2IdoLgREe2XO52FycrssA"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_3ElOsLgREe2XO52FycrssA" base_AcceptEventAction="_3EAm4rgREe2XO52FycrssA" base_Action="_3EAm4rgREe2XO52FycrssA"/>
+  <QuantumUMLProfile:ControlledQubit xmi:id="_3EqHILgREe2XO52FycrssA" base_SendSignalAction="_3Dx9YLgREe2XO52FycrssA"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_85rZwLgREe2XO52FycrssA" base_Action="_85i24LgREe2XO52FycrssA"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_85tO8LgREe2XO52FycrssA" base_Action="_85dXULgREe2XO52FycrssA"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="__77p3LgREe2XO52FycrssA" base_Action="__7zuALgREe2XO52FycrssA"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="__79fALgREe2XO52FycrssA" base_Action="__7u1gLgREe2XO52FycrssA"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_DGEDgLgSEe2XO52FycrssA" base_Action="_DF4dULgSEe2XO52FycrssA"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_EGYRBrgSEe2XO52FycrssA" base_Action="_EGSxcLgSEe2XO52FycrssA"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_Jpla6bgSEe2XO52FycrssA" base_AcceptEventAction="_JpabwrgSEe2XO52FycrssA" base_Action="_JpabwrgSEe2XO52FycrssA"/>
+  <QuantumUMLProfile:ControlledQubit xmi:id="_JpnQELgSEe2XO52FycrssA" base_SendSignalAction="_JpVjQLgSEe2XO52FycrssA"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_UiLVELgSEe2XO52FycrssA" base_Action="_Uh_H0LgSEe2XO52FycrssA"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_UiL8ILgSEe2XO52FycrssA" base_Action="_UiEnYLgSEe2XO52FycrssA"/>
+  <QuantumUMLProfile:Measure xmi:id="_YTpbnbgSEe2XO52FycrssA" base_Action="_YTj8ALgSEe2XO52FycrssA"/>
+  <QuantumUMLProfile:Measure xmi:id="_bFIrxrgSEe2XO52FycrssA" base_Action="_bFClILgSEe2XO52FycrssA"/>
+</xmi:XMI>

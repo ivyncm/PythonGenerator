@@ -1,0 +1,19 @@
+rule Class2PythonFile transform aClass : Class {
+		parameters{
+			var params : new Map;
+			params.put("dataTypes", Sequence{"Boolean", "Integer", "Real", "String"});
+			params.put("pythonDataTypes", Sequence{"bool", "int", "float", "str"});
+			params.put("activities", Parameters);
+			return params;
+		}
+		template : "classTemplate.egl"
+		target : "../RESULTS/" + aClass.qualifiedName.replace('::', '/').concat(".py")
+}
+operation Package isValid() : Boolean {
+  return not(self.qualifiedName == null);
+}
+rule PackageInit transform aPackage : Package {
+		guard : aPackage.isValid()
+		template : "packageTemplate.egl"
+		target : "../RESULTS/" + aPackage.qualifiedName.replace('::', '/').concat("/__init__.py")
+}
