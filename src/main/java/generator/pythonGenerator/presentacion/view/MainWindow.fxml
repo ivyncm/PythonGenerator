@@ -3,8 +3,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
@@ -16,7 +19,32 @@
       <Text layoutX="50.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Input files:" textAlignment="RIGHT" />
       <ScrollPane layoutX="109.0" layoutY="30.0" prefHeight="205.0" prefWidth="294.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="215.0" prefWidth="278.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="205.0" prefWidth="278.0">
+               <children>
+                  <TableView fx:id="InputTable" prefHeight="205.0" prefWidth="278.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="NombreCol" prefWidth="90.0" text="Nombre">
+                      	<cellValueFactory><PropertyValueFactory property="Name" />
+        				</cellValueFactory>
+                      </TableColumn>
+                      <TableColumn fx:id="ActividadCol" prefWidth="72.0" text="Actividad">
+                      	<cellValueFactory>
+                      		<PropertyValueFactory property="Actividad" />
+       					</cellValueFactory>
+                      </TableColumn>
+                      <TableColumn fx:id="ClaseCol" prefWidth="50.0" text="Clase">
+                      	<cellValueFactory>
+                      		<PropertyValueFactory property="Clase" />
+       					</cellValueFactory>
+                      </TableColumn>
+                      <TableColumn fx:id="RutaCol" prefWidth="65.0" text="Ruta">
+                      	<cellValueFactory>
+                      		<PropertyValueFactory property="Ruta" />
+       					</cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
         </content>
       </ScrollPane>
       <Text layoutX="14.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Output directory:" textAlignment="RIGHT" />
