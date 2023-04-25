@@ -7,21 +7,20 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="500.0" prefWidth="503.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="generator.pythonGenerator.presentacion.MainWindowController">
    <children>
       <Button fx:id="btnAnadir" layoutX="413.0" layoutY="34.0" mnemonicParsing="false" onAction="#clickAnadir" prefHeight="26.0" prefWidth="58.0" text="Añadir" />
-      <Button fx:id="btnEditar" layoutX="413.0" layoutY="71.0" mnemonicParsing="false" onAction="#clickEditar" prefHeight="26.0" prefWidth="58.0" text="Editar" />
-      <Button fx:id="btnEliminar" layoutX="413.0" layoutY="111.0" mnemonicParsing="false" onAction="#clickEliminar" text="Eliminar" />
+      <Button fx:id="btnEliminar" layoutX="413.0" layoutY="67.0" mnemonicParsing="false" onAction="#clickEliminar" text="Eliminar" />
       <Text layoutX="50.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Input files:" textAlignment="RIGHT" />
       <ScrollPane layoutX="109.0" layoutY="30.0" prefHeight="205.0" prefWidth="294.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="205.0" prefWidth="278.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="201.0" prefWidth="292.0">
                <children>
-                  <TableView fx:id="InputTable" prefHeight="205.0" prefWidth="278.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="InputTable" prefHeight="205.0" prefWidth="292.0" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                       <TableColumn fx:id="NombreCol" prefWidth="90.0" text="Nombre">
                       	<cellValueFactory><PropertyValueFactory property="Name" />
@@ -48,10 +47,10 @@
         </content>
       </ScrollPane>
       <Text layoutX="14.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Output directory:" textAlignment="RIGHT" />
-      <TextField layoutX="109.0" layoutY="246.0" prefHeight="26.0" prefWidth="294.0" />
+      <TextField fx:id="OutputLabel" layoutX="109.0" layoutY="246.0" prefHeight="26.0" prefWidth="294.0" />
       <Button fx:id="btnBrowse" layoutX="413.0" layoutY="246.0" mnemonicParsing="false" onAction="#clickBrowse" prefHeight="26.0" prefWidth="58.0" text="Browse" />
       <Button fx:id="btnGenerar" layoutX="109.0" layoutY="310.0" mnemonicParsing="false" onAction="#clickGennerar" prefHeight="26.0" prefWidth="106.0" text="Generar Código" />
-      <ProgressBar layoutX="221.0" layoutY="310.0" prefHeight="26.0" prefWidth="181.0" progress="0.0" />
-      <TextArea layoutX="109.0" layoutY="350.0" prefHeight="135.0" prefWidth="294.0" />
+      <ProgressBar fx:id="progressBar" layoutX="221.0" layoutY="310.0" prefHeight="26.0" prefWidth="181.0" progress="0.0" />
+      <TextArea fx:id="progressTextLabel" layoutX="109.0" layoutY="350.0" prefHeight="135.0" prefWidth="294.0" />
    </children>
 </AnchorPane>

@@ -1,18 +1,20 @@
 package generator.pythonGenerator.presentacion.model;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class InputFile {
 	private SimpleStringProperty Name;
     private SimpleStringProperty Ruta;
-    private Boolean Actividad;
-    private Boolean Clase;
+    public BooleanProperty Actividad;
+    public BooleanProperty Clase;
 
-    public InputFile(String Name, String Ruta, Boolean Actividad, Boolean Clase) {
+    public InputFile(String Name, String Ruta) {
         this.Name = new SimpleStringProperty(Name);
         this.Ruta = new SimpleStringProperty(Ruta);
-        this.Actividad = Actividad;
-        this.Clase = Clase;
+        this.Actividad = new SimpleBooleanProperty(false);
+        this.Clase = new SimpleBooleanProperty(false);
     }
 
     public String getName() {
@@ -30,17 +32,20 @@ public class InputFile {
     	this.Ruta.set(Ruta);
     }
     public Boolean getActividad() {
-        return this.Actividad;
+        return this.Actividad.get();
     }
 
     public void setActividad(Boolean Actividad) {
-    	this.Actividad = Actividad;
+    	this.Actividad.set(Actividad);
     }
     public Boolean getClase() {
-        return this.Clase;
+        return this.Clase.get();
     }
 
     public void setClase(Boolean Clase) {
-    	this.Clase = Clase;
+    	this.Clase.set(Clase);
     }
+    
+    public BooleanProperty ActividadProperty() { return Actividad; }
+    public BooleanProperty ClaseProperty() { return Clase; }
 }

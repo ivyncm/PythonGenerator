@@ -12,20 +12,24 @@ import org.eclipse.epsilon.eol.exceptions.models.EolModelElementTypeNotFoundExce
 public class Generator {
 	private static String egxClassFilePath = "templates/classGen.egx"; // Path to egx class file
 	private static String egxActivityFilePath = "templates/activityGen.egx"; // Path to egx activity file
-	private static String umlClassDirectoryPath = "umlDiagrams/classes"; // Path to uml classes directory
-	private static String umlActivityDirectoryPath = "umlDiagrams/activities"; // Path to uml activities directory
+	private List<String> umlClassFiles; // Path to uml classes directory
+	private List<String> umlActivityFiles; // Path to uml activities directory
 
+	
+	public Generator(List<String> umlClassFiles, List<String> umlActivityFiles) {
+		this.umlClassFiles = umlClassFiles;
+		this.umlActivityFiles = umlActivityFiles;
+	}
+	
 	/**
 	 * Main method for the complete execution of the transformations.
 	 * 
 	 * @param args
 	 * @throws EolModelElementTypeNotFoundException
 	 */
-	public static void main(String[] args) throws EolModelElementTypeNotFoundException {
+	public void execute() throws EolModelElementTypeNotFoundException {
 		List<String> activities = iterateDirectoryAndExecuteActivity(); // Iterate activity diagrams from directory and save name of circuits on List
 		iterateDirectoryAndExecuteClass(activities); // Iterate class diagrams from directory
-		
-		Utils.deleteTempDir();  // Delete temp directory
 	}
 	
 	/**
@@ -34,13 +38,13 @@ public class Generator {
 	 * @return Returns List containing name of circuits.
 	 * @throws EolModelElementTypeNotFoundException
 	 */
-	public static List<String> iterateDirectoryAndExecuteActivity() throws EolModelElementTypeNotFoundException {
+	public List<String> iterateDirectoryAndExecuteActivity() throws EolModelElementTypeNotFoundException {
 		List<String> activities = new ArrayList<String>();
-		File[] files = new File(umlActivityDirectoryPath).listFiles();
-		for (File filename : files) {
-			if (!filename.isDirectory()) {
-				System.out.println("Executing activity: ".concat(filename.toString().replace('\\', '/')));
-				activities.add(executeGeneratorActivity(filename.toString().replace('\\', '/')));
+		for (String filename : this.umlActivityFiles) {
+			File file = new File(filename);
+			if (!file.isDirectory()) {
+				System.out.println("Executing activity: ".concat(file.toString().replace('\\', '/')));
+				activities.add(executeGeneratorActivity(file.toString().replace('\\', '/')));
 			}
 		}
 		return activities;
@@ -51,12 +55,12 @@ public class Generator {
 	 * 
 	 * @throws EolModelElementTypeNotFoundException
 	 */
-	public static void iterateDirectoryAndExecuteClass(List<String> activities) throws EolModelElementTypeNotFoundException {
-		File[] files = new File(umlClassDirectoryPath).listFiles();
-		for (File filename : files) {
-			if (!filename.isDirectory()) {
-				System.out.println("Executing class: ".concat(filename.toString().replace('\\', '/')));
-				executeGeneratorClass(filename.toString().replace('\\', '/'), activities);
+	public void iterateDirectoryAndExecuteClass(List<String> activities) throws EolModelElementTypeNotFoundException {
+		for (String filename : this.umlClassFiles) {
+			File file = new File(filename);
+			if (!file.isDirectory()) {
+				System.out.println("Executing class: ".concat(file.toString().replace('\\', '/')));
+				executeGeneratorClass(file.toString().replace('\\', '/'), activities);
 			}
 		}
 	}
@@ -68,7 +72,7 @@ public class Generator {
 	 * @return Returns name of activity (used for class transformation).
 	 * @throws EolModelElementTypeNotFoundException
 	 */
-	public static String executeGeneratorActivity(String umlFilePath) throws EolModelElementTypeNotFoundException {
+	public String executeGeneratorActivity(String umlFilePath) throws EolModelElementTypeNotFoundException {
 		EgxModule module = Utils.parseEgxFile(egxActivityFilePath); // Parse egxFilePath.egx
 		UmlModel umlModel = Utils.loadUml(umlFilePath); // Load UmlModel
 		
@@ -90,7 +94,7 @@ public class Generator {
 	 * @param activities List contains name of activities.
 	 * @throws EolModelElementTypeNotFoundException
 	 */
-	public static void executeGeneratorClass(String umlFilePath, List<String> activities) throws EolModelElementTypeNotFoundException {
+	public void executeGeneratorClass(String umlFilePath, List<String> activities) throws EolModelElementTypeNotFoundException {
 		EgxModule module = Utils.parseEgxFile(egxClassFilePath); // Parse egxFilePath.egx
 		UmlModel umlModel = Utils.loadUml(umlFilePath); // Load UmlModel
 		
@@ -105,8 +109,27 @@ public class Generator {
 		}
 		
 		// Copy circuits(activities) to class generated directory
-		File destDir = new File("RESULTS/".concat(umlModel.getAllOfType("Model").toString().split("name: ")[1].split(",")[0].concat("/quantumCircuits")));
-		Utils.copyCircuits(new File("temp/quantumCircuits"), destDir);
+		File destDir = new File("temp/RESULTS/".concat(umlModel.getAllOfType("Model").toString().split("name: ")[1].split(",")[0].concat("/quantumCircuits")));
+		Utils.copyCircuits(new File("temp/RESULTS/quantumCircuits"), destDir);
 	}
+	
+    public List<String> getumlClassFiles() {
+        return this.umlClassFiles;
+    }
+    public void setumlClassFiles(List<String> umlClassFiles) {
+    	this.umlClassFiles = umlClassFiles;
+    }
+    public List<String> getumlActivityFiles() {
+        return this.umlActivityFiles;
+    }
+    public void setName(List<String> umlActivityFiles) {
+    	this.umlActivityFiles = umlActivityFiles;
+    }
+    public String getegxClassFilePath() {
+        return egxClassFilePath;
+    }
+    public String getName() {
+        return egxActivityFilePath;
+    }
 	
 }

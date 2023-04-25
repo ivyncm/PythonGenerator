@@ -7,7 +7,7 @@ rule Class2PythonFile transform aClass : Class {
 			return params;
 		}
 		template : "classTemplate.egl"
-		target : "../RESULTS/" + aClass.qualifiedName.replace('::', '/').concat(".py")
+		target : "../temp/RESULTS/" + aClass.qualifiedName.replace('::', '/').concat(".py")
 }
 operation Package isValid() : Boolean {
   return not(self.qualifiedName == null);
@@ -15,5 +15,5 @@ operation Package isValid() : Boolean {
 rule PackageInit transform aPackage : Package {
 		guard : aPackage.isValid()
 		template : "packageTemplate.egl"
-		target : "../RESULTS/" + aPackage.qualifiedName.replace('::', '/').concat("/__init__.py")
+		target : "../temp/RESULTS/" + aPackage.qualifiedName.replace('::', '/').concat("/__init__.py")
 }
