@@ -5,19 +5,19 @@
 package generator.pythonGenerator.presentacion;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-
-import javax.security.auth.callback.Callback;
 
 import org.eclipse.epsilon.eol.exceptions.models.EolModelElementTypeNotFoundException;
 
 import generator.pythonGenerator.Generator;
 import generator.pythonGenerator.Utils;
 import generator.pythonGenerator.presentacion.model.InputFile;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,10 +25,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -76,9 +74,6 @@ import javafx.stage.Stage;
 
         @FXML // fx:id="btnGenerar"
         private Button btnGenerar; // Value injected by FXMLLoader
-        
-        @FXML // fx:id="progressBar"
-        private ProgressBar progressBar; // Value injected by FXMLLoader
 
         @FXML // fx:id="progressTextLabel"
         private TextArea progressTextLabel; // Value injected by FXMLLoader
@@ -123,10 +118,7 @@ import javafx.stage.Stage;
 
         @FXML
         void clickGennerar(ActionEvent event) {
-        	
         	Generator generator = new Generator(getClassesFromTable(), getActivitiesFromTable());
-        	System.out.println(generator.getumlActivityFiles());
-        	System.out.println(generator.getumlClassFiles());
         	try {
 				generator.execute();
 			} catch (EolModelElementTypeNotFoundException e) {
@@ -134,6 +126,7 @@ import javafx.stage.Stage;
 			} finally {
 				Utils.copyCircuits(new File("temp"), new File(OutputLabel.getText()));
 				Utils.deleteTempDir();
+				System.out.println("Done!");
 			}
         }
 
@@ -149,7 +142,6 @@ import javafx.stage.Stage;
             assert btnBrowse != null : "fx:id=\"btnBrowse\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert btnEliminar != null : "fx:id=\"btnEliminar\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert btnGenerar != null : "fx:id=\"btnGenerar\" was not injected: check your FXML file 'MainWindow.fxml'.";
-            assert progressBar != null : "fx:id=\"progressBar\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert progressTextLabel != null : "fx:id=\"progressTextLabel\" was not injected: check your FXML file 'MainWindow.fxml'.";
         	InputTable.setEditable(true);
         	ActividadCol.setEditable(true);
@@ -157,6 +149,18 @@ import javafx.stage.Stage;
             ActividadCol.setCellFactory(CheckBoxTableCell.forTableColumn(ActividadCol));
             ClaseCol.setCellFactory(CheckBoxTableCell.forTableColumn(ClaseCol));
             InputTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        
+        
+         // Crea un nuevo OutputStream personalizado que escribe en el TextArea
+            OutputStream out = new OutputStream() {
+                @Override
+                public void write(int b) throws IOException {
+                	progressTextLabel.appendText(String.valueOf((char) b));
+                }
+            };
+
+            // Redirige la salida estándar a este OutputStream personalizado
+            System.setOut(new PrintStream(out, true));
         }
         
         public List<String> getActivitiesFromTable() {

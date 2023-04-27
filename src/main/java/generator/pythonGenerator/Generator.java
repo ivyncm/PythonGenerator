@@ -28,17 +28,17 @@ public class Generator {
 	 * @throws EolModelElementTypeNotFoundException
 	 */
 	public void execute() throws EolModelElementTypeNotFoundException {
-		List<String> activities = iterateDirectoryAndExecuteActivity(); // Iterate activity diagrams from directory and save name of circuits on List
-		iterateDirectoryAndExecuteClass(activities); // Iterate class diagrams from directory
+		List<String> activities = iterateListAndExecuteActivity(); // Iterate activity diagrams from directory and save name of circuits on List
+		iterateListAndExecuteClass(activities); // Iterate class diagrams from directory
 	}
 	
 	/**
-	 * Method that iterates through a directory looking for uml activity files and execute egx/egl transformation on them.
+	 * Method that iterates through a list looking for uml activity files and execute egx/egl transformation on them.
 	 * 
 	 * @return Returns List containing name of circuits.
 	 * @throws EolModelElementTypeNotFoundException
 	 */
-	public List<String> iterateDirectoryAndExecuteActivity() throws EolModelElementTypeNotFoundException {
+	public List<String> iterateListAndExecuteActivity() throws EolModelElementTypeNotFoundException {
 		List<String> activities = new ArrayList<String>();
 		for (String filename : this.umlActivityFiles) {
 			File file = new File(filename);
@@ -51,11 +51,11 @@ public class Generator {
 	}
 	
 	/**
-	 * Method that iterates through a directory looking for uml class files and execute egx/egl transformation on them.
+	 * Method that iterates through a list looking for uml class files and execute egx/egl transformation on them.
 	 * 
 	 * @throws EolModelElementTypeNotFoundException
 	 */
-	public void iterateDirectoryAndExecuteClass(List<String> activities) throws EolModelElementTypeNotFoundException {
+	public void iterateListAndExecuteClass(List<String> activities) throws EolModelElementTypeNotFoundException {
 		for (String filename : this.umlClassFiles) {
 			File file = new File(filename);
 			if (!file.isDirectory()) {
@@ -122,13 +122,13 @@ public class Generator {
     public List<String> getumlActivityFiles() {
         return this.umlActivityFiles;
     }
-    public void setName(List<String> umlActivityFiles) {
+    public void setumlActivityFiles(List<String> umlActivityFiles) {
     	this.umlActivityFiles = umlActivityFiles;
     }
     public String getegxClassFilePath() {
         return egxClassFilePath;
     }
-    public String getName() {
+    public String getegxActivityFilePath() {
         return egxActivityFilePath;
     }
 	
