@@ -3,7 +3,7 @@ rule Class2PythonFile transform aClass : Class {
 			var params : new Map;
 			params.put("dataTypes", Sequence{"Boolean", "Integer", "Real", "String"});
 			params.put("pythonDataTypes", Sequence{"bool", "int", "float", "str"});
-			params.put("activities", Parameters);
+			params.put("activities", ListActivities); // Format: "activity1,activity2,..."
 			return params;
 		}
 		template : "classTemplate.egl"

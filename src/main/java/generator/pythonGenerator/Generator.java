@@ -10,7 +10,7 @@ import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
 import org.eclipse.epsilon.eol.exceptions.models.EolModelElementTypeNotFoundException;
 
 public class Generator {
-	private static String egxClassFilePath = "EGLtemplates/classGen.egx"; // Path to egx class file
+	private static String egxClassFilePath = "EGLtemplates/classGenJava.egx"; // Path to egx class file
 	private static String egxActivityFilePath = "EGLtemplates/activityGen.egx"; // Path to egx activity file
 	private List<String> umlClassFiles; // Path to uml classes directory
 	private List<String> umlActivityFiles; // Path to uml activities directory
@@ -99,7 +99,11 @@ public class Generator {
 		
 		// Add umlModel and parameters to egx file
 		module.getContext().getModelRepository().addModel(umlModel); // Make the document visible to the EGX program
-		module.getContext().getFrameStack().put("Parameters", activities.toString()); // Make the activity names visible to the EGX program
+		if(activities.size() == 0) {
+			module.getContext().getFrameStack().put("ListActivities", activities.toString()); // Make the activity names visible to the EGX program
+		}else {
+			module.getContext().getFrameStack().put("ListActivities", activities.toString().substring(1, activities.toString().length()-1)); // Make the activity names visible to the EGX program
+		}
 		try {
 			module.execute(); // Execute egxFileName.egx
 		} catch (EolRuntimeException e) {
