@@ -14,7 +14,6 @@ public class Generator {
 	private static String egxActivityFilePath = "templates/activityGen.egx"; // Path to egx activity file
 	private List<String> umlClassFiles; // Path to uml classes directory
 	private List<String> umlActivityFiles; // Path to uml activities directory
-
 	
 	public Generator(List<String> umlClassFiles, List<String> umlActivityFiles) {
 		this.umlClassFiles = umlClassFiles;
