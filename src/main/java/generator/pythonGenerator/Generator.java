@@ -10,8 +10,8 @@ import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
 import org.eclipse.epsilon.eol.exceptions.models.EolModelElementTypeNotFoundException;
 
 public class Generator {
-	private static String egxClassFilePath = "templates/classGen.egx"; // Path to egx class file
-	private static String egxActivityFilePath = "templates/activityGen.egx"; // Path to egx activity file
+	private static String egxClassFilePath = "EGLtemplates/classGen.egx"; // Path to egx class file
+	private static String egxActivityFilePath = "EGLtemplates/activityGen.egx"; // Path to egx activity file
 	private List<String> umlClassFiles; // Path to uml classes directory
 	private List<String> umlActivityFiles; // Path to uml activities directory
 	
