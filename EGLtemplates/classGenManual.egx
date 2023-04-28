@@ -1,9 +1,12 @@
 rule Class2PythonFile transform aClass : Class {
+		pre{
+			var activities = ""; // Añadir los nombres necesarios con el siguiente formato separado por comas: "activity1,activity2,..."
+		}
 		parameters{
 			var params : new Map;
 			params.put("dataTypes", Sequence{"Boolean", "Integer", "Real", "String"});
 			params.put("pythonDataTypes", Sequence{"bool", "int", "float", "str"});
-			params.put("activities", ""); // Format: "activity1,activity2,..."
+			params.put("activities", activities); 
 			return params;
 		}
 		template : "classTemplate.egl"
