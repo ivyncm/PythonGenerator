@@ -13,10 +13,10 @@
 
 <AnchorPane minHeight="600.0" minWidth="520.0" prefHeight="600.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="generator.pythonGenerator.presentacion.MainWindowController">
    <children>
-      <Button fx:id="btnAnadir" layoutX="526.0" layoutY="2.0" mnemonicParsing="false" onAction="#clickAnadir" prefHeight="26.0" prefWidth="58.0" text="Añadir" AnchorPane.rightAnchor="80.0" />
-      <Button fx:id="btnEliminar" layoutX="591.0" layoutY="2.0" mnemonicParsing="false" onAction="#clickEliminar" text="Eliminar" AnchorPane.rightAnchor="8.0" />
-      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Input files:" textAlignment="RIGHT" />
-      <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="14.0" layoutY="31.0" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="31.0">
+      <Button fx:id="btnAnadir" layoutX="526.0" layoutY="2.0" mnemonicParsing="false" onAction="#clickAnadir" prefHeight="26.0" prefWidth="58.0" text="Añadir" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="10.0" />
+      <Button fx:id="btnEliminar" layoutX="591.0" layoutY="2.0" mnemonicParsing="false" onAction="#clickEliminar" text="Eliminar" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0" />
+      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Input files:" textAlignment="RIGHT" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="14.0" layoutY="31.0" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="40.0">
          <content>
             <TableView fx:id="InputTable" prefHeight="197.0" prefWidth="629.0">
               <columns>
@@ -47,11 +47,12 @@
             </TableView>
          </content>
       </ScrollPane>
-      <Text layoutX="11.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Output directory:" textAlignment="RIGHT" AnchorPane.bottomAnchor="279.98828125" AnchorPane.leftAnchor="11.0" />
-      <TextField fx:id="OutputLabel" layoutX="107.0" layoutY="300.0" prefHeight="26.0" prefWidth="330.0" AnchorPane.bottomAnchor="274.0" AnchorPane.leftAnchor="107.0" AnchorPane.rightAnchor="83.0" />
-      <Button fx:id="btnBrowse" layoutX="451.0" layoutY="300.0" mnemonicParsing="false" onAction="#clickBrowse" prefHeight="26.0" prefWidth="58.0" text="Browse" AnchorPane.bottomAnchor="274.0" AnchorPane.rightAnchor="11.0" />
-      <Button fx:id="btnGenerar" layoutX="385.0" layoutY="335.0" mnemonicParsing="false" onAction="#clickGennerar" prefHeight="35.0" prefWidth="214.0" text="Generar Código" AnchorPane.bottomAnchor="230.0" AnchorPane.rightAnchor="8.0" />
-      <TextArea fx:id="progressTextLabel" layoutX="14.0" layoutY="352.0" prefHeight="216.0" prefWidth="504.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" />
-      <ProgressBar layoutX="8.0" layoutY="339.0" prefHeight="25.0" prefWidth="280.0" progress="0.0" AnchorPane.bottomAnchor="236.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="232.0" />
+      <Text layoutX="11.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Output directory:" textAlignment="RIGHT" AnchorPane.bottomAnchor="279.98828125" AnchorPane.leftAnchor="20.0" />
+      <TextField fx:id="OutputLabel" layoutX="107.0" layoutY="300.0" prefHeight="26.0" prefWidth="285.0" AnchorPane.bottomAnchor="274.0" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="120.0" />
+      <Button fx:id="btnBrowse" layoutX="451.0" layoutY="300.0" mnemonicParsing="false" onAction="#clickBrowse" prefHeight="26.0" prefWidth="58.0" text="Browse" AnchorPane.bottomAnchor="274.0" AnchorPane.rightAnchor="20.0" />
+      <Button fx:id="btnGenerar" layoutX="385.0" layoutY="335.0" mnemonicParsing="false" onAction="#clickGennerar" prefHeight="35.0" prefWidth="214.0" text="Generar Código" AnchorPane.bottomAnchor="230.0" AnchorPane.rightAnchor="20.0" />
+      <TextArea fx:id="progressTextLabel" layoutX="14.0" layoutY="352.0" prefHeight="203.0" prefWidth="480.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+      <ProgressBar layoutX="8.0" layoutY="339.0" prefHeight="25.0" prefWidth="280.0" progress="0.0" AnchorPane.bottomAnchor="235.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="240.0" />
+      <Button fx:id="btnOpenOutDir" layoutX="406.0" layoutY="300.0" mnemonicParsing="false" onAction="#clickOpenOutDir" text="📁" AnchorPane.bottomAnchor="274.4" AnchorPane.rightAnchor="86.0" />
    </children>
 </AnchorPane>

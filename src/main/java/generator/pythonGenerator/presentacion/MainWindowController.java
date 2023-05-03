@@ -4,6 +4,7 @@
 
 package generator.pythonGenerator.presentacion;
 
+import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -78,6 +79,9 @@ import javafx.stage.Stage;
         @FXML // fx:id="progressTextLabel"
         private TextArea progressTextLabel; // Value injected by FXMLLoader
 
+        @FXML // fx:id="btnOpenOutDir"
+        private Button btnOpenOutDir; // Value injected by FXMLLoader
+
         @FXML
         void clickAnadir(ActionEvent event) {
         	ObservableList<InputFile> fileList = FXCollections.observableArrayList();
@@ -129,6 +133,17 @@ import javafx.stage.Stage;
 				System.out.println("Done!");
 			}
         }
+        
+        @FXML
+        void clickOpenOutDir(ActionEvent event) {
+        	Desktop desktop = Desktop.getDesktop();
+        	String directory = OutputLabel.getText();
+            try {
+                desktop.open(new File(directory));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         @FXML // This method is called by the FXMLLoader when initialization is complete
         void initialize() {
@@ -142,6 +157,7 @@ import javafx.stage.Stage;
             assert btnBrowse != null : "fx:id=\"btnBrowse\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert btnEliminar != null : "fx:id=\"btnEliminar\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert btnGenerar != null : "fx:id=\"btnGenerar\" was not injected: check your FXML file 'MainWindow.fxml'.";
+            assert btnOpenOutDir != null : "fx:id=\"btnOpenOutDir\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert progressTextLabel != null : "fx:id=\"progressTextLabel\" was not injected: check your FXML file 'MainWindow.fxml'.";
         	InputTable.setEditable(true);
         	ActividadCol.setEditable(true);
