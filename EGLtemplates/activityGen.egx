@@ -1,10 +1,10 @@
 rule Activity2PythonFile transform anActivity : Activity {
 		parameters : Map {"gates" = Sequence{"NOT", "I"},
 					   	  "gatesQiskit" = Sequence{"x", "id"}}
-		template : "activityTemplate.egl"
+		template : "Activity/activityTemplate.egl"
 		target : "../temp/RESULTS/quantumCircuits/" + anActivity.name.replace(' ', '_').replace('-', '_') + ".py"
 }
 rule PackageInit transform aPackage : Activity {
-		template : "packageTemplate.egl"
+		template : "Package/packageTemplate.egl"
 		target : "../temp/RESULTS/quantumCircuits/__init__.py"
 }

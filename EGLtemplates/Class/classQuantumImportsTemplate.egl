@@ -1,0 +1,8 @@
+[*QUANTUM IMPORTS*]
+[%for(anAttribute in aClass.attributes){
+	if((anAttribute.type.name == "qiskit.circuit.QuantumCircuit")){
+		for(activity in activities.split(', ')){
+			if(activity.toLowerCase().replace(' ', '_').replace('-', '_') == anAttribute.name.toLowerCase().replace(' ', '_').replace('-', '_')){%]
+from quantumCircuits.[%=anAttribute.name%] import [%=anAttribute.name%]
+	[%}}}
+}%]

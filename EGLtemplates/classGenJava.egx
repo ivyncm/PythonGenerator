@@ -1,19 +1,44 @@
-rule Class2PythonFile transform aClass : Class {
+pre{
+	var activities = ListActivities; // Añadir los nombres necesarios con el siguiente formato separado por comas: "activity1,activity2,..."
+}
+rule ClassImports2PythonFile transform aClass : Class {
+		template : "Class/classImportsTemplate.egl"
+		target : "../temp/RESULTS/" + aClass.qualifiedName.replace('::', '/').concat(".py")
+}
+rule ClassQuantumImports2PythonFile transform aClass : Class {
+		parameters{
+			var params : new Map;
+			params.put("activities", activities); 
+			return params;
+		}
+		guard : aClass.isQuantumClass()
+		append : true
+		template : "Class/classQuantumImportsTemplate.egl"
+		target : "../temp/RESULTS/" + aClass.qualifiedName.replace('::', '/').concat(".py")
+}
+rule ClassBody2PythonFile transform aClass : Class {
 		parameters{
 			var params : new Map;
 			params.put("dataTypes", Sequence{"Boolean", "Integer", "Real", "String"});
 			params.put("pythonDataTypes", Sequence{"bool", "int", "float", "str"});
-			params.put("activities", ListActivities); // Format: "activity1,activity2,..."
+			params.put("activities", activities); 
 			return params;
 		}
-		template : "classTemplate.egl"
+		append : true
+		template : "Class/classBodyTemplate.egl"
 		target : "../temp/RESULTS/" + aClass.qualifiedName.replace('::', '/').concat(".py")
+}
+rule PackageInit transform aPackage : Package {
+		guard : aPackage.isValid()
+		template : "Package/packageTemplate.egl"
+		target : "../temp/RESULTS/" + aPackage.qualifiedName.replace('::', '/').concat("/__init__.py")
 }
 operation Package isValid() : Boolean {
   return not(self.qualifiedName == null);
 }
-rule PackageInit transform aPackage : Package {
-		guard : aPackage.isValid()
-		template : "packageTemplate.egl"
-		target : "../temp/RESULTS/" + aPackage.qualifiedName.replace('::', '/').concat("/__init__.py")
+operation Class isQuantumClass() : Boolean {
+	if(self.stereotypeApplications.size() == 0){
+		return false;
+	}
+	return (self.stereotypeApplications.get(0).eClass.name == "Quantum");
 }

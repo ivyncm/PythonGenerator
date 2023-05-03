@@ -1,21 +1,3 @@
-# -*- coding: utf-8 -*-
-[*IMPORTS*]
-import qiskit, qiskit.circuit, qiskit_finance.circuit
-
-[%for(dependency in Dependency){
-	if(dependency.client.get(0) == aClass){%]
-from [%=generarRuta(dependency.supplier.get(0))%] import [%=dependency.supplier.get(0).name%]
-	[%}}
-for(anAttribute in aClass.attributes){
-	if(not(anAttribute.association == null)){%]
-from [%=generarRuta(anAttribute.type)%] import [%=anAttribute.type.name%]
-	[%}else if(anAttribute.type.name == "qiskit.circuit.QuantumCircuit"){
-		for(activity in activities.split(', ')){
-			if(activity.toLowerCase().replace(' ', '_').replace('-', '_') == anAttribute.name.toLowerCase().replace(' ', '_').replace('-', '_')){%]
-from quantumCircuits.[%=anAttribute.name%] import [%=anAttribute.name%]
-	[%}}}
-}%]
-
 [*CLASE*]
 class [%=aClass.name%]():
 	
@@ -96,21 +78,4 @@ function getReturn(anOperation) : String{
 	if(ret.length == 4)
 		return "";
 	return ret.substring(0, ret.length -2);
-}
-function generarRuta(aClass) : String{
-	var ruta = "";
-	for (p in Package.all)
-		if (p.type.name == "Package")
-			if (isParent(p, aClass))
-				ruta += p.name + ".";
-  	return ruta.substring(0, ruta.length -1);
-}
-function isParent(package, aClass) : Boolean{
-	for(element in package.packagedElement){
-		if((element.type.name == "Package") and (isParent(element, aClass)))
-				return true;
-		else if((element.type.name == "Class") and (element.name == aClass.name))
-			return true;
-	}
-	return false;
 }%]
