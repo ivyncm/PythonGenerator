@@ -142,7 +142,7 @@ import javafx.stage.Stage;
 				            		}
 		            			} else {
 		            				// Mostrar un mensaje de error si no se seleccionó ninguna fila
-		                            Alert alert = new Alert(AlertType.ERROR);
+		                            Alert alert = new Alert(AlertType.WARNING);
 		                            alert.setTitle("Warning");
 		                            alert.setHeaderText(null);
 		                            alert.setContentText("El elemento ".concat(file.getName()).concat(" ya está insertado."));
@@ -182,8 +182,8 @@ import javafx.stage.Stage;
             	InputTable.getSelectionModel().clearSelection();
             } else {
                 // Mostrar un mensaje de error si no se seleccionó ninguna fila
-                Alert alert = new Alert(AlertType.ERROR);
-                alert.setTitle("Error");
+                Alert alert = new Alert(AlertType.WARNING);
+                alert.setTitle("Warning!");
                 alert.setHeaderText(null);
                 alert.setContentText("Debes seleccionar una fila para eliminar.");
                 alert.showAndWait();
@@ -192,52 +192,54 @@ import javafx.stage.Stage;
 
         @FXML
         void clickGennerar(ActionEvent event) {
-        	progressBar.setProgress(0.0);
-        	Generator generator = new Generator(getClassesFromTable(), getActivitiesFromTable());
-    		// Inicia la tarea en un hilo separado
-    	    Task<Void> task = new Task<Void>() {
-    	        @Override
-    	        protected Void call() throws Exception {
-    	        	updateProgress(0.0, 1.0);
-    	        	updateMessage("Starting... \n");
-    	        	int n = generator.getumlActivityFiles().size();
-    	        	int m = generator.getumlClassFiles().size();
-    	        	int totalIterations = n + m;
-    	        	List<String> activities = new ArrayList<String>();
-    	            // Bucle que realiza un total de n iteraciones
-    	            for (int i = 0; i < n; i++) {
-    	            	updateMessage("Executing activity: ".concat(generator.getumlActivityFiles().get(i).toString().replace('\\', '/')));
-    	                // Realiza una iteración de la tarea
-    	            	activities.add(generator.executeGeneratorActivity(generator.getumlActivityFiles().get(i)));
+        	if(checkOutputDirectory() == true && checkTableSelection() == true && checkEmptyTable() == false) {
+	        	Generator generator = new Generator(getClassesFromTable(), getActivitiesFromTable());
+	    		// Inicia la tarea en un hilo separado
+	    	    Task<Void> task = new Task<Void>() {
+	    	        @Override
+	    	        protected Void call() throws Exception {
+	    	        	updateProgress(0.0, 1.0);
+	    	        	updateMessage("Starting... \n");
+	    	        	int n = generator.getumlActivityFiles().size();
+	    	        	int m = generator.getumlClassFiles().size();
+	    	        	int totalIterations = n + m;
+	    	        	List<String> activities = new ArrayList<String>();
+	    	            // Bucle que realiza un total de n iteraciones
+	    	            for (int i = 0; i < n; i++) {
+	    	            	updateMessage("Executing activity: ".concat(generator.getumlActivityFiles().get(i).toString().replace('\\', '/')));
+	    	                // Realiza una iteración de la tarea
+	    	            	activities.add(generator.executeGeneratorActivity(generator.getumlActivityFiles().get(i)));
+	
+	    	                // Calcula el progreso actual y actualiza la barra de progreso
+	    	                double progress = (i + 1.0) / totalIterations;
+	    	                updateProgress(progress, 1.0);
+	    	            }
+	    	            for (int j = 0; j < m; j++) {
+	    	            	updateMessage("Executing activity: ".concat(generator.getumlClassFiles().get(j).toString().replace('\\', '/')));
+	    	                // Realiza una iteración de la tarea
+	    	            	generator.executeGeneratorClass(generator.getumlClassFiles().get(j), activities);
+	
+	    	                // Calcula el progreso actual y actualiza la barra de progreso
+	    	                double progress = (n + j + 1.0) / totalIterations;
+	    	                updateProgress(progress, 1.0);
+	    	            }
+	    	            updateMessage("Moviendo resultados a: ".concat(OutputLabel.getText()));
+	    				Utils.copyCircuits(new File("temp"), new File(OutputLabel.getText()));
+	    				Utils.deleteTempDir();
+	    				updateMessage("Done!");
+	
+	    	            return null;
+	    	        }
+	    	    };
+	    	    // Vincula la barra de progreso con la propiedad de progreso de la tarea
+	    	    progressBar.progressProperty().bind(task.progressProperty());
+	    	    progressTextLabel.textProperty().bind(task.messageProperty());
+	
+	    	    // Inicia la tarea en un nuevo hilo
+	    	    new Thread(task).start();
 
-    	                // Calcula el progreso actual y actualiza la barra de progreso
-    	                double progress = (i + 1.0) / totalIterations;
-    	                updateProgress(progress, 1.0);
-    	            }
-    	            for (int j = 0; j < m; j++) {
-    	            	updateMessage("Executing activity: ".concat(generator.getumlClassFiles().get(j).toString().replace('\\', '/')));
-    	                // Realiza una iteración de la tarea
-    	            	generator.executeGeneratorClass(generator.getumlClassFiles().get(j), activities);
-
-    	                // Calcula el progreso actual y actualiza la barra de progreso
-    	                double progress = (n + j + 1.0) / totalIterations;
-    	                updateProgress(progress, 1.0);
-    	            }
-    	            updateMessage("Moviendo resultados a: ".concat(OutputLabel.getText()));
-    				Utils.copyCircuits(new File("temp"), new File(OutputLabel.getText()));
-    				Utils.deleteTempDir();
-    				updateMessage("Done!");
-
-    	            return null;
-    	        }
-    	    };
-    	    // Vincula la barra de progreso con la propiedad de progreso de la tarea
-    	    progressBar.progressProperty().bind(task.progressProperty());
-    	    progressTextLabel.textProperty().bind(task.messageProperty());
-
-    	    // Inicia la tarea en un nuevo hilo
-    	    new Thread(task).start();
-    	    
+	        	progressBar.setProgress(0);
+        	}
         }
         
         @FXML
@@ -297,6 +299,51 @@ import javafx.stage.Stage;
         	}
         	return filteredItems;
         }
-
+        public Boolean checkOutputDirectory() {
+        	Boolean validOutput = true;
+        	File directorio = new File(OutputLabel.getText());
+        	if(!(directorio.exists() && directorio.isDirectory())) {
+        		validOutput = false;
+        	}
+        	if (validOutput == false) {
+        		Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Error!");
+                alert.setHeaderText(null);
+                alert.setContentText("El directorio destino no es válido.");
+                alert.showAndWait();
+        	}
+        	return validOutput;
+        }
+        public Boolean checkTableSelection() {
+        	Boolean validTable = true;
+        	for(InputFile row : InputTable.getItems()) {
+        		if(!row.getActividad() && !row.getClase()) {
+        			validTable = false;
+        		}
+        	}
+        	if (validTable == false) {
+        		Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Error!");
+                alert.setHeaderText(null);
+                alert.setContentText("Debes seleccionar al menos una opción (clase o actividad) para cada uml.");
+                alert.showAndWait();
+        	}
+        	return validTable;
+        	
+        }
+        public Boolean checkEmptyTable() {
+        	Boolean emptyTable = false;
+        	if(InputTable.getItems().size() == 0) {
+        		emptyTable = true;
+        	}
+        	if (emptyTable == true) {
+        		Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Error!");
+                alert.setHeaderText(null);
+                alert.setContentText("La tabla está vacía. Debes añadir al menos un fichero uml.");
+                alert.showAndWait();
+        	}
+        	return emptyTable;
+        }
     }
   
