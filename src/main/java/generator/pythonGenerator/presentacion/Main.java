@@ -16,7 +16,7 @@ public class Main extends Application {
 			Parent root = FXMLLoader.load(new File("src/main/java/generator/pythonGenerator/presentacion/view/MainWindow.fxml").toURI().toURL());
 			Scene scene = new Scene(root);
 			
-			primaryStage.setTitle("Hello World!");
+			primaryStage.setTitle("Q-UML2Python");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		}catch(Exception e) {
