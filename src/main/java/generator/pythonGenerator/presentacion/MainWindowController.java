@@ -7,25 +7,26 @@ package generator.pythonGenerator.presentacion;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
-
-import org.eclipse.epsilon.eol.exceptions.models.EolModelElementTypeNotFoundException;
+import java.util.prefs.Preferences;
 
 import generator.pythonGenerator.Generator;
 import generator.pythonGenerator.Utils;
 import generator.pythonGenerator.presentacion.model.InputFile;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -39,6 +40,8 @@ import javafx.stage.Stage;
 
 
     public class MainWindowController {
+    	
+    	private Preferences preferences;
 
         @FXML // ResourceBundle that was given to the FXMLLoader
         private ResourceBundle resources;
@@ -78,6 +81,9 @@ import javafx.stage.Stage;
 
         @FXML // fx:id="progressTextLabel"
         private TextArea progressTextLabel; // Value injected by FXMLLoader
+        
+        @FXML // fx:id="progressBar"
+        private ProgressBar progressBar; // Value injected by FXMLLoader
 
         @FXML // fx:id="btnOpenOutDir"
         private Button btnOpenOutDir; // Value injected by FXMLLoader
@@ -86,20 +92,84 @@ import javafx.stage.Stage;
         void clickAnadir(ActionEvent event) {
         	ObservableList<InputFile> fileList = FXCollections.observableArrayList();
         	FileChooser chooser = new FileChooser();
+        	String lastDir = preferences.get("lastDir", System.getProperty("user.home"));
+            File lastDirFile = new File(lastDir);
+            if (lastDirFile.exists()) {
+            	chooser.setInitialDirectory(lastDirFile);
+            }
             chooser.setTitle("Open File");
             chooser.getExtensionFilters().addAll(new ExtensionFilter("Uml Files", "*.uml"));
             List<File> list = chooser.showOpenMultipleDialog(new Stage());
-            for(File file : list) {
-            	fileList.add(new InputFile(file.getName(), file.getAbsolutePath()));
+            
+            if (!list.isEmpty()) {
+	            preferences.put("lastDir", list.get(0).getParent());
+	            Boolean exists;
+	            for(File file : list) {
+	            	exists = false;
+	            	if (!InputTable.getItems().isEmpty()) {
+		            	for(InputFile row : InputTable.getItems()) {
+		            		if(row.getName().equals(file.getName())) {
+		            			exists = true;
+		            			if(!row.getRuta().equals(file.getAbsolutePath())) {
+			            			// Crear una alerta
+				            		Alert alert = new Alert(AlertType.CONFIRMATION);
+				            		alert.setTitle("Confirmación");
+				            		alert.setHeaderText("El elemento ya existe en la tabla");
+				            		alert.setContentText("¿Desea quedarse con el elemento anterior o con el nuevo?");
+		
+				            		// Crear botones de opción
+				            		ButtonType buttonTypeAnterior = new ButtonType("Anterior");
+				            		ButtonType buttonTypeNuevo = new ButtonType("Nuevo");
+		
+				            		// Agregar botones a la alerta
+				            		alert.getButtonTypes().setAll(buttonTypeAnterior, buttonTypeNuevo);
+		
+				            		// Mostrar la alerta y esperar a que el usuario seleccione una opción
+				            		Optional<ButtonType> result = alert.showAndWait();
+		
+				            		// Verificar la opción seleccionada por el usuario
+				            		if (result.get() == buttonTypeAnterior) {
+				            		    // El usuario seleccionó quedarse con el elemento anterior
+				            		} else if (result.get() == buttonTypeNuevo) {
+				            		    // El usuario seleccionó quedarse con el elemento nuevo
+				            			row.setName(file.getName());
+				            			row.setRuta(file.getAbsolutePath());
+				            			row.setActividad(false);
+				            			row.setClase(false);
+				            			InputTable.refresh();
+				            		} else {
+				            		    // El usuario cerró la alerta sin seleccionar ninguna opción
+				            		}
+		            			} else {
+		            				// Mostrar un mensaje de error si no se seleccionó ninguna fila
+		                            Alert alert = new Alert(AlertType.ERROR);
+		                            alert.setTitle("Warning");
+		                            alert.setHeaderText(null);
+		                            alert.setContentText("El elemento ".concat(file.getName()).concat(" ya está insertado."));
+		                            alert.showAndWait();
+		            			}
+			            	}
+		            	}
+	            	}
+	            	if(exists == false) {
+	            		fileList.add(new InputFile(file.getName(), file.getAbsolutePath()));
+	            	}
+	            }
+	            InputTable.getItems().addAll(fileList);
             }
-            InputTable.getItems().addAll(fileList);
         }
 
         @FXML
         void clickBrowse(ActionEvent event) {
         	DirectoryChooser directoryChooser = new DirectoryChooser();
+        	String lastDir = preferences.get("lastDir", System.getProperty("user.home"));
+            File lastDirFile = new File(lastDir);
+            if (lastDirFile.exists()) {
+            	directoryChooser.setInitialDirectory(lastDirFile);
+            }
             File selectedDirectory = directoryChooser.showDialog(new Stage());
             if (selectedDirectory != null) {
+	            preferences.put("lastDir", selectedDirectory.getAbsolutePath());
             	OutputLabel.setText(selectedDirectory.getAbsolutePath());
             }
         }
@@ -122,16 +192,52 @@ import javafx.stage.Stage;
 
         @FXML
         void clickGennerar(ActionEvent event) {
+        	progressBar.setProgress(0.0);
         	Generator generator = new Generator(getClassesFromTable(), getActivitiesFromTable());
-        	try {
-				generator.execute();
-			} catch (EolModelElementTypeNotFoundException e) {
-				e.printStackTrace();
-			} finally {
-				Utils.copyCircuits(new File("temp"), new File(OutputLabel.getText()));
-				Utils.deleteTempDir();
-				System.out.println("Done!");
-			}
+    		// Inicia la tarea en un hilo separado
+    	    Task<Void> task = new Task<Void>() {
+    	        @Override
+    	        protected Void call() throws Exception {
+    	        	updateProgress(0.0, 1.0);
+    	        	updateMessage("Starting... \n");
+    	        	int n = generator.getumlActivityFiles().size();
+    	        	int m = generator.getumlClassFiles().size();
+    	        	int totalIterations = n + m;
+    	        	List<String> activities = new ArrayList<String>();
+    	            // Bucle que realiza un total de n iteraciones
+    	            for (int i = 0; i < n; i++) {
+    	            	updateMessage("Executing activity: ".concat(generator.getumlActivityFiles().get(i).toString().replace('\\', '/')));
+    	                // Realiza una iteración de la tarea
+    	            	activities.add(generator.executeGeneratorActivity(generator.getumlActivityFiles().get(i)));
+
+    	                // Calcula el progreso actual y actualiza la barra de progreso
+    	                double progress = (i + 1.0) / totalIterations;
+    	                updateProgress(progress, 1.0);
+    	            }
+    	            for (int j = 0; j < m; j++) {
+    	            	updateMessage("Executing activity: ".concat(generator.getumlClassFiles().get(j).toString().replace('\\', '/')));
+    	                // Realiza una iteración de la tarea
+    	            	generator.executeGeneratorClass(generator.getumlClassFiles().get(j), activities);
+
+    	                // Calcula el progreso actual y actualiza la barra de progreso
+    	                double progress = (n + j + 1.0) / totalIterations;
+    	                updateProgress(progress, 1.0);
+    	            }
+    	            updateMessage("Moviendo resultados a: ".concat(OutputLabel.getText()));
+    				Utils.copyCircuits(new File("temp"), new File(OutputLabel.getText()));
+    				Utils.deleteTempDir();
+    				updateMessage("Done!");
+
+    	            return null;
+    	        }
+    	    };
+    	    // Vincula la barra de progreso con la propiedad de progreso de la tarea
+    	    progressBar.progressProperty().bind(task.progressProperty());
+    	    progressTextLabel.textProperty().bind(task.messageProperty());
+
+    	    // Inicia la tarea en un nuevo hilo
+    	    new Thread(task).start();
+    	    
         }
         
         @FXML
@@ -159,24 +265,14 @@ import javafx.stage.Stage;
             assert btnGenerar != null : "fx:id=\"btnGenerar\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert btnOpenOutDir != null : "fx:id=\"btnOpenOutDir\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert progressTextLabel != null : "fx:id=\"progressTextLabel\" was not injected: check your FXML file 'MainWindow.fxml'.";
+            assert progressBar != null : "fx:id=\"progressBar\" was not injected: check your FXML file 'MainWindow.fxml'.";
         	InputTable.setEditable(true);
         	ActividadCol.setEditable(true);
         	ClaseCol.setEditable(true);
             ActividadCol.setCellFactory(CheckBoxTableCell.forTableColumn(ActividadCol));
             ClaseCol.setCellFactory(CheckBoxTableCell.forTableColumn(ClaseCol));
             InputTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        
-        
-         // Crea un nuevo OutputStream personalizado que escribe en el TextArea
-            OutputStream out = new OutputStream() {
-                @Override
-                public void write(int b) throws IOException {
-                	progressTextLabel.appendText(String.valueOf((char) b));
-                }
-            };
-
-            // Redirige la salida estándar a este OutputStream personalizado
-            System.setOut(new PrintStream(out, true));
+            preferences = Preferences.userRoot().node("myApp");
         }
         
         public List<String> getActivitiesFromTable() {
