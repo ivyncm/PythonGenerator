@@ -8,6 +8,7 @@ from numpy import pi
 	var classicalRegisters = "";
 	var quantumRegisters = "";%]
 def [%=circuitName%]() -> QuantumCircuit:
+
 	[*QUANTUM REGISTERS*]
 		[%for(qubit in anActivity.group){
 			if(isQubit(qubit)){

@@ -101,7 +101,7 @@ import javafx.stage.Stage;
             chooser.getExtensionFilters().addAll(new ExtensionFilter("Uml Files", "*.uml"));
             List<File> list = chooser.showOpenMultipleDialog(new Stage());
             
-            if (!list.isEmpty()) {
+            if (!(list == null)) {
 	            preferences.put("lastDir", list.get(0).getParent());
 	            Boolean exists;
 	            for(File file : list) {
@@ -244,13 +244,16 @@ import javafx.stage.Stage;
         
         @FXML
         void clickOpenOutDir(ActionEvent event) {
-        	Desktop desktop = Desktop.getDesktop();
         	String directory = OutputLabel.getText();
-            try {
-                desktop.open(new File(directory));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        	File fileDirectory = new File(directory);
+        	if(fileDirectory.exists() && fileDirectory.isDirectory()) {
+	        	Desktop desktop = Desktop.getDesktop();
+	            try {
+	                desktop.open(new File(directory));
+	            } catch (IOException e) {
+	                e.printStackTrace();
+	            }
+        	}
         }
 
         @FXML // This method is called by the FXMLLoader when initialization is complete
