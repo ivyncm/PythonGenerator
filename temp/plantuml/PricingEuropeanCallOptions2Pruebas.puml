@@ -1,0 +1,42 @@
+\startuml
+package PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp{
+	class PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.App{
+	}
+}
+package PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.presentation{
+	class PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.presentation.MainForm{
+	}
+	class PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.presentation.PricingParametersForm{
+	}
+	class PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.presentation.ProblemDefinitionForm{
+	}
+	class PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.presentation.EvaluatePayoffForm{
+	}
+}
+package PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.businesslogic{
+}
+package PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.businesslogic.controllers{
+	class PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.businesslogic.controllers.EuropeanCallController{
+	}
+}
+package PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.businesslogic.entities{
+	class PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.businesslogic.entities.EuropeanCallObjective{
+	}
+	class PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.businesslogic.entities.EuropeanCallProblem{
+	}
+}
+package PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.classicalquantumlogic{
+	class PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.classicalquantumlogic.EuropeanCallDriver{
+	}
+	class PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.classicalquantumlogic.EuropeanCallEstimation{
+	}
+	class PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.classicalquantumlogic.EuropeanCallQuantumRequest{
+	}
+}
+package PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.quantumlogic{
+}
+package PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.quantumlogic.algorithms{
+	class PricingEuropeanCallOptions2Pruebas.pricingEuropeanCallOptionsApp.quantumlogic.algorithms.QuantumAmplitudeEstimationAlgorithm{
+	}
+}
+\enduml

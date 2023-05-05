@@ -1,0 +1,42 @@
+\startuml
+package PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp{
+	class PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.App{
+	}
+}
+package PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.presentation{
+	class PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.presentation.MainForm{
+	}
+	class PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.presentation.PricingParametersForm{
+	}
+	class PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.presentation.ProblemDefinitionForm{
+	}
+	class PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.presentation.EvaluatePayoffForm{
+	}
+}
+package PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.businesslogic{
+}
+package PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.businesslogic.controllers{
+	class PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.businesslogic.controllers.EuropeanCallController{
+	}
+}
+package PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.businesslogic.entities{
+	class PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.businesslogic.entities.EuropeanCallObjective{
+	}
+	class PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.businesslogic.entities.EuropeanCallProblem{
+	}
+}
+package PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.classicalquantumlogic{
+	class PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.classicalquantumlogic.EuropeanCallDriver{
+	}
+	class PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.classicalquantumlogic.EuropeanCallEstimation{
+	}
+	class PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.classicalquantumlogic.EuropeanCallQuantumRequest{
+	}
+}
+package PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.quantumlogic{
+}
+package PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.quantumlogic.algorithms{
+	class PricingEuropeanCallOptions.pricingEuropeanCallOptionsApp.quantumlogic.algorithms.QuantumAmplitudeEstimationAlgorithm{
+	}
+}
+\enduml

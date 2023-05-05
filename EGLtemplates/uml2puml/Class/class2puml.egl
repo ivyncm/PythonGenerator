@@ -1,0 +1,13 @@
+\startuml
+[%for(package in Package.all){
+if((not(package.qualifiedName == null)) and (package.type.name == "Package")){%]
+package [%=package.qualifiedName.replace('::', '.')%]{
+	[%for(element in package.packagedElement){
+		if(element.type.name == "Class"){%]
+	class [%=element.qualifiedName.replace('::', '.')%]{
+	}
+		[%}
+	}%]
+}
+[%}}%]
+\enduml

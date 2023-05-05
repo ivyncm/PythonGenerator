@@ -14,6 +14,10 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 
+import org.eclipse.epsilon.egl.EgxModule;
+import org.eclipse.epsilon.emc.uml.UmlModel;
+import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
+
 import generator.pythonGenerator.Generator;
 import generator.pythonGenerator.Utils;
 import generator.pythonGenerator.presentacion.model.InputFile;
@@ -22,20 +26,28 @@ import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.CheckBoxTableCell;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 
@@ -55,8 +67,14 @@ import javafx.stage.Stage;
         @FXML // fx:id="NombreCol"
         private TableColumn<InputFile, String> NombreCol; // Value injected by FXMLLoader
 
+        @FXML // fx:id="ResultadoCol"
+        private TableColumn<InputFile, Button> ResultadoCol; // Value injected by FXMLLoader
+
         @FXML // fx:id="RutaCol"
         private TableColumn<InputFile, String> RutaCol; // Value injected by FXMLLoader
+
+        @FXML // fx:id="VerCol"
+        private TableColumn<InputFile, Button> VerCol; // Value injected by FXMLLoader
 
         @FXML // fx:id="ActividadCol"
         private TableColumn<InputFile, Boolean> ActividadCol; // Value injected by FXMLLoader
@@ -263,7 +281,9 @@ import javafx.stage.Stage;
             assert InputTable != null : "fx:id=\"InputTable\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert NombreCol != null : "fx:id=\"NombreCol\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert OutputLabel != null : "fx:id=\"OutputLabel\" was not injected: check your FXML file 'MainWindow.fxml'.";
+            assert ResultadoCol != null : "fx:id=\"ResultadoCol\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert RutaCol != null : "fx:id=\"RutaCol\" was not injected: check your FXML file 'MainWindow.fxml'.";
+            assert VerCol != null : "fx:id=\"VerCol\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert btnAnadir != null : "fx:id=\"btnAnadir\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert btnBrowse != null : "fx:id=\"btnBrowse\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert btnEliminar != null : "fx:id=\"btnEliminar\" was not injected: check your FXML file 'MainWindow.fxml'.";
@@ -278,6 +298,82 @@ import javafx.stage.Stage;
             ClaseCol.setCellFactory(CheckBoxTableCell.forTableColumn(ClaseCol));
             InputTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
             preferences = Preferences.userRoot().node("myApp");
+            
+            VerCol.setCellFactory(col -> new TableCell<InputFile, Button>() {
+            	private final Button viewButton =  new Button("👁");
+                	{
+                		viewButton.setOnAction((ActionEvent event) -> {
+                			viewButton.setVisible(false);
+                			InputFile item = (InputFile) getTableRow().getItem();
+                                if (item != null) {
+                                	EgxModule module = null;
+                                	if(item.getClase() == true) {
+                                		// Generate .puml
+                                    	module = Utils.parseEgxFile("EGLtemplates/classGenPUML.egx"); // Parse egxFilePath.egx
+                                	} 
+                                	if(module != null) {
+	                            		UmlModel umlModel = Utils.loadUml(item.getRuta()); // Load UmlModel
+	                            		
+	                            		module.getContext().getModelRepository().addModel(umlModel); // Make the document visible to the EGX program
+	                            		try {
+	                            			module.execute(); // Execute module egxFilePath.egx
+	                            		} catch (EolRuntimeException e) {
+	                            			e.printStackTrace();
+	                            			System.out.printf("Failed to execute %s%n", item.getRuta());
+	                            		}
+	                                	// Crear una nueva ventana para mostrar la imagen
+	                                    Stage stage = new Stage();
+	                                    stage.setTitle("Imagen");
+	                                    stage.initModality(Modality.APPLICATION_MODAL);
+	
+	                                    // Crear un objeto ImageView con la imagen a mostrar
+										try {
+											File file = new File(item.generateImage());
+											Image image = new Image(file.toURI().toString());
+
+									        // Create an ImageView with the Image object
+									        ImageView imageView = new ImageView(image);
+
+									        // Wrap the ImageView in a ScrollPane
+									        ScrollPane scrollPane = new ScrollPane(imageView);
+
+									        // Create a StackPane to hold the ScrollPane
+									        StackPane root = new StackPane(scrollPane);
+
+									        // Create a Scene with the StackPane
+									        Scene scene = new Scene(root, 640, 480);
+
+									        // Set the Scene and show the Stage
+									        stage.setScene(scene);
+									        stage.show();
+										} catch (IOException e) {
+											// TODO Auto-generated catch block
+											e.printStackTrace();
+										}
+                                	} else {
+                                		Alert alert = new Alert(AlertType.ERROR);
+                                        alert.setTitle("Error!");
+                                        alert.setHeaderText(null);
+                                        alert.setContentText("Debe seleccionar al menos una opción(actividad o clase).");
+                                        alert.showAndWait();
+                                	}
+										
+                                }
+                    			viewButton.setVisible(true);
+                            });
+                        }
+                	
+                    @Override
+                    public void updateItem(Button file, boolean empty) {
+                        super.updateItem(file, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            setGraphic(viewButton);
+                            setAlignment(Pos.CENTER);
+                        }
+                    }
+            });
         }
         
         public List<String> getActivitiesFromTable() {

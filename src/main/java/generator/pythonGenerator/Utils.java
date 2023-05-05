@@ -2,6 +2,9 @@ package generator.pythonGenerator;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.apache.commons.io.FileUtils;
 import org.eclipse.epsilon.egl.EglFileGeneratingTemplateFactory;
@@ -74,4 +77,21 @@ public class Utils {
 			System.out.println("Failed to delete temp directory");
 		}
 	}
+    public static void crearDirectorio(String rutaDirectorio) {
+        // Crea un objeto Path con la ruta del directorio
+        Path directorio = Paths.get(rutaDirectorio);
+
+        // Comprueba si el directorio ya existe
+        if (!Files.exists(directorio)) {
+            // Intenta crear el directorio
+            try {
+                Files.createDirectories(directorio);
+                System.out.println("Directorio creado con éxito.");
+            } catch (Exception e) {
+                System.out.println("No se pudo crear el directorio.");
+            }
+        } else {
+            System.out.println("El directorio ya existe.");
+        }
+    }
 }
