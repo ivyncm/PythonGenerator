@@ -303,6 +303,7 @@ import javafx.stage.Stage;
             	private final Button viewButton =  new Button("👁");
                 	{
                 		viewButton.setOnAction((ActionEvent event) -> {
+                			InputTable.refresh();
                 			viewButton.setVisible(false);
                 			InputFile item = (InputFile) getTableRow().getItem();
                                 if (item != null) {
@@ -310,7 +311,9 @@ import javafx.stage.Stage;
                                 	if(item.getClase() == true) {
                                 		// Generate .puml
                                     	module = Utils.parseEgxFile("EGLtemplates/classGenPUML.egx"); // Parse egxFilePath.egx
-                                	} 
+                                	}else if(item.getActividad() == true) {
+                                		module = Utils.parseEgxFile("EGLtemplates/activityGenPUML.egx"); // Parse egxFilePath.egx
+                                	}
                                 	if(module != null) {
 	                            		UmlModel umlModel = Utils.loadUml(item.getRuta()); // Load UmlModel
 	                            		

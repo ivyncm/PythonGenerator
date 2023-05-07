@@ -1,0 +1,4 @@
+rule uml2PUML transform anActivity : Activity {
+		template : "./uml2puml/activity2puml.egl"
+		target : "../temp/plantuml/" + anActivity.name.replace(' ', '_').concat(".puml")
+}

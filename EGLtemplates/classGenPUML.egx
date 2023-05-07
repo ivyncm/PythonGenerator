@@ -1,4 +1,4 @@
 rule uml2PUML transform uml : Model {
-		template : "./uml2puml/Class/class2puml.egl"
+		template : "./uml2puml/class2puml.egl"
 		target : "../temp/plantuml/" + uml.name.replace(' ', '_').concat(".puml")
 }
