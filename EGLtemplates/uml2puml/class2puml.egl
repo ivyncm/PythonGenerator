@@ -2,7 +2,6 @@
 [%for(package in Package.all){
 if((not(package.qualifiedName == null)) and (package.type.name == "Package")){
 var packageStereotype = "";
-package.stereotypeApplications.println();
 if(package.stereotypeApplications.eClass.name.size > 0){
 	packageStereotype = "<< " + package.stereotypeApplications.eClass.name.get(0) + " >> ";
 }%]
