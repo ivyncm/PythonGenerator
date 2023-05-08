@@ -1,13 +1,106 @@
 \startuml
 [%for(package in Package.all){
-if((not(package.qualifiedName == null)) and (package.type.name == "Package")){%]
-package [%=package.qualifiedName.replace('::', '.')%]{
+if((not(package.qualifiedName == null)) and (package.type.name == "Package")){
+var packageStereotype = "";
+package.stereotypeApplications.println();
+if(package.stereotypeApplications.eClass.name.size > 0){
+	packageStereotype = "<< " + package.stereotypeApplications.eClass.name.get(0) + " >> ";
+}%]
+package [%=package.qualifiedName.replace('::', '.')%] [%=packageStereotype%]{
 	[%for(element in package.packagedElement){
-		if(element.type.name == "Class"){%]
-	class [%=element.qualifiedName.replace('::', '.')%]{
+		if(element.type.name == "Class"){
+		var classStereotype = "";
+		if(element.stereotypeApplications.eClass.name.size > 0){
+			classStereotype = "<< " + element.stereotypeApplications.eClass.name.get(0) + " >> ";
+		}%]
+	class [%=element.qualifiedName.replace('::', '.')%] [%=classStereotype%]{
+		[*ATRIBUTOS*]
+		[%for(anAttribute in element.attributes) {%]
+		[%=getAttributeType(anAttribute)%] [%=anAttribute.name%]
+		[%}%]
+		
+		[*OPERACIONES*]
+		[%for(anOperation in element.operations){%]
+		[%=anOperation.name%]([%=getParameters(anOperation)%])
+		[%}%]
 	}
 		[%}
 	}%]
 }
-[%}}%]
+	[*RELACIONES*]
+[%}}
+		for(dependency in Dependency){%]
+[%=dependency.client.get(0).name%] .. [%=dependency.supplier.get(0).name%]
+		[%}
+		for(element in uml.packagedElement){
+			if(element.type.name == "Association"){
+			element.memberEnd.get(0).type.type.name.println();
+				if(element.memberEnd.get(0).type.type.name == "Class"){%]
+[%=element.memberEnd.get(0).type.name%] -- [%=element.memberEnd.get(1).type.name%]
+				[%
+				}
+		}}%]
 \enduml
+
+[%function generarRuta(aClass) : String{
+	var ruta = "";
+	for (p in Package.all)
+		if (p.type.name == "Package")
+			if (isParent(p, aClass))
+				ruta += p.name + ".";
+  	return ruta.substring(0, ruta.length -1);
+}
+function isParent(package, aClass) : Boolean{
+	for(element in package.packagedElement){
+		if((element.type.name == "Package") and (isParent(element, aClass)))
+				return true;
+		else if((element.type.name == "Class") and (element.name == aClass.name))
+			return true;
+	}
+	return false;
+}
+function getAttributeType(attribute) : String{
+	if(attribute.type.name == null)
+		return attribute.type.eProxyURI.toString().split('#').get(1);
+	return attribute.type.name;
+}
+function getDataType(type) : String{
+	if(not(dataTypes.indexOf(type) == -1))
+		return pythonDataTypes.get(dataTypes.indexOf(type));
+	return type;
+}
+function getDefaultValue(attribute) : String{
+	if(not(attribute.defaultValue == null))
+		return attribute.defaultValue.value.toString;
+	else if(attribute.type.toString().split('@').get(0) == "org.eclipse.uml2.uml.internal.impl.ClassImpl"){
+		return "";
+	}
+	return "";
+}
+function getParameters(anOperation) : String{
+	var params = "";
+	var paramType = "";
+	if(not(anOperation.ownedParameter == null)){
+		for(param in anOperation.ownedParameter){
+			if(param.direction.name == "in"){
+				if(param.type.name == null)
+					paramType = param.type.eProxyURI.toString().split('#').get(1);
+				else
+					paramType = param.type.name;
+				params += ", " + paramType + " " + param.name;
+			}
+		}
+	}
+	if(params.length > 0)
+		return params.substring(2, params.length);
+	return "";
+}
+function getReturn(anOperation) : String{
+	var ret = " -> ";
+	for(param in anOperation.ownedParameter)
+		if(param.direction.name == "return")
+			ret += getAttributeType(param) + ", ";
+	if(ret.length == 4)
+		return "";
+	return ret.substring(0, ret.length -2);
+}%]
