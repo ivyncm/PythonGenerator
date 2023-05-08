@@ -33,7 +33,6 @@ package [%=package.qualifiedName.replace('::', '.')%] [%=packageStereotype%]{
 		[%}
 		for(element in uml.packagedElement){
 			if(element.type.name == "Association"){
-			element.memberEnd.get(0).type.type.name.println();
 				if(element.memberEnd.get(0).type.type.name == "Class"){%]
 [%=element.memberEnd.get(0).type.name%] -- [%=element.memberEnd.get(1).type.name%]
 				[%
