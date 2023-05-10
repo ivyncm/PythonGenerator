@@ -131,39 +131,39 @@ import javafx.stage.Stage;
 		            			if(!row.getRuta().equals(file.getAbsolutePath())) {
 			            			// Crear una alerta
 				            		Alert alert = new Alert(AlertType.CONFIRMATION);
-				            		alert.setTitle("Confirmación");
+				            		alert.setTitle("ConfirmaciÃ³n");
 				            		alert.setHeaderText("El elemento ya existe en la tabla");
-				            		alert.setContentText("¿Desea quedarse con el elemento anterior o con el nuevo?");
+				            		alert.setContentText("Â¿Desea quedarse con el elemento anterior o con el nuevo?");
 		
-				            		// Crear botones de opción
+				            		// Crear botones de opciÃ³n
 				            		ButtonType buttonTypeAnterior = new ButtonType("Anterior");
 				            		ButtonType buttonTypeNuevo = new ButtonType("Nuevo");
 		
 				            		// Agregar botones a la alerta
 				            		alert.getButtonTypes().setAll(buttonTypeAnterior, buttonTypeNuevo);
 		
-				            		// Mostrar la alerta y esperar a que el usuario seleccione una opción
+				            		// Mostrar la alerta y esperar a que el usuario seleccione una opciÃ³n
 				            		Optional<ButtonType> result = alert.showAndWait();
 		
-				            		// Verificar la opción seleccionada por el usuario
+				            		// Verificar la opciÃ³n seleccionada por el usuario
 				            		if (result.get() == buttonTypeAnterior) {
-				            		    // El usuario seleccionó quedarse con el elemento anterior
+				            		    // El usuario seleccionÃ³ quedarse con el elemento anterior
 				            		} else if (result.get() == buttonTypeNuevo) {
-				            		    // El usuario seleccionó quedarse con el elemento nuevo
+				            		    // El usuario seleccionÃ³ quedarse con el elemento nuevo
 				            			row.setName(file.getName());
 				            			row.setRuta(file.getAbsolutePath());
 				            			row.setActividad(false);
 				            			row.setClase(false);
 				            			InputTable.refresh();
 				            		} else {
-				            		    // El usuario cerró la alerta sin seleccionar ninguna opción
+				            		    // El usuario cerrÃ³ la alerta sin seleccionar ninguna opciÃ³n
 				            		}
 		            			} else {
-		            				// Mostrar un mensaje de error si no se seleccionó ninguna fila
+		            				// Mostrar un mensaje de error si no se seleccionÃ³ ninguna fila
 		                            Alert alert = new Alert(AlertType.WARNING);
 		                            alert.setTitle("Warning");
 		                            alert.setHeaderText(null);
-		                            alert.setContentText("El elemento ".concat(file.getName()).concat(" ya está insertado."));
+		                            alert.setContentText("El elemento ".concat(file.getName()).concat(" ya estÃ¡ insertado."));
 		                            alert.showAndWait();
 		            			}
 			            	}
@@ -199,7 +199,7 @@ import javafx.stage.Stage;
             	InputTable.getItems().removeAll(selectedItems);
             	InputTable.getSelectionModel().clearSelection();
             } else {
-                // Mostrar un mensaje de error si no se seleccionó ninguna fila
+                // Mostrar un mensaje de error si no se seleccionÃ³ ninguna fila
                 Alert alert = new Alert(AlertType.WARNING);
                 alert.setTitle("Warning!");
                 alert.setHeaderText(null);
@@ -224,8 +224,8 @@ import javafx.stage.Stage;
 	    	        	List<String> activities = new ArrayList<String>();
 	    	            // Bucle que realiza un total de n iteraciones
 	    	            for (int i = 0; i < n; i++) {
-	    	            	updateMessage("Executing activity: ".concat(generator.getumlActivityFiles().get(i).toString().replace('\\', '/')));
-	    	                // Realiza una iteración de la tarea
+	    	            	updateMessage("Executing activity: ".concat(generator.getumlActivityFiles().get(i).toString().replace('/', '/')));
+	    	                // Realiza una iteraciÃ³n de la tarea
 	    	            	activities.add(generator.executeGeneratorActivity(generator.getumlActivityFiles().get(i)));
 	
 	    	                // Calcula el progreso actual y actualiza la barra de progreso
@@ -233,8 +233,8 @@ import javafx.stage.Stage;
 	    	                updateProgress(progress, 1.0);
 	    	            }
 	    	            for (int j = 0; j < m; j++) {
-	    	            	updateMessage("Executing activity: ".concat(generator.getumlClassFiles().get(j).toString().replace('\\', '/')));
-	    	                // Realiza una iteración de la tarea
+	    	            	updateMessage("Executing activity: ".concat(generator.getumlClassFiles().get(j).toString().replace('/', '/')));
+	    	                // Realiza una iteraciÃ³n de la tarea
 	    	            	generator.executeGeneratorClass(generator.getumlClassFiles().get(j), activities);
 	
 	    	                // Calcula el progreso actual y actualiza la barra de progreso
@@ -242,7 +242,7 @@ import javafx.stage.Stage;
 	    	                updateProgress(progress, 1.0);
 	    	            }
 	    	            updateMessage("Moviendo resultados a: ".concat(OutputLabel.getText()));
-	    				Utils.copyCircuits(new File("temp"), new File(OutputLabel.getText()));
+	    				Utils.copyCircuits(new File("temp/RESULTS"), new File(OutputLabel.getText() + "/RESULTS"));
 	    				Utils.deleteTempDir();
 	    				updateMessage("Done!");
 	
@@ -305,59 +305,66 @@ import javafx.stage.Stage;
                 		viewButton.setOnAction((ActionEvent event) -> {
                 			InputTable.refresh();
                 			viewButton.setVisible(false);
+                			File file = null;
                 			InputFile item = (InputFile) getTableRow().getItem();
                                 if (item != null) {
                                 	EgxModule module = null;
                                 	if(item.getClase() == true) {
                                 		// Generate .puml
                                     	module = Utils.parseEgxFile("EGLtemplates/classGenPUML.egx"); // Parse egxFilePath.egx
-                                	}else if(item.getActividad() == true) {
-                                		module = Utils.parseEgxFile("EGLtemplates/activityGenPUML.egx"); // Parse egxFilePath.egx
-                                	}
-                                	if(module != null) {
-	                            		UmlModel umlModel = Utils.loadUml(item.getRuta()); // Load UmlModel
+                                    	UmlModel umlModel = Utils.loadUml(item.getRuta()); // Load UmlModel
 	                            		
 	                            		module.getContext().getModelRepository().addModel(umlModel); // Make the document visible to the EGX program
 	                            		try {
 	                            			module.execute(); // Execute module egxFilePath.egx
-	                            		} catch (EolRuntimeException e) {
+											file = new File(item.generateImageFromPuml());
+	                            		} catch (EolRuntimeException | IOException e) {
 	                            			e.printStackTrace();
 	                            			System.out.printf("Failed to execute %s%n", item.getRuta());
 	                            		}
+                                	}else if(item.getActividad() == true) {
+	                            		// Generar .py
+                                		module = Utils.parseEgxFile("EGLtemplates/activityGenPng.egx"); // Parse egxFilePath.egx
+                                		UmlModel umlModel = Utils.loadUml(item.getRuta()); // Load UmlModel
+	                            		
+	                            		module.getContext().getModelRepository().addModel(umlModel); // Make the document visible to the EGX program
+	                            		try {
+	                            			module.execute(); // Execute module egxFilePath.egx
+	                            			file = new File(item.generateImageFromPython());
+	                            		} catch (EolRuntimeException | IOException e) {
+	                            			e.printStackTrace();
+	                            			System.out.printf("Failed to execute %s%n", item.getRuta());
+	                            		}
+                                	}
+                                	if(file != null) {
+	                            		
 	                                	// Crear una nueva ventana para mostrar la imagen
 	                                    Stage stage = new Stage();
-	                                    stage.setTitle("Imagen");
+	                                    stage.setTitle(item.getName().replace(".uml", ""));
 	                                    stage.initModality(Modality.APPLICATION_MODAL);
 	
-	                                    // Crear un objeto ImageView con la imagen a mostrar
-										try {
-											File file = new File(item.generateImage());
-											Image image = new Image(file.toURI().toString());
+	                                    Image image = new Image(file.toURI().toString());
 
-									        // Create an ImageView with the Image object
-									        ImageView imageView = new ImageView(image);
+										// Create an ImageView with the Image object
+										ImageView imageView = new ImageView(image);
 
-									        // Wrap the ImageView in a ScrollPane
-									        ScrollPane scrollPane = new ScrollPane(imageView);
+										// Wrap the ImageView in a ScrollPane
+										ScrollPane scrollPane = new ScrollPane(imageView);
 
-									        // Create a StackPane to hold the ScrollPane
-									        StackPane root = new StackPane(scrollPane);
+										// Create a StackPane to hold the ScrollPane
+										StackPane root = new StackPane(scrollPane);
 
-									        // Create a Scene with the StackPane
-									        Scene scene = new Scene(root, 640, 480);
+										// Create a Scene with the StackPane
+										Scene scene = new Scene(root, 640, 480);
 
-									        // Set the Scene and show the Stage
-									        stage.setScene(scene);
-									        stage.show();
-										} catch (IOException e) {
-											// TODO Auto-generated catch block
-											e.printStackTrace();
-										}
+										// Set the Scene and show the Stage
+										stage.setScene(scene);
+										stage.show();
                                 	} else {
                                 		Alert alert = new Alert(AlertType.ERROR);
                                         alert.setTitle("Error!");
                                         alert.setHeaderText(null);
-                                        alert.setContentText("Debe seleccionar al menos una opción(actividad o clase).");
+                                        alert.setContentText("Debe seleccionar al menos una opciÃ³n(actividad o clase).");
                                         alert.showAndWait();
                                 	}
 										
@@ -411,7 +418,7 @@ import javafx.stage.Stage;
         		Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Error!");
                 alert.setHeaderText(null);
-                alert.setContentText("El directorio destino no es válido.");
+                alert.setContentText("El directorio destino no es vÃ¡lido.");
                 alert.showAndWait();
         	}
         	return validOutput;
@@ -427,7 +434,7 @@ import javafx.stage.Stage;
         		Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Error!");
                 alert.setHeaderText(null);
-                alert.setContentText("Debes seleccionar al menos una opción (clase o actividad) para cada uml.");
+                alert.setContentText("Debes seleccionar al menos una opciÃ³n (clase o actividad) para cada uml.");
                 alert.showAndWait();
         	}
         	return validTable;
@@ -442,7 +449,7 @@ import javafx.stage.Stage;
         		Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Error!");
                 alert.setHeaderText(null);
-                alert.setContentText("La tabla está vacía. Debes añadir al menos un fichero uml.");
+                alert.setContentText("La tabla estÃ¡ vacÃ­a. Debes aÃ±adir al menos un fichero uml.");
                 alert.showAndWait();
         	}
         	return emptyTable;

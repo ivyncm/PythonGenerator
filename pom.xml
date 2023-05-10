@@ -70,7 +70,6 @@
 	    <artifactId>plantuml</artifactId>
 	    <version>1.2023.6</version>
 	</dependency>
-
   </dependencies>
 
   <build>

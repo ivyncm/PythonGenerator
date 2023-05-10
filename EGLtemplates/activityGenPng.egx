@@ -1,0 +1,6 @@
+rule uml2PUML transform anActivity : Activity {
+		parameters : Map {"gates" = Sequence{"NOT", "I"},
+					   	  "gatesQiskit" = Sequence{"x", "id"}}
+		template : "./umlactivity2png/activityTemplate2png.egl"
+		target : "../temp/qiskit/" + anActivity.name.replace(' ', '_').replace('-', '_').concat(".py").toLowerCase()
+}

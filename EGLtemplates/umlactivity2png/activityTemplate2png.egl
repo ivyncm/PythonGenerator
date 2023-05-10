@@ -1,52 +1,62 @@
-\startuml
+# -*- coding: utf-8 -*-
 
-[% var initial = getInitialNode();
-	var contador = 0;
+[*IMPORTS*]
+
+from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
+from numpy import pi
+from qiskit.visualization import circuit_drawer
+import matplotlib.pyplot as plt
+import os
+
+[%var circuitName = anActivity.name.replace(' ', '_').replace('-', '_').toLowerCase();
+	var classicalRegisters = "";
+	var quantumRegisters = "";%]
+def [%=circuitName%]():
+
+	[*QUANTUM REGISTERS*]
+		[%for(qubit in anActivity.group){
+			if(isQubit(qubit)){
+				quantumRegisters += ', ' + qubit.name.replace(' ', '_').replace('-', '_').toLowerCase();
+				var qubitName = qubit.name.replace(' ', '_').replace('-', '_').toLowerCase();%]
+	[%=qubitName%] = QuantumRegister(1, '[%=qubitName%]')
+		[%}}%]
+	
+	[*CLASSICAL REGISTERS*]
+		[%for(measure in anActivity.node){
+			var type = measure.toString().split(' ').get(0).split('@').get(0);
+			if(type == "org.eclipse.uml2.uml.internal.impl.DataStoreNodeImpl"){
+				classicalRegisters += ', ' + measure.name.replace(' ', '_').replace('-', '_').toLowerCase();
+				var registerName = measure.name.replace(' ', '_').replace('-', '_').toLowerCase();%]
+	[%=registerName%] = ClassicalRegister(1, '[%=registerName%]')
+		[%}}%]
+	
+	[*QUANTUM CIRCUIT*]
+	[%=circuitName%] = QuantumCircuit([%=quantumRegisters.substring(2, quantumRegisters.length)%][%=classicalRegisters%])
+	
+	[*QUANTUM GATES*]
+		[% var initial = getInitialNode();
 			if(initial == null){
 				"There is no InitialNode".println();
 			} else{
-				var actual = initial;
+				var actual = initial.outgoings.target.get(0);
 				var type = actual.toString().split(' ').get(0).split('@').get(0);
 				while(not(type == "org.eclipse.uml2.uml.internal.impl.ActivityFinalNodeImpl")){
-					var gate = checkGateType(actual);%]
-[*NODO*]
-					[%if (not (actual.inPartitions.size() == 0)){%]
-partition [%=actual.inPartitions.get(0).name%] {
-[%=getRelation(actual)%]
-}
-[*INITIAL*]
-					[%} else{%]
-[%=getRelation(actual)%]
-
-
+					var gate = checkGateType(actual);
+					if (not (gate == "pass")){%]
+	[%=circuitName%].[%=gate%]
 					[%}
 					actual = nextNode(actual);
 					type = actual.toString().split(' ').get(0).split('@').get(0);
 				}
 			}%]
-
-\enduml
-
-
+	
+	[*RETURN CIRCUIT*]
+	return [%=circuitName%]
+# Grafica el circuito utilizando Matplotlib
+fig = circuit_drawer([%=circuitName%](), output='mpl')
+plt.savefig('./temp/images/[%=circuitName%].png')
 [*FUNCTIONS*]
-[%function getRelation(node) : String{
-	contador ++;
-	var result = "";
-	if(node.toString().split('@').get(0) == "org.eclipse.uml2.uml.internal.impl.InitialNodeImpl"){
-		result = "(*) -right-> ";
-	} else{
-		
-				result = node.name + "_" + (contador - 1) + " -up-> ";
-		
-	}
-	if(nextNode(node).toString().split('@').get(0) == "org.eclipse.uml2.uml.internal.impl.ActivityFinalNodeImpl"){
-		result = result.substring(0, result.length -7) + " -up-> (*)";
-	} else{
-		result += nextNode(node).name + "_" + contador;
-	}
-	return result;
-}
-function checkGateType(node) : String{
+[%function checkGateType(node) : String{
 	if(isMeasure(node))
 		return "measure" + "(" + node.inPartitions.get(0).name.toLowerCase() + ", " + getNameofRegisterFromMeasure(node) + ")";
 	else if(isControlledGate(node)){
@@ -55,12 +65,12 @@ function checkGateType(node) : String{
 	}
 	else if(not(getConstraint(node) == null))
 		return "pass";
-	else if(node.inPartitions.name.size() == 0)
-		return "";
 	return getNameandParamsofGate(node) + node.inPartitions.name.get(0).toLowerCase() + ")";
 }
 function getNameandParamsofGate(node) : String{
 	if(not(node == null)){
+		if(not(gates.indexOf(node.name.toUpperCase()) == -1))
+				return gatesQiskit.get(gates.indexOf(node.name.toUpperCase())) + "(";
 		return node.name.toLowerCase() + "(" + getStringParamsofGate(node);
 	}
 	return "";
@@ -84,14 +94,12 @@ function getNameandParamsofControlled(constrainedElements) : String{
 }
 function getStringParamsofGate(node) : String{
 	var params = "";
-	if(not(node.stereotypeApplications.eClass.name.size() == 0)){
-		if(node.stereotypeApplications.eClass.name.get(0) == "QuantumGate"){
-			var quantumGate = node.stereotypeApplications;
-			var aux = Sequence{quantumGate.theta.get(0), quantumGate.phi.get(0), quantumGate.lambda.get(0), quantumGate.gamma.get(0)};
-			for(param in aux)
-				if(not(param == ""))
-					params += param + ", ";
-		}
+	if(node.stereotypeApplications.eClass.name.get(0) == "QuantumGate"){
+		var quantumGate = node.stereotypeApplications;
+		var aux = Sequence{quantumGate.theta.get(0), quantumGate.phi.get(0), quantumGate.lambda.get(0), quantumGate.gamma.get(0)};
+		for(param in aux)
+			if(not(param == ""))
+				params += param + ", ";
 	}
 	return params;
 }
@@ -105,24 +113,18 @@ function getNameofRegisterFromMeasure(measure) : String{
 	return null;
 }
 function isMeasure(node) : Boolean{
-	if(not(node.stereotypeApplications.eClass.name.size() == 0)){
-		if(node.stereotypeApplications.eClass.name.get(0) == "Measure")
-			return true;
-	}
+	if(node.stereotypeApplications.eClass.name.get(0) == "Measure")
+		return true;
 	return false;
 }
 function isControlledGate(node) : Boolean{
-	if(not(node.stereotypeApplications.eClass.name.size() == 0)){
-		if(node.stereotypeApplications.eClass.name.get(0) == "ControlledQubit")
-			return true;
-	}
+	if(node.stereotypeApplications.eClass.name.get(0) == "ControlledQubit")
+		return true;
 	return false;
 }
 function isQubit(node) : Boolean{
-	if(not(node.stereotypeApplications.eClass.name.size() == 0)){
-		if(node.stereotypeApplications.eClass.name.get(0) == "Qubit")
-			return true;
-	}
+	if(node.stereotypeApplications.eClass.name.get(0) == "Qubit")
+		return true;
 	return false;
 }
 function getPositionofNextNode(node) : Integer{

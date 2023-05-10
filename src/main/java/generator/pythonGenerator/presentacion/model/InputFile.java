@@ -1,11 +1,14 @@
 package generator.pythonGenerator.presentacion.model;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Arrays;
 
 import generator.pythonGenerator.Utils;
 import javafx.beans.property.BooleanProperty;
@@ -29,7 +32,7 @@ public class InputFile {
     }
     
     //Return path to image
-	public String generateImage() throws IOException{
+	public String generateImageFromPuml() throws IOException{
     	Utils.crearDirectorio("temp/images/");
 		Path filePath = Path.of("temp/plantuml/" + this.getName().replace(".uml", ".puml"));
 
@@ -38,7 +41,6 @@ public class InputFile {
 
         // Convert the byte array to a string using the specified character set
         String plantUmlCode = new String(fileBytes, StandardCharsets.UTF_8);
-        System.out.println(plantUmlCode);
 
         // Create a SourceStringReader object with our PlantUML source code
         SourceStringReader reader = new SourceStringReader(plantUmlCode);
@@ -49,6 +51,30 @@ public class InputFile {
         reader.outputImage(new FileOutputStream(outputFile), option);
         
         return "temp/images/" + this.getName().replace(".uml", ".png");
+	}
+	public String generateImageFromPython() throws IOException{
+		// GENERAR IMAGEN FROM PYTHON FILE
+		try {
+            ProcessBuilder pb = new ProcessBuilder(Arrays.asList("python", "temp/qiskit/" + this.getName().replace(".uml", ".py").toLowerCase().replace('-', '_')));
+            Process p = pb.start();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+            BufferedReader errorReader = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+            while ((line = errorReader.readLine()) != null) {
+                System.err.println(line);
+            }
+            int exitCode = p.waitFor();
+            System.out.println("Exited with error code " + exitCode);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
+        return "temp/images/" + this.getName().replace(".uml", ".png").replace('-', '_').toLowerCase();
 	}
     
     public String getName() {
