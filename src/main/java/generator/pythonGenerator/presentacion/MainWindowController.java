@@ -4,7 +4,6 @@
 
 package generator.pythonGenerator.presentacion;
 
-import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -87,9 +86,6 @@ import javafx.stage.Stage;
 
         @FXML // fx:id="btnAnadir"
         private Button btnAnadir; // Value injected by FXMLLoader
-
-        @FXML // fx:id="btnBrowse"
-        private Button btnBrowse; // Value injected by FXMLLoader
 
         @FXML // fx:id="btnEliminar"
         private Button btnEliminar; // Value injected by FXMLLoader
@@ -178,21 +174,6 @@ import javafx.stage.Stage;
         }
 
         @FXML
-        void clickBrowse(ActionEvent event) {
-        	DirectoryChooser directoryChooser = new DirectoryChooser();
-        	String lastDir = preferences.get("lastDir", System.getProperty("user.home"));
-            File lastDirFile = new File(lastDir);
-            if (lastDirFile.exists()) {
-            	directoryChooser.setInitialDirectory(lastDirFile);
-            }
-            File selectedDirectory = directoryChooser.showDialog(new Stage());
-            if (selectedDirectory != null) {
-	            preferences.put("lastDir", selectedDirectory.getAbsolutePath());
-            	OutputLabel.setText(selectedDirectory.getAbsolutePath());
-            }
-        }
-
-        @FXML
         void clickEliminar(ActionEvent event) {
         	ObservableList<InputFile> selectedItems = InputTable.getSelectionModel().getSelectedItems();
             if (!selectedItems.isEmpty()) {
@@ -256,22 +237,22 @@ import javafx.stage.Stage;
 	    	    // Inicia la tarea en un nuevo hilo
 	    	    new Thread(task).start();
 
-	        	progressBar.setProgress(0);
         	}
         }
         
         @FXML
         void clickOpenOutDir(ActionEvent event) {
-        	String directory = OutputLabel.getText();
-        	File fileDirectory = new File(directory);
-        	if(fileDirectory.exists() && fileDirectory.isDirectory()) {
-	        	Desktop desktop = Desktop.getDesktop();
-	            try {
-	                desktop.open(new File(directory));
-	            } catch (IOException e) {
-	                e.printStackTrace();
-	            }
-        	}
+        	DirectoryChooser directoryChooser = new DirectoryChooser();
+        	String lastDir = preferences.get("lastDir", System.getProperty("user.home"));
+            File lastDirFile = new File(lastDir);
+            if (lastDirFile.exists()) {
+            	directoryChooser.setInitialDirectory(lastDirFile);
+            }
+            File selectedDirectory = directoryChooser.showDialog(new Stage());
+            if (selectedDirectory != null) {
+	            preferences.put("lastDir", selectedDirectory.getAbsolutePath());
+            	OutputLabel.setText(selectedDirectory.getAbsolutePath());
+            }
         }
 
         @FXML // This method is called by the FXMLLoader when initialization is complete
@@ -285,7 +266,6 @@ import javafx.stage.Stage;
             assert RutaCol != null : "fx:id=\"RutaCol\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert VerCol != null : "fx:id=\"VerCol\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert btnAnadir != null : "fx:id=\"btnAnadir\" was not injected: check your FXML file 'MainWindow.fxml'.";
-            assert btnBrowse != null : "fx:id=\"btnBrowse\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert btnEliminar != null : "fx:id=\"btnEliminar\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert btnGenerar != null : "fx:id=\"btnGenerar\" was not injected: check your FXML file 'MainWindow.fxml'.";
             assert btnOpenOutDir != null : "fx:id=\"btnOpenOutDir\" was not injected: check your FXML file 'MainWindow.fxml'.";
@@ -317,10 +297,11 @@ import javafx.stage.Stage;
 	                            		module.getContext().getModelRepository().addModel(umlModel); // Make the document visible to the EGX program
 	                            		try {
 	                            			module.execute(); // Execute module egxFilePath.egx
+	                            			Utils.crearDirectorio("./temp/images");
 											file = new File(item.generateImageFromPuml());
 	                            		} catch (EolRuntimeException | IOException e) {
 	                            			e.printStackTrace();
-	                            			System.out.printf("Failed to execute %s%n", item.getRuta());
+	                            			System.out.printf("[ERROR] Failed to execute %s%n", item.getRuta());
 	                            		}
                                 	}else if(item.getActividad() == true) {
 	                            		// Generar .py
@@ -330,10 +311,11 @@ import javafx.stage.Stage;
 	                            		module.getContext().getModelRepository().addModel(umlModel); // Make the document visible to the EGX program
 	                            		try {
 	                            			module.execute(); // Execute module egxFilePath.egx
+	                            			Utils.crearDirectorio("./temp/images");
 	                            			file = new File(item.generateImageFromPython());
 	                            		} catch (EolRuntimeException | IOException e) {
 	                            			e.printStackTrace();
-	                            			System.out.printf("Failed to execute %s%n", item.getRuta());
+	                            			System.out.printf("[ERROR] Failed to execute %s%n", item.getRuta());
 	                            		}
                                 	}
                                 	if(file != null) {
@@ -364,7 +346,7 @@ import javafx.stage.Stage;
                                 		Alert alert = new Alert(AlertType.ERROR);
                                         alert.setTitle("Error!");
                                         alert.setHeaderText(null);
-                                        alert.setContentText("Debe seleccionar al menos una opciÃ³n(actividad o clase).");
+                                        alert.setContentText("Debe seleccionar al menos una opción(actividad o clase).");
                                         alert.showAndWait();
                                 	}
 										
@@ -418,7 +400,7 @@ import javafx.stage.Stage;
         		Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Error!");
                 alert.setHeaderText(null);
-                alert.setContentText("El directorio destino no es vÃ¡lido.");
+                alert.setContentText("El directorio destino no es válido.");
                 alert.showAndWait();
         	}
         	return validOutput;
@@ -434,7 +416,7 @@ import javafx.stage.Stage;
         		Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Error!");
                 alert.setHeaderText(null);
-                alert.setContentText("Debes seleccionar al menos una opciÃ³n (clase o actividad) para cada uml.");
+                alert.setContentText("Debes seleccionar al menos una opción (clase o actividad) para cada uml.");
                 alert.showAndWait();
         	}
         	return validTable;
@@ -449,7 +431,7 @@ import javafx.stage.Stage;
         		Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Error!");
                 alert.setHeaderText(null);
-                alert.setContentText("La tabla estÃ¡ vacÃ­a. Debes aÃ±adir al menos un fichero uml.");
+                alert.setContentText("La tabla está vacía. Debes añadir al menos un fichero uml.");
                 alert.showAndWait();
         	}
         	return emptyTable;

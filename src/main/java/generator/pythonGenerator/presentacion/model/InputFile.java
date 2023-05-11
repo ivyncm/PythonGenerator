@@ -66,11 +66,7 @@ public class InputFile {
             while ((line = errorReader.readLine()) != null) {
                 System.err.println(line);
             }
-            int exitCode = p.waitFor();
-            System.out.println("Exited with error code " + exitCode);
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
             e.printStackTrace();
         }
         

@@ -9,12 +9,16 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane minHeight="416.0" minWidth="520.0" prefHeight="416.0" prefWidth="718.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="generator.pythonGenerator.presentacion.MainWindowController">
    <children>
-      <Button fx:id="btnAnadir" layoutX="526.0" layoutY="2.0" mnemonicParsing="false" onAction="#clickAnadir" prefHeight="26.0" prefWidth="58.0" text="Añadir" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="10.0" />
-      <Button fx:id="btnEliminar" layoutX="591.0" layoutY="2.0" mnemonicParsing="false" onAction="#clickEliminar" text="Eliminar" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0" />
+      <Button fx:id="btnAnadir" layoutX="635.0" layoutY="9.0" mnemonicParsing="false" onAction="#clickAnadir" prefHeight="26.0" prefWidth="28.0" text="➕" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="9.0" />
+      <Button fx:id="btnEliminar" layoutX="591.0" layoutY="2.0" mnemonicParsing="false" onAction="#clickEliminar" text="➖" textAlignment="CENTER" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ficheros de entrada:" textAlignment="RIGHT" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
       <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="14.0" layoutY="31.0" prefHeight="382.0" prefWidth="480.0" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="40.0">
          <content>
@@ -50,11 +54,10 @@
          </content>
       </ScrollPane>
       <Text layoutX="18.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destino:" textAlignment="RIGHT" AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="20.0" />
-      <TextField fx:id="OutputLabel" layoutX="69.0" layoutY="433.0" prefHeight="26.0" prefWidth="331.0" AnchorPane.bottomAnchor="131.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="120.0" />
-      <Button fx:id="btnBrowse" layoutX="440.0" layoutY="433.0" mnemonicParsing="false" onAction="#clickBrowse" prefHeight="26.0" prefWidth="58.0" text="Browse" AnchorPane.bottomAnchor="131.0" AnchorPane.rightAnchor="20.0" />
-      <Button fx:id="btnGenerar" layoutX="280.0" layoutY="472.0" mnemonicParsing="false" onAction="#clickGennerar" prefHeight="35.0" prefWidth="214.0" text="Generar Código" AnchorPane.bottomAnchor="80.0" AnchorPane.rightAnchor="20.0" />
+      <TextField fx:id="OutputLabel" layoutX="69.0" layoutY="433.0" prefHeight="26.0" prefWidth="592.0" AnchorPane.bottomAnchor="131.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="55.0" />
+      <Button fx:id="btnGenerar" layoutX="280.0" layoutY="472.0" mnemonicParsing="false" onAction="#clickGennerar" prefHeight="35.0" prefWidth="214.0" text="Generar Código" textAlignment="CENTER" AnchorPane.bottomAnchor="80.0" AnchorPane.rightAnchor="20.0" />
       <TextArea fx:id="progressTextLabel" layoutX="18.0" layoutY="524.0" prefHeight="52.0" prefWidth="480.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
       <ProgressBar fx:id="progressBar" layoutX="14.0" layoutY="477.0" prefHeight="25.0" prefWidth="280.0" progress="0.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="245.0" />
-      <Button fx:id="btnOpenOutDir" layoutX="404.0" layoutY="434.0" mnemonicParsing="false" onAction="#clickOpenOutDir" text="📁" AnchorPane.bottomAnchor="130.0" AnchorPane.rightAnchor="85.0" />
+      <Button fx:id="btnOpenOutDir" layoutX="404.0" layoutY="434.0" mnemonicParsing="false" onAction="#clickOpenOutDir" text="📁" AnchorPane.bottomAnchor="130.0" AnchorPane.rightAnchor="20.0" />
    </children>
 </AnchorPane>

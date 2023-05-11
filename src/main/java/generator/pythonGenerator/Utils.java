@@ -29,7 +29,7 @@ public class Utils {
 			umlModel.load();
 		} catch (EolModelLoadingException e) {
 			e.printStackTrace();
-			System.out.printf("Failed to load %s%n", umlFilePath);
+			System.out.printf("[ERROR] Failed to load %s%n", umlFilePath);
 		}
 		return umlModel;
 	}
@@ -46,7 +46,7 @@ public class Utils {
 			module.parse(new File(egxFilePath).getAbsoluteFile());
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.printf("Syntax errors found at %s%n", egxFilePath);
+			System.out.printf("[ERROR] Syntax errors found at %s%n", egxFilePath);
 		}
 		return module;
 	}
@@ -62,7 +62,7 @@ public class Utils {
 			FileUtils.copyDirectory(srcDir, destDir, true);
 		} catch (IOException e1) {
 			e1.printStackTrace();
-			System.out.printf("Failed to copy circuits to %s%n", destDir);
+			System.out.printf("[ERROR] Failed to copy circuits to %s%n", destDir);
 		}
 	}
 	
@@ -74,7 +74,7 @@ public class Utils {
 			FileUtils.deleteDirectory(new File("temp"));
 		} catch (IOException e) {
 			e.printStackTrace();
-			System.out.println("Failed to delete temp directory");
+			System.out.println("[ERROR] Failed to delete temp directory");
 		}
 	}
     public static void crearDirectorio(String rutaDirectorio) {
@@ -86,12 +86,10 @@ public class Utils {
             // Intenta crear el directorio
             try {
                 Files.createDirectories(directorio);
-                System.out.println("Directorio creado con éxito.");
             } catch (Exception e) {
-                System.out.println("No se pudo crear el directorio.");
+    			e.printStackTrace();
+                System.out.printf("[ERROR] No se pudo crear el directorio %s.%n", rutaDirectorio);
             }
-        } else {
-            System.out.println("El directorio ya existe.");
         }
     }
 }
