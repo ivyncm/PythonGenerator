@@ -1,5 +1,5 @@
 target/
-.jython_cache/
+temp/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
