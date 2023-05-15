@@ -15,14 +15,7 @@
 					}%]
 					
 [*NODO*]
-					[%if (not (actual.inPartitions.size() == 0)){
-						if(preType == "org.eclipse.uml2.uml.internal.impl.InitialNodeImpl"){%]
-partition [%=actual.inPartitions.get(0).name%] {
-[%=getRelation(actual)%]
-}
-					[%
-						
-						} else if(not (nextNode(actual).inPartitions.size() == 0)){%]
+					[%if(not (nextNode(actual).inPartitions.size() == 0)){%]
 partition [%=nextNode(actual).inPartitions.get(0).name%] {
 [%=getRelation(actual)%]
 }
@@ -31,14 +24,9 @@ partition [%=actual.inPartitions.get(0).name%] {
 [%=getRelation(actual)%]
 }
 					[%}
-					
-					}
 					actual = nextNode(actual);
 					type = actual.toString().split(' ').get(0).split('@').get(0);
-					%]
-
-[*INITIAL*]
-					[%}
+				}
 			}%]
 
 \enduml
