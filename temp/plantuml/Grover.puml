@@ -1,0 +1,54 @@
+\startuml
+
+partition q0 {
+(*) -right-> H_0
+}
+partition q1 {
+H_0 -up-> NOT_1
+}
+partition q0 {
+NOT_1 -up-> NOT_2
+}
+partition q1 {
+NOT_2 -up-> C_3
+}
+partition q0 {
+C_3 -up-> NOT_4
+}
+partition q0 {
+NOT_4 -up-> NOT_5
+}
+partition q1 {
+NOT_5 -up-> H_6
+}
+partition q0 {
+H_6 -up-> H_7
+}
+partition q1 {
+H_7 -up-> Z_8
+}
+partition q0 {
+Z_8 -up-> Z_9
+}
+partition q1 {
+Z_9 -up-> C_10
+}
+partition q0 {
+C_10 -up-> H_11
+}
+partition q0 {
+H_11 -up-> H_12
+}
+partition q1 {
+H_12 -up-> M_13
+}
+partition q0 {
+M_13 -up-> M_14
+}
+partition q1 {
+M_14 -up-> (*)
+}
+
+\enduml
+
+

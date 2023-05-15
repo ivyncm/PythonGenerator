@@ -289,10 +289,14 @@ import javafx.stage.Stage;
                 			InputFile item = (InputFile) getTableRow().getItem();
                                 if (item != null) {
                                 	EgxModule module = null;
+                                	// Generate .puml
                                 	if(item.getClase() == true) {
-                                		// Generate .puml
                                     	module = Utils.parseEgxFile("EGLtemplates/classGenPUML.egx"); // Parse egxFilePath.egx
-                                    	UmlModel umlModel = Utils.loadUml(item.getRuta()); // Load UmlModel
+                                	}else if(item.getActividad() == true) {
+                                		module = Utils.parseEgxFile("EGLtemplates/activityGenPUML.egx"); // Parse egxFilePath.egx
+                                	}
+                                	if(module != null) {
+                                		UmlModel umlModel = Utils.loadUml(item.getRuta()); // Load UmlModel
 	                            		
 	                            		module.getContext().getModelRepository().addModel(umlModel); // Make the document visible to the EGX program
 	                            		try {
@@ -303,23 +307,6 @@ import javafx.stage.Stage;
 	                            			e.printStackTrace();
 	                            			System.out.printf("[ERROR] Failed to execute %s%n", item.getRuta());
 	                            		}
-                                	}else if(item.getActividad() == true) {
-	                            		// Generar .py
-                                		module = Utils.parseEgxFile("EGLtemplates/activityGenPng.egx"); // Parse egxFilePath.egx
-                                		UmlModel umlModel = Utils.loadUml(item.getRuta()); // Load UmlModel
-	                            		
-	                            		module.getContext().getModelRepository().addModel(umlModel); // Make the document visible to the EGX program
-	                            		try {
-	                            			module.execute(); // Execute module egxFilePath.egx
-	                            			Utils.crearDirectorio("./temp/images");
-	                            			file = new File(item.generateImageFromPython());
-	                            		} catch (EolRuntimeException | IOException e) {
-	                            			e.printStackTrace();
-	                            			System.out.printf("[ERROR] Failed to execute %s%n", item.getRuta());
-	                            		}
-                                	}
-                                	if(file != null) {
-	                            		
 	                                	// Crear una nueva ventana para mostrar la imagen
 	                                    Stage stage = new Stage();
 	                                    stage.setTitle(item.getName().replace(".uml", ""));

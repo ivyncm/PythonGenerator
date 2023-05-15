@@ -10,6 +10,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 
+import org.eclipse.epsilon.egl.EgxModule;
+import org.eclipse.epsilon.emc.uml.UmlModel;
+import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
+
 import generator.pythonGenerator.Utils;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -53,6 +57,17 @@ public class InputFile {
         return "temp/images/" + this.getName().replace(".uml", ".png");
 	}
 	public String generateImageFromPython() throws IOException{
+    	EgxModule module = Utils.parseEgxFile("EGLtemplates/activityGenPng.egx"); // Parse egxFilePath.egx
+		UmlModel umlModel = Utils.loadUml(this.getRuta()); // Load UmlModel
+		
+		module.getContext().getModelRepository().addModel(umlModel); // Make the document visible to the EGX program
+		try {
+			module.execute(); // Execute module egxFilePath.egx
+			Utils.crearDirectorio("./temp/images");
+		} catch (EolRuntimeException e) {
+			e.printStackTrace();
+			System.out.printf("[ERROR] Failed to execute %s%n", this.getRuta());
+		}
 		// GENERAR IMAGEN FROM PYTHON FILE
 		try {
             ProcessBuilder pb = new ProcessBuilder(Arrays.asList("python", "temp/qiskit/" + this.getName().replace(".uml", ".py").toLowerCase().replace('-', '_')));

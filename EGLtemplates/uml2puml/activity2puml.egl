@@ -1,0 +1,160 @@
+\startuml
+
+[% var initial = getInitialNode();
+	var contador = 0;
+			if(initial == null){
+				"There is no InitialNode".println();
+			} else{
+				var actual = initial;
+				var type = actual.toString().split(' ').get(0).split('@').get(0);
+				while(not(type == "org.eclipse.uml2.uml.internal.impl.ActivityFinalNodeImpl")){
+					var gate = checkGateType(actual);%]
+[*NODO*]
+					[%if (not (actual.inPartitions.size() == 0)){%]
+partition [%=actual.inPartitions.get(0).name%] {
+[%=getRelation(actual)%]
+}
+[*INITIAL*]
+					[%}
+					actual = nextNode(actual);
+					type = actual.toString().split(' ').get(0).split('@').get(0);
+				}
+			}%]
+
+\enduml
+
+
+[*FUNCTIONS*]
+[%function getRelation(node) : String{
+	var result = "";
+	if((node.toString().split('@').get(0) == "org.eclipse.uml2.uml.internal.impl.InitialNodeImpl") or (node.incomings.get(0).source.toString().split('@').get(0) == "org.eclipse.uml2.uml.internal.impl.InitialNodeImpl")){
+		result = "(*) -right-> ";
+	}else{
+		result = node.name + "_" + (contador - 1) + " -up-> ";
+	}
+	if(nextNode(node).toString().split('@').get(0) == "org.eclipse.uml2.uml.internal.impl.ActivityFinalNodeImpl"){
+		result = result.substring(0, result.length -7) + " -up-> (*)";
+	} else if(not(node.incomings.isEmpty())){
+		if(node.incomings.get(0).source.toString().split('@').get(0) == "org.eclipse.uml2.uml.internal.impl.InitialNodeImpl"){
+			result += node.name + "_" + contador;
+		}else{
+			result += nextNode(node).name + "_" + contador;
+		}
+	}else{
+		result += nextNode(node).name + "_" + contador;
+	}
+	result.println();
+	contador ++;
+	return result;
+}
+function checkGateType(node) : String{
+	if(isMeasure(node))
+		return "measure" + "(" + node.inPartitions.get(0).name.toLowerCase() + ", " + getNameofRegisterFromMeasure(node) + ")";
+	else if(isControlledGate(node)){
+		var constrainedElements = getConstraint(node).constrainedElements;
+		return getNameandParamsofControlled(constrainedElements);
+	}
+	else if(not(getConstraint(node) == null))
+		return "pass";
+	else if(node.inPartitions.name.size() == 0)
+		return "";
+	return getNameandParamsofGate(node) + node.inPartitions.name.get(0).toLowerCase() + ")";
+}
+function getNameandParamsofGate(node) : String{
+	if(not(node == null)){
+		return node.name.toLowerCase() + "(" + getStringParamsofGate(node);
+	}
+	return "";
+}
+function getNameandParamsofControlled(constrainedElements) : String{
+	var controlledString = "";
+	var controlledQubits = "";
+	var gateWithParamsString = "";
+	var gateQubits = "";
+	for(element in constrainedElements){
+		if(isControlledGate(element)){
+			controlledString += "c";
+			controlledQubits += element.inPartitions.get(0).name.toLowerCase() + ", ";
+		}
+		else{
+			gateWithParamsString = getNameandParamsofGate(element);
+			gateQubits = element.inPartitions.get(0).name.toLowerCase();
+		}
+	}
+	return controlledString + gateWithParamsString + controlledQubits + gateQubits + ")";
+}
+function getStringParamsofGate(node) : String{
+	var params = "";
+	if(not(node.stereotypeApplications.eClass.name.size() == 0)){
+		if(node.stereotypeApplications.eClass.name.get(0) == "QuantumGate"){
+			var quantumGate = node.stereotypeApplications;
+			var aux = Sequence{quantumGate.theta.get(0), quantumGate.phi.get(0), quantumGate.lambda.get(0), quantumGate.gamma.get(0)};
+			for(param in aux)
+				if(not(param == ""))
+					params += param + ", ";
+		}
+	}
+	return params;
+}
+function getNameofRegisterFromMeasure(measure) : String{
+	for(register in anActivity.node){
+		var type = register.toString().split(' ').get(0).split('@').get(0);
+		if(type == "org.eclipse.uml2.uml.internal.impl.DataStoreNodeImpl")
+			if((register == measure.outgoings.get(0).target) or (register == measure.outgoings.get(1).target))
+				return register.name.replace(' ', '_').replace('-', '_').toLowerCase();
+	}
+	return null;
+}
+function isMeasure(node) : Boolean{
+	if(not(node.stereotypeApplications.eClass.name.size() == 0)){
+		if(node.stereotypeApplications.eClass.name.get(0) == "Measure")
+			return true;
+	}
+	return false;
+}
+function isControlledGate(node) : Boolean{
+	if(not(node.stereotypeApplications.eClass.name.size() == 0)){
+		if(node.stereotypeApplications.eClass.name.get(0) == "ControlledQubit")
+			return true;
+	}
+	return false;
+}
+function isQubit(node) : Boolean{
+	if(not(node.stereotypeApplications.eClass.name.size() == 0)){
+		if(node.stereotypeApplications.eClass.name.get(0) == "Qubit")
+			return true;
+	}
+	return false;
+}
+function getPositionofNextNode(node) : Integer{
+	var type = node.outgoings.get(0).target.toString().split(' ').get(0).split('@').get(0);
+	if(isMeasure(node))
+		if(type == "org.eclipse.uml2.uml.internal.impl.DataStoreNodeImpl")
+			return 1;
+	return 0;
+}
+function getInitialNode(){
+	for(aNode in anActivity.node)
+		if(not(aNode == null))
+			if(aNode.toString().split(' ').get(0).split('@').get(0) == "org.eclipse.uml2.uml.internal.impl.InitialNodeImpl")
+				return aNode;
+	return null;
+}
+function nextNode(node){
+	if(node.outgoings.isEmpty()){
+		var constraint = getConstraint(node);
+		if(not(constraint == null))
+			for(element in constraint.constrainedElements)
+				if(not(element.outgoings.isEmpty()))
+					return element;
+		return null;
+	}
+	return node.outgoings.get(getPositionofNextNode(node)).target;
+}
+function getConstraint(node){
+	for(constraint in anActivity.ownedRule)
+		for(constrainedElement in constraint.constrainedElement)
+			if(constrainedElement == node)
+				return constraint;
+	return null;
+}%]
