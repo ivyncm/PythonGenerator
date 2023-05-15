@@ -4,6 +4,7 @@
 
 package generator.pythonGenerator.presentacion;
 
+import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -146,6 +147,7 @@ import javafx.stage.Stage;
 				            		    // El usuario seleccionÃ³ quedarse con el elemento anterior
 				            		} else if (result.get() == buttonTypeNuevo) {
 				            		    // El usuario seleccionÃ³ quedarse con el elemento nuevo
+				                    	ResultadoCol.setVisible(false);
 				            			row.setName(file.getName());
 				            			row.setRuta(file.getAbsolutePath());
 				            			row.setActividad(false);
@@ -166,6 +168,7 @@ import javafx.stage.Stage;
 		            	}
 	            	}
 	            	if(exists == false) {
+	                	ResultadoCol.setVisible(false);
 	            		fileList.add(new InputFile(file.getName(), file.getAbsolutePath()));
 	            	}
 	            }
@@ -224,7 +227,6 @@ import javafx.stage.Stage;
 	    	            }
 	    	            updateMessage("Moviendo resultados a: ".concat(OutputLabel.getText()));
 	    				Utils.copyCircuits(new File("temp/RESULTS"), new File(OutputLabel.getText() + "/RESULTS"));
-	    				Utils.deleteTempDir();
 	    				updateMessage("Done!");
 	
 	    	            return null;
@@ -235,7 +237,15 @@ import javafx.stage.Stage;
 	    	    progressTextLabel.textProperty().bind(task.messageProperty());
 	
 	    	    // Inicia la tarea en un nuevo hilo
-	    	    new Thread(task).start();
+	    	    Thread thread = new Thread(task);
+	    	    thread.start();
+	    	    
+	    	    try {
+	    	    	thread.join(); // Esperar a que el hilo finalice
+		            ResultadoCol.setVisible(true);
+	            } catch (InterruptedException e) {
+	                e.printStackTrace();
+	            }
 
         	}
         }
@@ -278,6 +288,7 @@ import javafx.stage.Stage;
             ClaseCol.setCellFactory(CheckBoxTableCell.forTableColumn(ClaseCol));
             InputTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
             preferences = Preferences.userRoot().node("myApp");
+            ResultadoCol.setVisible(false);
             
             VerCol.setCellFactory(col -> new TableCell<InputFile, Button>() {
             	private final Button viewButton =  new Button("👁");
@@ -353,6 +364,80 @@ import javafx.stage.Stage;
                         }
                     }
             });
+            
+            ResultadoCol.setCellFactory(col -> new TableCell<InputFile, Button>() {
+            	private final Button resButton =  new Button("📂");
+                	{	
+                		resButton.setOnAction((ActionEvent event) -> {
+                			InputTable.refresh();
+                			resButton.setVisible(false);
+                			InputFile item = (InputFile) getTableRow().getItem();
+                            if (item != null) {
+                            	String directoryPath = item.getRutaResultado(); // Specify the directory path here
+
+                                if(item.getActividad()) {
+                                	if (directoryPath != null) {
+                                        if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.EDIT)) {
+                                            try {
+                                                Desktop.getDesktop().edit(new File(directoryPath + "/" + item.getName().replace(".uml", ".py").replace(' ', '_').replace('-', '_')));
+                                            } catch (IOException e) {
+                                            	String os = System.getProperty("os.name").toLowerCase();
+
+                                                if (os.contains("win")) {
+                                                    try {
+														Runtime.getRuntime().exec("notepad.exe " + (new File(directoryPath + "/" + item.getName().replace(".uml", ".py").replace(' ', '_').replace('-', '_'))).getAbsolutePath());
+													} catch (IOException e1) {
+														e1.printStackTrace();
+													}
+                                                } else {
+                                                	Alert alert = new Alert(AlertType.ERROR);
+            	                                    alert.setTitle("Error!");
+            	                                    alert.setHeaderText(null);
+            	                                    alert.setContentText("Opening with Notepad is supported only on Windows.");
+            	                                    alert.showAndWait();
+                                                }
+                                            }
+                                        } else {
+                                        	Alert alert = new Alert(AlertType.ERROR);
+    	                                    alert.setTitle("Error!");
+    	                                    alert.setHeaderText(null);
+    	                                    alert.setContentText("No se pudo abrir el fichero.");
+    	                                    alert.showAndWait();
+                                        }
+                                    }
+                                } else if(item.getClase()) {
+                                    File directory = new File(directoryPath + item.getName().replace(".uml", ""));
+	                                if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.OPEN)) {
+	                                    try {
+	                                        Desktop.getDesktop().open(directory);
+	                                    } catch (IOException e) {
+	                                        e.printStackTrace();
+	                                        // Handle the exception appropriately
+	                                    }
+	                                } else {
+	                                	Alert alert = new Alert(AlertType.ERROR);
+	                                    alert.setTitle("Error!");
+	                                    alert.setHeaderText(null);
+	                                    alert.setContentText("No se pudo abrir el directorio.");
+	                                    alert.showAndWait();
+	                                }
+                                }
+                            }
+                            resButton.setVisible(true);
+                        });
+                    }
+                	
+                    @Override
+                    public void updateItem(Button file, boolean empty) {
+                        super.updateItem(file, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            setGraphic(resButton);
+                            setAlignment(Pos.CENTER);
+                        }
+                    }
+            });
         }
         
         public List<String> getActivitiesFromTable() {
@@ -361,6 +446,7 @@ import javafx.stage.Stage;
 
         	for (InputFile item : items) {
         	    if (item.getActividad()) {
+        	    	item.setRutaResultado(OutputLabel.getText() + "/RESULTS/quantumCircuits/");
         	        filteredItems.add(item.getRuta());
         	    }
         	}
@@ -372,6 +458,7 @@ import javafx.stage.Stage;
 
         	for (InputFile item : items) {
         	    if (item.getClase()) {
+        	    	item.setRutaResultado(OutputLabel.getText() + "/RESULTS/");
         	        filteredItems.add(item.getRuta());
         	    }
         	}

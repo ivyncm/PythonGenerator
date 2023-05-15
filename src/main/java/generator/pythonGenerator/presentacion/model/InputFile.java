@@ -25,12 +25,14 @@ import net.sourceforge.plantuml.SourceStringReader;
 public class InputFile {
 	private SimpleStringProperty Name;
     private SimpleStringProperty Ruta;
+    private SimpleStringProperty RutaResultado;
     public BooleanProperty Actividad;
     public BooleanProperty Clase;
 
     public InputFile(String Name, String Ruta) {
         this.Name = new SimpleStringProperty(Name);
         this.Ruta = new SimpleStringProperty(Ruta);
+        this.RutaResultado = new SimpleStringProperty("");
         this.Actividad = new SimpleBooleanProperty(false);
         this.Clase = new SimpleBooleanProperty(false);
     }
@@ -101,6 +103,13 @@ public class InputFile {
 
     public void setRuta(String Ruta) {
     	this.Ruta.set(Ruta);
+    }
+    public String getRutaResultado() {
+    	return RutaResultado.get();
+    }
+
+    public void setRutaResultado(String RutaResultado) {
+    	this.RutaResultado.set(RutaResultado);
     }
     public Boolean getActividad() {
         return this.Actividad.get();

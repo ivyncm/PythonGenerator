@@ -2,6 +2,7 @@ package generator.pythonGenerator.presentacion;
 
 import java.io.File;
 
+import generator.pythonGenerator.Utils;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,6 +19,9 @@ public class Main extends Application {
 			
 			primaryStage.setTitle("Q-UML2Python");
 			primaryStage.setScene(scene);
+			primaryStage.setOnCloseRequest(event -> {
+                Utils.deleteTempDir();
+            });
 			primaryStage.show();
 		}catch(Exception e) {
 			e.printStackTrace();
