@@ -73,8 +73,6 @@ public class Utils {
 		try {
 			FileUtils.deleteDirectory(new File("temp"));
 		} catch (IOException e) {
-			e.printStackTrace();
-			System.out.println("[ERROR] Failed to delete temp directory");
 		}
 	}
     public static void crearDirectorio(String rutaDirectorio) {

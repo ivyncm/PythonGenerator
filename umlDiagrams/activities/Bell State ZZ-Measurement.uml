@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:QuantumUMLProfile="http://QuantumUMLProfile/schemas/QuantumUMLProfile/_zeqykL6NEe24U6R9ykQTQA/15" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://QuantumUMLProfile/schemas/QuantumUMLProfile/_zeqykL6NEe24U6R9ykQTQA/15 /QuantumUMLProfile/QuantumUMLProfile.profile.uml#_zetO0L6NEe24U6R9ykQTQA">
   <uml:Model xmi:id="_07Wa4LdZEe2gVf62LoCHyw" name="Bell State ZZ-Measurement">
-    <packageImport xmi:id="_0-tQ4LdZEe2gVf62LoCHyw">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_0-tQ4LdZEe2gVf62LoCHyw">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
     <packagedElement xmi:type="uml:Activity" xmi:id="_08qCcLdZEe2gVf62LoCHyw" name="Bell State ZZ" node="__TMYcLdZEe2gVf62LoCHyw _DYKCsLdaEe2gVf62LoCHyw _DUzXQrdbEe2gVf62LoCHyw _DU7TELdbEe2gVf62LoCHyw _V7SxQLdbEe2gVf62LoCHyw _YAHvwLdbEe2gVf62LoCHyw _azyxQLdbEe2gVf62LoCHyw _az4Q0LdbEe2gVf62LoCHyw _k8YK0LdbEe2gVf62LoCHyw" group="_6RDUQLdZEe2gVf62LoCHyw _6RDUQbdZEe2gVf62LoCHyw">
-      <ownedRule xmi:id="_DUzXQLdbEe2gVf62LoCHyw" name="CNOT(q0-q1)" constrainedElement="_DU7TELdbEe2gVf62LoCHyw _DUzXQrdbEe2gVf62LoCHyw">
+      <ownedRule xmi:type="uml:Constraint" xmi:id="_DUzXQLdbEe2gVf62LoCHyw" name="CNOT(q0-q1)" constrainedElement="_DU7TELdbEe2gVf62LoCHyw _DUzXQrdbEe2gVf62LoCHyw">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_DUzXQbdbEe2gVf62LoCHyw" name="constraintSpec">
           <language>Natural language</language>
           <body>CNOT</body>
@@ -34,31 +34,31 @@
       </node>
       <node xmi:type="uml:ActivityFinalNode" xmi:id="_k8YK0LdbEe2gVf62LoCHyw" incoming="_meIRcLdbEe2gVf62LoCHyw"/>
     </packagedElement>
-    <profileApplication xmi:id="_09kBYLdZEe2gVf62LoCHyw">
-      <eAnnotations xmi:id="_ceLoQMc6Ee2zlr0bEl8blw" source="PapyrusVersion">
-        <details xmi:id="_ceLoQcc6Ee2zlr0bEl8blw" key="Version" value="0.1.6"/>
-        <details xmi:id="_ceMPUMc6Ee2zlr0bEl8blw" key="Comment" value=""/>
-        <details xmi:id="_ceMPUcc6Ee2zlr0bEl8blw" key="Copyright" value=""/>
-        <details xmi:id="_ceMPUsc6Ee2zlr0bEl8blw" key="Date" value="2023-03-09"/>
-        <details xmi:id="_ceMPU8c6Ee2zlr0bEl8blw" key="Author" value=""/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_09kBYLdZEe2gVf62LoCHyw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ceLoQMc6Ee2zlr0bEl8blw" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ceLoQcc6Ee2zlr0bEl8blw" key="Version" value="0.1.6"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ceMPUMc6Ee2zlr0bEl8blw" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ceMPUcc6Ee2zlr0bEl8blw" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ceMPUsc6Ee2zlr0bEl8blw" key="Date" value="2023-03-09"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ceMPU8c6Ee2zlr0bEl8blw" key="Author" value=""/>
       </eAnnotations>
-      <eAnnotations xmi:id="_09kBYbdZEe2gVf62LoCHyw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_09kBYbdZEe2gVf62LoCHyw" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_zel6EL6NEe24U6R9ykQTQA"/>
       </eAnnotations>
-      <appliedProfile href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_TU1zcOP7EeubK-rnJ_MIxA"/>
+      <appliedProfile xmi:type="uml:Profile" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_TU1zcOP7EeubK-rnJ_MIxA"/>
     </profileApplication>
-    <profileApplication xmi:id="_4iVTMLdaEe2gVf62LoCHyw">
-      <eAnnotations xmi:id="_cf11IMc6Ee2zlr0bEl8blw" source="PapyrusVersion">
-        <details xmi:id="_cf11Icc6Ee2zlr0bEl8blw" key="Version" value="0.1.6"/>
-        <details xmi:id="_cf11Isc6Ee2zlr0bEl8blw" key="Comment" value=""/>
-        <details xmi:id="_cf11I8c6Ee2zlr0bEl8blw" key="Copyright" value=""/>
-        <details xmi:id="_cf11JMc6Ee2zlr0bEl8blw" key="Date" value="2023-03-09"/>
-        <details xmi:id="_cf11Jcc6Ee2zlr0bEl8blw" key="Author" value=""/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_4iVTMLdaEe2gVf62LoCHyw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cf11IMc6Ee2zlr0bEl8blw" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cf11Icc6Ee2zlr0bEl8blw" key="Version" value="0.1.6"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cf11Isc6Ee2zlr0bEl8blw" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cf11I8c6Ee2zlr0bEl8blw" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cf11JMc6Ee2zlr0bEl8blw" key="Date" value="2023-03-09"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cf11Jcc6Ee2zlr0bEl8blw" key="Author" value=""/>
       </eAnnotations>
-      <eAnnotations xmi:id="_4iVTMbdaEe2gVf62LoCHyw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4iVTMbdaEe2gVf62LoCHyw" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_zetO0L6NEe24U6R9ykQTQA"/>
       </eAnnotations>
-      <appliedProfile href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_UyBjIOP7EeubK-rnJ_MIxA"/>
+      <appliedProfile xmi:type="uml:Profile" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_UyBjIOP7EeubK-rnJ_MIxA"/>
     </profileApplication>
   </uml:Model>
   <QuantumUMLProfile:QuantumCircuit xmi:id="_7vXP4LdaEe2gVf62LoCHyw" base_Activity="_08qCcLdZEe2gVf62LoCHyw"/>

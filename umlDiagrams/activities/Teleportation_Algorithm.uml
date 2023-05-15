@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:QuantumUMLProfile="http://QuantumUMLProfile/schemas/QuantumUMLProfile/_8NBMI7wDEe2zxI_Q4p2YQQ/14" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://QuantumUMLProfile/schemas/QuantumUMLProfile/_8NBMI7wDEe2zxI_Q4p2YQQ/14 /QuantumUMLProfile/QuantumUMLProfile.profile.uml#_8NKWELwDEe2zxI_Q4p2YQQ">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:QuantumUMLProfile="http://QuantumUMLProfile/schemas/QuantumUMLProfile/_zeqykL6NEe24U6R9ykQTQA/15" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://QuantumUMLProfile/schemas/QuantumUMLProfile/_zeqykL6NEe24U6R9ykQTQA/15 /QuantumUMLProfile/QuantumUMLProfile.profile.uml#_zetO0L6NEe24U6R9ykQTQA">
   <uml:Model xmi:id="_LlKqAJ44Ee28yoKeVNJ_1Q" name="UML2qiskit">
-    <packageImport xmi:id="_LljrkJ44Ee28yoKeVNJ_1Q">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_LljrkJ44Ee28yoKeVNJ_1Q">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
     <packagedElement xmi:type="uml:Activity" xmi:id="_N5QMgJ44Ee28yoKeVNJ_1Q" name="Teleportation Algorithm" node="_pZ6sMJ44Ee28yoKeVNJ_1Q _kragQJ45Ee28yoKeVNJ_1Q _rFj5MJ45Ee28yoKeVNJ_1Q _AlC5kJ46Ee28yoKeVNJ_1Q _zoVWEJ46Ee28yoKeVNJ_1Q _z3gagJ46Ee28yoKeVNJ_1Q _2AMlUJ46Ee28yoKeVNJ_1Q _8nm-MJ46Ee28yoKeVNJ_1Q _-lsbgJ46Ee28yoKeVNJ_1Q _DeG78J47Ee28yoKeVNJ_1Q _FfsZMJ47Ee28yoKeVNJ_1Q _L8XhsJ47Ee28yoKeVNJ_1Q _aXDpoJ47Ee28yoKeVNJ_1Q _vhfAAJ47Ee28yoKeVNJ_1Q _xMESgJ47Ee28yoKeVNJ_1Q _xoi9wLNxEe27nN-b3kTVwQ" group="_kBhEIJ44Ee28yoKeVNJ_1Q _lRh6gJ44Ee28yoKeVNJ_1Q _kvC4gJ44Ee28yoKeVNJ_1Q">
-      <ownedRule xmi:id="_9bHn4KOiEe2W2vZ1vdEIfw" name="CNOT(q1-q2)" constrainedElement="_rFj5MJ45Ee28yoKeVNJ_1Q _AlC5kJ46Ee28yoKeVNJ_1Q">
+      <ownedRule xmi:type="uml:Constraint" xmi:id="_9bHn4KOiEe2W2vZ1vdEIfw" name="CNOT(q1-q2)" constrainedElement="_rFj5MJ45Ee28yoKeVNJ_1Q _AlC5kJ46Ee28yoKeVNJ_1Q">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_9bO8oKOiEe2W2vZ1vdEIfw" name="constraintSpec">
           <language>Natural language</language>
           <body>CNOT</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_vRiR0LNrEe27nN-b3kTVwQ" name="CNOT(q0-q1)" constrainedElement="_z3gagJ46Ee28yoKeVNJ_1Q _2AMlUJ46Ee28yoKeVNJ_1Q">
+      <ownedRule xmi:type="uml:Constraint" xmi:id="_vRiR0LNrEe27nN-b3kTVwQ" name="CNOT(q0-q1)" constrainedElement="_z3gagJ46Ee28yoKeVNJ_1Q _2AMlUJ46Ee28yoKeVNJ_1Q">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_vRsC0LNrEe27nN-b3kTVwQ" name="constraintSpec">
           <language>Natural language</language>
           <body>CNOT</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_9HUOgLNuEe27nN-b3kTVwQ" name="CZ(q0-q2)" constrainedElement="_DeG78J47Ee28yoKeVNJ_1Q _FfsZMJ47Ee28yoKeVNJ_1Q">
+      <ownedRule xmi:type="uml:Constraint" xmi:id="_9HUOgLNuEe27nN-b3kTVwQ" name="CZ(q0-q2)" constrainedElement="_DeG78J47Ee28yoKeVNJ_1Q _FfsZMJ47Ee28yoKeVNJ_1Q">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_9HUOgbNuEe27nN-b3kTVwQ" name="constraintSpec">
           <language>Natural language</language>
           <body>CZ</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_KgqOMLNvEe27nN-b3kTVwQ" name="CNOT(q1-q2)_2" constrainedElement="_zoVWEJ46Ee28yoKeVNJ_1Q _aXDpoJ47Ee28yoKeVNJ_1Q">
+      <ownedRule xmi:type="uml:Constraint" xmi:id="_KgqOMLNvEe27nN-b3kTVwQ" name="CNOT(q1-q2)_2" constrainedElement="_zoVWEJ46Ee28yoKeVNJ_1Q _aXDpoJ47Ee28yoKeVNJ_1Q">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_KgqOMbNvEe27nN-b3kTVwQ" name="constraintSpec">
           <language>Natural language</language>
           <body>CNOT</body>
@@ -64,31 +64,31 @@
         <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xMESgZ47Ee28yoKeVNJ_1Q" value="1"/>
       </node>
     </packagedElement>
-    <profileApplication xmi:id="_LlZTgJ44Ee28yoKeVNJ_1Q">
-      <eAnnotations xmi:id="_8idNYLzDEe2oQOSy6whbVQ" source="PapyrusVersion">
-        <details xmi:id="_8idNYbzDEe2oQOSy6whbVQ" key="Version" value="0.1.5"/>
-        <details xmi:id="_8idNYrzDEe2oQOSy6whbVQ" key="Comment" value=""/>
-        <details xmi:id="_8idNY7zDEe2oQOSy6whbVQ" key="Copyright" value=""/>
-        <details xmi:id="_8idNZLzDEe2oQOSy6whbVQ" key="Date" value="2023-03-06"/>
-        <details xmi:id="_8idNZbzDEe2oQOSy6whbVQ" key="Author" value=""/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_LlZTgJ44Ee28yoKeVNJ_1Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_m8frUOmWEe236bBqan--xw" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_m8frUemWEe236bBqan--xw" key="Version" value="0.1.6"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_m8frUumWEe236bBqan--xw" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_m8frU-mWEe236bBqan--xw" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_m8frVOmWEe236bBqan--xw" key="Date" value="2023-03-09"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_m8frVemWEe236bBqan--xw" key="Author" value=""/>
       </eAnnotations>
-      <eAnnotations xmi:id="_LlZTgZ44Ee28yoKeVNJ_1Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_8NBMIbwDEe2zxI_Q4p2YQQ"/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LlZTgZ44Ee28yoKeVNJ_1Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_zel6EL6NEe24U6R9ykQTQA"/>
       </eAnnotations>
-      <appliedProfile href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_TU1zcOP7EeubK-rnJ_MIxA"/>
+      <appliedProfile xmi:type="uml:Profile" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_TU1zcOP7EeubK-rnJ_MIxA"/>
     </profileApplication>
-    <profileApplication xmi:id="_RpbSgJ44Ee28yoKeVNJ_1Q">
-      <eAnnotations xmi:id="_8ipaoLzDEe2oQOSy6whbVQ" source="PapyrusVersion">
-        <details xmi:id="_8ipaobzDEe2oQOSy6whbVQ" key="Version" value="0.1.5"/>
-        <details xmi:id="_8ipaorzDEe2oQOSy6whbVQ" key="Comment" value=""/>
-        <details xmi:id="_8ipao7zDEe2oQOSy6whbVQ" key="Copyright" value=""/>
-        <details xmi:id="_8ipapLzDEe2oQOSy6whbVQ" key="Date" value="2023-03-06"/>
-        <details xmi:id="_8ipapbzDEe2oQOSy6whbVQ" key="Author" value=""/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_RpbSgJ44Ee28yoKeVNJ_1Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_m-cMG-mWEe236bBqan--xw" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_m-cMHOmWEe236bBqan--xw" key="Version" value="0.1.6"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_m-cMHemWEe236bBqan--xw" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_m-cMHumWEe236bBqan--xw" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_m-cMH-mWEe236bBqan--xw" key="Date" value="2023-03-09"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_m-cMIOmWEe236bBqan--xw" key="Author" value=""/>
       </eAnnotations>
-      <eAnnotations xmi:id="_RpbSgZ44Ee28yoKeVNJ_1Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_8NKWELwDEe2zxI_Q4p2YQQ"/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RpbSgZ44Ee28yoKeVNJ_1Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_zetO0L6NEe24U6R9ykQTQA"/>
       </eAnnotations>
-      <appliedProfile href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_UyBjIOP7EeubK-rnJ_MIxA"/>
+      <appliedProfile xmi:type="uml:Profile" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_UyBjIOP7EeubK-rnJ_MIxA"/>
     </profileApplication>
   </uml:Model>
   <QuantumUMLProfile:QuantumCircuit xmi:id="_g5otMJ44Ee28yoKeVNJ_1Q" base_Activity="_N5QMgJ44Ee28yoKeVNJ_1Q"/>

@@ -194,6 +194,7 @@ import javafx.stage.Stage;
 
         @FXML
         void clickGennerar(ActionEvent event) {
+        	Utils.deleteTempDir();
         	if(checkOutputDirectory() == true && checkTableSelection() == true && checkEmptyTable() == false) {
 	        	Generator generator = new Generator(getClassesFromTable(), getActivitiesFromTable());
 	    		// Inicia la tarea en un hilo separado

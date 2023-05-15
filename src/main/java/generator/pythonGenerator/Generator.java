@@ -113,7 +113,10 @@ public class Generator {
 		
 		// Copy circuits(activities) to class generated directory
 		File destDir = new File("temp/RESULTS/".concat(umlModel.getAllOfType("Model").toString().split("name: ")[1].split(",")[0].concat("/quantumCircuits")));
-		Utils.copyCircuits(new File("temp/RESULTS/quantumCircuits"), destDir);
+		File circuitsDir = new File("temp/RESULTS/quantumCircuits");
+		if (circuitsDir.exists() && circuitsDir.isDirectory()) {
+			Utils.copyCircuits(circuitsDir, destDir);
+        } 
 	}
 	
     public List<String> getumlClassFiles() {

@@ -8,17 +8,37 @@
 				var actual = initial;
 				var type = actual.toString().split(' ').get(0).split('@').get(0);
 				while(not(type == "org.eclipse.uml2.uml.internal.impl.ActivityFinalNodeImpl")){
-					var gate = checkGateType(actual);%]
+					var gate = checkGateType(actual);
+					var preType = "";
+					if(not(actual.incomings.isEmpty())){
+						preType = actual.incomings.get(0).source.toString().split('@').get(0);
+					}%]
+					
 [*NODO*]
-					[%if (not (actual.inPartitions.size() == 0)){%]
+					[%if (not (actual.inPartitions.size() == 0)){
+						if(preType == "org.eclipse.uml2.uml.internal.impl.InitialNodeImpl"){%]
 partition [%=actual.inPartitions.get(0).name%] {
 [%=getRelation(actual)%]
 }
-[*INITIAL*]
+					[%
+						
+						} else if(not (nextNode(actual).inPartitions.size() == 0)){%]
+partition [%=nextNode(actual).inPartitions.get(0).name%] {
+[%=getRelation(actual)%]
+}
+					[%	} else{%]
+partition [%=actual.inPartitions.get(0).name%] {
+[%=getRelation(actual)%]
+}
 					[%}
+					
+					}
 					actual = nextNode(actual);
 					type = actual.toString().split(' ').get(0).split('@').get(0);
-				}
+					%]
+
+[*INITIAL*]
+					[%}
 			}%]
 
 \enduml
@@ -27,25 +47,27 @@ partition [%=actual.inPartitions.get(0).name%] {
 [*FUNCTIONS*]
 [%function getRelation(node) : String{
 	var result = "";
-	if((node.toString().split('@').get(0) == "org.eclipse.uml2.uml.internal.impl.InitialNodeImpl") or (node.incomings.get(0).source.toString().split('@').get(0) == "org.eclipse.uml2.uml.internal.impl.InitialNodeImpl")){
-		result = "(*) -right-> ";
-	}else{
-		result = node.name + "_" + (contador - 1) + " -up-> ";
+	var preResult = "";
+	var preType = "";
+	if(not(node.incomings.isEmpty())){
+		preType = node.incomings.get(0).source.toString().split('@').get(0);
+	}
+	if(preType == "org.eclipse.uml2.uml.internal.impl.InitialNodeImpl"){
+		preResult = "(*) -right-> ";
+		result = node.name + "_" + contador + " -up-> ";
+	} else{
+		result = node.name + "_" + contador + " -up-> ";
 	}
 	if(nextNode(node).toString().split('@').get(0) == "org.eclipse.uml2.uml.internal.impl.ActivityFinalNodeImpl"){
 		result = result.substring(0, result.length -7) + " -up-> (*)";
-	} else if(not(node.incomings.isEmpty())){
-		if(node.incomings.get(0).source.toString().split('@').get(0) == "org.eclipse.uml2.uml.internal.impl.InitialNodeImpl"){
-			result += node.name + "_" + contador;
-		}else{
-			result += nextNode(node).name + "_" + contador;
-		}
+	} else if(preType == "org.eclipse.uml2.uml.internal.impl.InitialNodeImpl"){
+			preResult += node.name + "_" + contador;
+			result += nextNode(node).name + "_" + (contador + 1);
 	}else{
-		result += nextNode(node).name + "_" + contador;
+		result += nextNode(node).name + "_" + (contador + 1);
 	}
-	result.println();
 	contador ++;
-	return result;
+	return preResult + "\n" + result;
 }
 function checkGateType(node) : String{
 	if(isMeasure(node))

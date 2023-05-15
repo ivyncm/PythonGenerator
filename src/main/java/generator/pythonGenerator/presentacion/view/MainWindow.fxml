@@ -29,7 +29,7 @@
                         <PropertyValueFactory property="Name" />
       				</cellValueFactory>
                 </TableColumn>
-                  <TableColumn fx:id="VerCol" maxWidth="-1.0" minWidth="60.0" prefWidth="-1.0" resizable="false" text="Ver" />
+                  <TableColumn fx:id="VerCol" maxWidth="-1.0" minWidth="60.0" prefWidth="-1.0" resizable="false" text="Ver UML" />
                 <TableColumn fx:id="ActividadCol" maxWidth="-1.0" minWidth="60.0" prefWidth="-1.0" resizable="false" text="Actividad">
                 	<cellValueFactory>
                 		<PropertyValueFactory property="Actividad" />
