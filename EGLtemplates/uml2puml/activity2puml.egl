@@ -1,31 +1,56 @@
 \startuml
 
+top to bottom direction
+skinparam ranksep 200
+
+hide circle
+hide members
+[%var stereotypeAct = "";
+if(not(anActivity.stereotypeApplications.eClass.name.size == 0)){
+	stereotypeAct = "<< " + anActivity.stereotypeApplications.eClass.name.get(0) + " >> ";
+}%]
+package " [%=anActivity.name%] [%=stereotypeAct%] " {
 [% var initial = getInitialNode();
 	var contador = 0;
+	var stereotype = "";
+	var stereotypePart = "";
+	var nodes : new Sequence;
+	for(partition in anActivity.group){
+		if(not(partition.stereotypeApplications.eClass.name.size == 0)){
+			stereotypePart = "<< " + partition.stereotypeApplications.eClass.name.get(0) + " >> ";
+		}%]
+package " [%=partition.name%] [%=stereotypePart%] " {
+[%for(node in partition.nodes){
+		nodes.add(node); 
+		if(not(node.stereotypeApplications.eClass.name.size == 0)){
+			stereotype = "<< " + node.stereotypeApplications.eClass.name.get(0) + " >> ";
+		}
+		%]
+		class "[%=node.name%]" as [%=node.name + "_" + contador%] [%=stereotype%]
+		[%
+		contador++;
+}%]
+}
+	[%}
+	contador = 0;
 			if(initial == null){
 				"There is no InitialNode".println();
 			} else{
 				var actual = initial;
 				var type = actual.toString().split(' ').get(0).split('@').get(0);
+%]
+}
+[%
 				while(not(type == "org.eclipse.uml2.uml.internal.impl.ActivityFinalNodeImpl")){
 					var gate = checkGateType(actual);
 					var preType = "";
 					if(not(actual.incomings.isEmpty())){
 						preType = actual.incomings.get(0).source.toString().split('@').get(0);
-					}%]
-					
+					}
+					%]
 [*NODO*]
-					[%if(not (nextNode(actual).inPartitions.size() == 0)){%]
-partition [%=nextNode(actual).inPartitions.get(0).name%] {
 [%=getRelation(actual)%]
-}
-					[%	} else{%]
-partition [%=actual.inPartitions.get(0).name%] {
-[%=getRelation(actual)%]
-}
-					[%}
-					
-					actual = nextNode(actual);
+					[%actual = nextNode(actual);
 					type = actual.toString().split(' ').get(0).split('@').get(0);
 				}
 			}%]
@@ -36,18 +61,41 @@ partition [%=actual.inPartitions.get(0).name%] {
 [*FUNCTIONS*]
 [%function getRelation(node) : String{
 	var result = "";
+	if(isControlledGate(node)){
+		var constrainedElements = getConstraint(node).constrainedElements;
+		for(element in constrainedElements){
+			if(not(element == node)){
+				result += (node.name + "_" + getId(node) + " ..> " + element.name + "_" + getId(element) + "\n"); 
+			}
+		}
+	}
 	if(node.toString().split('@').get(0) == "org.eclipse.uml2.uml.internal.impl.InitialNodeImpl"){
-		result = "(*) -right-> ";
-	} else{
-		result = node.name + "_" + contador + " -up-> ";
+		result += "Inicio --> ";
+	} else if(node.inPartitions.size > 0 and nextNode(node).inPartitions.size > 0){
+		if(node.inPartitions.get(0) == nextNode(node).inPartitions.get(0)){
+			result += node.name + "_" + getId(node) + " -right-> ";
+		} else{
+			result += node.name + "_" + getId(node) + " --> ";
+		}
+	}else{
+		result += node.name + "_" + getId(node) + " --> ";
 	}
 	if(nextNode(node).toString().split('@').get(0) == "org.eclipse.uml2.uml.internal.impl.ActivityFinalNodeImpl"){
-		result = result.substring(0, result.length -7) + " -up-> (*)";
+		result += "Final";
 	}else{
-		result += nextNode(node).name + "_" + (contador + 1);
+		result += nextNode(node).name + "_" + getId(nextNode(node));
 	}
-	contador ++;
 	return result;
+}
+function getId(node) : String{
+	var contador = 0;
+	for(element in nodes){
+		if(element == node){
+			return contador.toString();
+		}
+		contador++;
+	}
+	return "";
 }
 function checkGateType(node) : String{
 	if(isMeasure(node))
