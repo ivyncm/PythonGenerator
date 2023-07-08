@@ -1,4 +1,4 @@
-package generator.pythonGenerator;
+package generator.pythonGenerator.controller;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -1,8 +1,8 @@
-package generator.pythonGenerator.presentacion;
+package generator.pythonGenerator;
 
 import java.io.File;
 
-import generator.pythonGenerator.Utils;
+import generator.pythonGenerator.controller.Utils;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,7 +14,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(new File("src/main/java/generator/pythonGenerator/presentacion/view/MainWindow.fxml").toURI().toURL());
+			Parent root = FXMLLoader.load(new File("src/main/java/generator/pythonGenerator/view/MainWindow.fxml").toURI().toURL());
 			Scene scene = new Scene(root);
 			
 			primaryStage.setTitle("Q-UML2Python");

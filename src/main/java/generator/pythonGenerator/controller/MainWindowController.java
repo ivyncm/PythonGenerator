@@ -2,7 +2,7 @@
  * Sample Skeleton for 'MainWindow.fxml' Controller Class
  */
 
-package generator.pythonGenerator.presentacion;
+package generator.pythonGenerator.controller;
 
 import java.awt.Desktop;
 import java.io.File;
@@ -18,9 +18,7 @@ import org.eclipse.epsilon.egl.EgxModule;
 import org.eclipse.epsilon.emc.uml.UmlModel;
 import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
 
-import generator.pythonGenerator.Generator;
-import generator.pythonGenerator.Utils;
-import generator.pythonGenerator.presentacion.model.InputFile;
+import generator.pythonGenerator.model.UMLmodel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -62,25 +60,25 @@ import javafx.stage.Stage;
         private URL location;
 
         @FXML // fx:id="InputTable"
-        private TableView<InputFile> InputTable; // Value injected by FXMLLoader
+        private TableView<UMLmodel> InputTable; // Value injected by FXMLLoader
 
         @FXML // fx:id="NombreCol"
-        private TableColumn<InputFile, String> NombreCol; // Value injected by FXMLLoader
+        private TableColumn<UMLmodel, String> NombreCol; // Value injected by FXMLLoader
 
         @FXML // fx:id="ResultadoCol"
-        private TableColumn<InputFile, Button> ResultadoCol; // Value injected by FXMLLoader
+        private TableColumn<UMLmodel, Button> ResultadoCol; // Value injected by FXMLLoader
 
         @FXML // fx:id="RutaCol"
-        private TableColumn<InputFile, String> RutaCol; // Value injected by FXMLLoader
+        private TableColumn<UMLmodel, String> RutaCol; // Value injected by FXMLLoader
 
         @FXML // fx:id="VerCol"
-        private TableColumn<InputFile, Button> VerCol; // Value injected by FXMLLoader
+        private TableColumn<UMLmodel, Button> VerCol; // Value injected by FXMLLoader
 
         @FXML // fx:id="ActividadCol"
-        private TableColumn<InputFile, Boolean> ActividadCol; // Value injected by FXMLLoader
+        private TableColumn<UMLmodel, Boolean> ActividadCol; // Value injected by FXMLLoader
 
         @FXML // fx:id="ClaseCol"
-        private TableColumn<InputFile, Boolean> ClaseCol; // Value injected by FXMLLoader
+        private TableColumn<UMLmodel, Boolean> ClaseCol; // Value injected by FXMLLoader
         
         @FXML // fx:id="OutputLabel"
         private TextField OutputLabel; // Value injected by FXMLLoader
@@ -105,7 +103,7 @@ import javafx.stage.Stage;
 
         @FXML
         void clickAnadir(ActionEvent event) {
-        	ObservableList<InputFile> fileList = FXCollections.observableArrayList();
+        	ObservableList<UMLmodel> fileList = FXCollections.observableArrayList();
         	FileChooser chooser = new FileChooser();
         	String lastDir = preferences.get("lastDir", System.getProperty("user.home"));
             File lastDirFile = new File(lastDir);
@@ -122,7 +120,7 @@ import javafx.stage.Stage;
 	            for(File file : list) {
 	            	exists = false;
 	            	if (!InputTable.getItems().isEmpty()) {
-		            	for(InputFile row : InputTable.getItems()) {
+		            	for(UMLmodel row : InputTable.getItems()) {
 		            		if(row.getName().equals(file.getName())) {
 		            			exists = true;
 		            			if(!row.getRuta().equals(file.getAbsolutePath())) {
@@ -169,7 +167,7 @@ import javafx.stage.Stage;
 	            	}
 	            	if(exists == false) {
 	                	ResultadoCol.setVisible(false);
-	            		fileList.add(new InputFile(file.getName(), file.getAbsolutePath()));
+	            		fileList.add(new UMLmodel(file.getName(), file.getAbsolutePath()));
 	            	}
 	            }
 	            InputTable.getItems().addAll(fileList);
@@ -178,7 +176,7 @@ import javafx.stage.Stage;
 
         @FXML
         void clickEliminar(ActionEvent event) {
-        	ObservableList<InputFile> selectedItems = InputTable.getSelectionModel().getSelectedItems();
+        	ObservableList<UMLmodel> selectedItems = InputTable.getSelectionModel().getSelectedItems();
             if (!selectedItems.isEmpty()) {
             	InputTable.getItems().removeAll(selectedItems);
             	InputTable.getSelectionModel().clearSelection();
@@ -291,14 +289,14 @@ import javafx.stage.Stage;
             preferences = Preferences.userRoot().node("myApp");
             ResultadoCol.setVisible(false);
             
-            VerCol.setCellFactory(col -> new TableCell<InputFile, Button>() {
+            VerCol.setCellFactory(col -> new TableCell<UMLmodel, Button>() {
             	private final Button viewButton =  new Button("👁");
                 	{
                 		viewButton.setOnAction((ActionEvent event) -> {
                 			InputTable.refresh();
                 			viewButton.setVisible(false);
                 			File file = null;
-                			InputFile item = (InputFile) getTableRow().getItem();
+                			UMLmodel item = (UMLmodel) getTableRow().getItem();
                                 if (item != null) {
                                 	EgxModule module = null;
                                 	// Generate .puml
@@ -366,13 +364,13 @@ import javafx.stage.Stage;
                     }
             });
             
-            ResultadoCol.setCellFactory(col -> new TableCell<InputFile, Button>() {
+            ResultadoCol.setCellFactory(col -> new TableCell<UMLmodel, Button>() {
             	private final Button resButton =  new Button("📂");
                 	{	
                 		resButton.setOnAction((ActionEvent event) -> {
                 			InputTable.refresh();
                 			resButton.setVisible(false);
-                			InputFile item = (InputFile) getTableRow().getItem();
+                			UMLmodel item = (UMLmodel) getTableRow().getItem();
                             if (item != null) {
                             	String directoryPath = item.getRutaResultado(); // Specify the directory path here
 
@@ -442,10 +440,10 @@ import javafx.stage.Stage;
         }
         
         public List<String> getActivitiesFromTable() {
-        	ObservableList<InputFile> items = InputTable.getItems();
+        	ObservableList<UMLmodel> items = InputTable.getItems();
         	List<String> filteredItems = new ArrayList<String>();
 
-        	for (InputFile item : items) {
+        	for (UMLmodel item : items) {
         	    if (item.getActividad()) {
         	    	item.setRutaResultado(OutputLabel.getText() + "/RESULTS/quantumCircuits/");
         	        filteredItems.add(item.getRuta());
@@ -454,10 +452,10 @@ import javafx.stage.Stage;
         	return filteredItems;
         }
         public List<String> getClassesFromTable() {
-        	ObservableList<InputFile> items = InputTable.getItems();
+        	ObservableList<UMLmodel> items = InputTable.getItems();
         	List<String> filteredItems = new ArrayList<String>();
 
-        	for (InputFile item : items) {
+        	for (UMLmodel item : items) {
         	    if (item.getClase()) {
         	    	item.setRutaResultado(OutputLabel.getText() + "/RESULTS/");
         	        filteredItems.add(item.getRuta());
@@ -482,7 +480,7 @@ import javafx.stage.Stage;
         }
         public Boolean checkTableSelection() {
         	Boolean validTable = true;
-        	for(InputFile row : InputTable.getItems()) {
+        	for(UMLmodel row : InputTable.getItems()) {
         		if(!row.getActividad() && !row.getClase()) {
         			validTable = false;
         		}

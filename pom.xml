@@ -22,12 +22,6 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
 	<!-- https://mvnrepository.com/artifact/org.eclipse.epsilon/org.eclipse.epsilon.egl.engine -->
 	<dependency>
 	    <groupId>org.eclipse.epsilon</groupId>
@@ -122,7 +116,7 @@
             <execution>
                 <id>default-cli</id>
                 <configuration>
-                    <mainClass>generator.pythonGenerator.presentacion.Main</mainClass>
+                    <mainClass>generator.pythonGenerator.Main</mainClass>
                 </configuration>
             </execution>
         </executions>

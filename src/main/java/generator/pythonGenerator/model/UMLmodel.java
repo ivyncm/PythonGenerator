@@ -1,4 +1,4 @@
-package generator.pythonGenerator.presentacion.model;
+package generator.pythonGenerator.model;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,7 +14,7 @@ import org.eclipse.epsilon.egl.EgxModule;
 import org.eclipse.epsilon.emc.uml.UmlModel;
 import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
 
-import generator.pythonGenerator.Utils;
+import generator.pythonGenerator.controller.Utils;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -22,14 +22,14 @@ import net.sourceforge.plantuml.FileFormat;
 import net.sourceforge.plantuml.FileFormatOption;
 import net.sourceforge.plantuml.SourceStringReader;
 
-public class InputFile {
+public class UMLmodel {
 	private SimpleStringProperty Name;
     private SimpleStringProperty Ruta;
     private SimpleStringProperty RutaResultado;
     public BooleanProperty Actividad;
     public BooleanProperty Clase;
 
-    public InputFile(String Name, String Ruta) {
+    public UMLmodel(String Name, String Ruta) {
         this.Name = new SimpleStringProperty(Name);
         this.Ruta = new SimpleStringProperty(Ruta);
         this.RutaResultado = new SimpleStringProperty("");
