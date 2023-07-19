@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:QuantumUMLProfile="http://QuantumUMLProfile/schemas/QuantumUMLProfile/_zeqykL6NEe24U6R9ykQTQA/15" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://QuantumUMLProfile/schemas/QuantumUMLProfile/_zeqykL6NEe24U6R9ykQTQA/15 /QuantumUMLProfile/QuantumUMLProfile.profile.uml#_zetO0L6NEe24U6R9ykQTQA">
+  <uml:Model xmi:id="_oKxjsIKwEeyje5pP7iZ8Mw" name="PricingEuropeanCallOptions">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_oPUFcIKwEeyje5pP7iZ8Mw">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_IXxEEIK7Eeyje5pP7iZ8Mw" name="pricingEuropeanCallOptionsApp2">
+      <packagedElement xmi:type="uml:Package" xmi:id="_UCUmsIK7Eeyje5pP7iZ8Mw" name="presentation">
+        <packagedElement xmi:type="uml:Class" xmi:id="_LEeh8IK7Eeyje5pP7iZ8Mw" name="MainForm">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_gdc1MoK8Eeyje5pP7iZ8Mw" type="_r8ikIIK7Eeyje5pP7iZ8Mw" aggregation="composite" association="_gdcOIIK8Eeyje5pP7iZ8Mw"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_iLRo84K8Eeyje5pP7iZ8Mw" type="_shJGAIK7Eeyje5pP7iZ8Mw" aggregation="composite" association="_iLRo8IK8Eeyje5pP7iZ8Mw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_r8ikIIK7Eeyje5pP7iZ8Mw" name="PricingParametersForm"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_shJGAIK7Eeyje5pP7iZ8Mw" name="ProblemDefinitionForm"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_v8zUkIK7Eeyje5pP7iZ8Mw" name="EvaluatePayoffForm"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_XcYycIK-Eeyje5pP7iZ8Mw" client="_r8ikIIK7Eeyje5pP7iZ8Mw" supplier="_4q-loIK7Eeyje5pP7iZ8Mw"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_YlIjMIK-Eeyje5pP7iZ8Mw" client="_shJGAIK7Eeyje5pP7iZ8Mw" supplier="_4q-loIK7Eeyje5pP7iZ8Mw"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_CEbg8IK_Eeyje5pP7iZ8Mw" client="_v8zUkIK7Eeyje5pP7iZ8Mw" supplier="_Iv5awIK8Eeyje5pP7iZ8Mw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_ZvAcsIK7Eeyje5pP7iZ8Mw" name="businesslogic">
+        <packagedElement xmi:type="uml:Package" xmi:id="_anzs8IK7Eeyje5pP7iZ8Mw" name="controllers">
+          <packagedElement xmi:type="uml:Class" xmi:id="_4q-loIK7Eeyje5pP7iZ8Mw" name="EuropeanCallController">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_IYYAsoK-Eeyje5pP7iZ8Mw" name="problem" type="_0l18QIK7Eeyje5pP7iZ8Mw" association="_IYXZoIK-Eeyje5pP7iZ8Mw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IYZ14IK-Eeyje5pP7iZ8Mw"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IYbrEIK-Eeyje5pP7iZ8Mw" value="1"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_SE6-g4K-Eeyje5pP7iZ8Mw" name="objective" type="_zUwH0IK7Eeyje5pP7iZ8Mw" association="_SE6-gIK-Eeyje5pP7iZ8Mw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SE7lkIK-Eeyje5pP7iZ8Mw"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SE7lkYK-Eeyje5pP7iZ8Mw" value="1"/>
+            </ownedAttribute>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_8Y8PsIK8Eeyje5pP7iZ8Mw" name="createProblem">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_8Y8PsYK8Eeyje5pP7iZ8Mw" name="spotPrice">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_RHhXkIK9Eeyje5pP7iZ8Mw" name="volatility">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_awOXMIK9Eeyje5pP7iZ8Mw" name="anualRate">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_h5kYcIK9Eeyje5pP7iZ8Mw" name="maturityDays">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_12WP8IK9Eeyje5pP7iZ8Mw" name="createObjectiveFunction">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_12WP8YK9Eeyje5pP7iZ8Mw" name="strikePrice">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_12WP8oK9Eeyje5pP7iZ8Mw" name="cApprox">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_tieVQIK9Eeyje5pP7iZ8Mw" name="getProblemPlot"/>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_a3w0gIK7Eeyje5pP7iZ8Mw" name="entities">
+          <nameExpression xmi:type="uml:StringExpression" xmi:id="_6PbosILAEeyje5pP7iZ8Mw" name="low"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_zUwH0IK7Eeyje5pP7iZ8Mw" name="EuropeanCallObjective" visibility="public">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_qWblIIK_Eeyje5pP7iZ8Mw" name="strikePrice" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_uaLucIK_Eeyje5pP7iZ8Mw" name="cApprox" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_SQMvgILAEeyje5pP7iZ8Mw" name="breakpoints" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_DgAcMILBEeyje5pP7iZ8Mw" name="slopes" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_IF5pQILBEeyje5pP7iZ8Mw" name="offsets" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_ZOEWAIK_Eeyje5pP7iZ8Mw" name="linearAmplitudeFunction" visibility="private" type="_ZCyTEIK_Eeyje5pP7iZ8Mw"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_-fC5MIK_Eeyje5pP7iZ8Mw" name="EuropeanCallObjective">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_-fC5MYK_Eeyje5pP7iZ8Mw" name="strikePrice">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_-fC5MoK_Eeyje5pP7iZ8Mw" name="cApprox">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_-fC5M4K_Eeyje5pP7iZ8Mw" name="low">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_-fC5NIK_Eeyje5pP7iZ8Mw" name="high">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_-fC5NYK_Eeyje5pP7iZ8Mw" name="numUncertaintyQubits">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_0l18QIK7Eeyje5pP7iZ8Mw" name="EuropeanCallProblem" visibility="public">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_n7W-8ILBEeyje5pP7iZ8Mw" name="NUM_UNCERTAINTY_QUBITS" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_0NrFIILBEeyje5pP7iZ8Mw" name="3" value="3"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="__1CUYILCEeyje5pP7iZ8Mw" name="uncertaintyModel" visibility="private" type="__o-OUILCEeyje5pP7iZ8Mw"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_8p5qkILBEeyje5pP7iZ8Mw" name="createDistribution">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_VVNtwILCEeyje5pP7iZ8Mw" name="spotPrice">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_swqEgILCEeyje5pP7iZ8Mw" name="volatility">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyJfkILCEeyje5pP7iZ8Mw" name="anualRate">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_xt6osILCEeyje5pP7iZ8Mw" name="maturityDays">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_JjRUQILDEeyje5pP7iZ8Mw" name="getUncertaintyModel">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_Rh-3QILDEeyje5pP7iZ8Mw" name="uncertaintyModel" type="__o-OUILCEeyje5pP7iZ8Mw" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:DataType" xmi:id="__o-OUILCEeyje5pP7iZ8Mw" name="qiskit_finance.circuit.library.LogNormalDistribution"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_bsonAIK7Eeyje5pP7iZ8Mw" name="classicalquantumlogic">
+        <packagedElement xmi:type="uml:Class" xmi:id="_Iv5awIK8Eeyje5pP7iZ8Mw" name="EuropeanCallDriver">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_sRvecoLDEeyje5pP7iZ8Mw" name="quantumRequest" type="_LKbjgIK8Eeyje5pP7iZ8Mw" association="_sRu3YILDEeyje5pP7iZ8Mw"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_tu5HAoLFEeyje5pP7iZ8Mw" name="QAEAlgorithm" type="_mxYG0IK7Eeyje5pP7iZ8Mw" association="_tu4f8ILFEeyje5pP7iZ8Mw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_6OcX8ILFEeyje5pP7iZ8Mw" name="EuropeanCallDriver">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ap5_gILGEeyje5pP7iZ8Mw" name="problem" type="_0l18QIK7Eeyje5pP7iZ8Mw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Dj8uwILGEeyje5pP7iZ8Mw" name="objective" type="_zUwH0IK7Eeyje5pP7iZ8Mw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4dtIMILHEeyje5pP7iZ8Mw" name="setQuantumRequestParameters">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4dtIMYLHEeyje5pP7iZ8Mw" name="epsilon">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4dtIMoLHEeyje5pP7iZ8Mw" name="alpha">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4dtIM4LHEeyje5pP7iZ8Mw" name="shots">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_I-oj4ILIEeyje5pP7iZ8Mw" name="estimateEuropeanCall">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_I-oj4YLIEeyje5pP7iZ8Mw" name="europeanCallEstimation" type="_JoeokIK8Eeyje5pP7iZ8Mw" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_JoeokIK8Eeyje5pP7iZ8Mw" name="EuropeanCallEstimation">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mWOFwILEEeyje5pP7iZ8Mw" name="result" visibility="private" type="_mCRPAILEEeyje5pP7iZ8Mw"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_t0hDUILEEeyje5pP7iZ8Mw" name="confidenceInterval" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+          </ownedAttribute>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_80he0ILEEeyje5pP7iZ8Mw" name="showResults"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_LKbjgIK8Eeyje5pP7iZ8Mw" name="EuropeanCallQuantumRequest">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_A4jqEILHEeyje5pP7iZ8Mw" name="QUANTUM_COMPUTER" visibility="private" isStatic="true" type="__osksILGEeyje5pP7iZ8Mw" isReadOnly="true"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_rAWAoILGEeyje5pP7iZ8Mw" name="epsilon" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+            <defaultValue xmi:type="uml:LiteralReal" xmi:id="_AKuo0ILJEeyje5pP7iZ8Mw" value="0.01"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_ueGg8ILGEeyje5pP7iZ8Mw" name="alpha" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+            <defaultValue xmi:type="uml:LiteralReal" xmi:id="_ClNuQILJEeyje5pP7iZ8Mw" value="0.05"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_yi_SsILGEeyje5pP7iZ8Mw" name="shots" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_FNOSUILJEeyje5pP7iZ8Mw" value="1000"/>
+          </ownedAttribute>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_eTSpwILHEeyje5pP7iZ8Mw" name="setParameters">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_eTSpwYLHEeyje5pP7iZ8Mw" name="epsilon">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_eTSpwoLHEeyje5pP7iZ8Mw" name="alpha">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_eTSpw4LHEeyje5pP7iZ8Mw" name="shots">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_gr78IILHEeyje5pP7iZ8Mw" name="getQuantumInstance"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_Ia0XEILGEeyje5pP7iZ8Mw" client="_Iv5awIK8Eeyje5pP7iZ8Mw" supplier="_0l18QIK7Eeyje5pP7iZ8Mw"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_JDQ3IILGEeyje5pP7iZ8Mw" client="_Iv5awIK8Eeyje5pP7iZ8Mw" supplier="_zUwH0IK7Eeyje5pP7iZ8Mw"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_L9uLMILIEeyje5pP7iZ8Mw" client="_Iv5awIK8Eeyje5pP7iZ8Mw" supplier="_JoeokIK8Eeyje5pP7iZ8Mw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_b-krkIK7Eeyje5pP7iZ8Mw" name="quantumlogic">
+        <packagedElement xmi:type="uml:Package" xmi:id="_dmrR0IK7Eeyje5pP7iZ8Mw" name="algorithms">
+          <packagedElement xmi:type="uml:Class" xmi:id="_mxYG0IK7Eeyje5pP7iZ8Mw" name="QuantumAmplitudeEstimationAlgorithm">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_NlchgoLJEeyje5pP7iZ8Mw" name="problem" type="_0l18QIK7Eeyje5pP7iZ8Mw" association="_Nlb6cILJEeyje5pP7iZ8Mw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_U3_iEILJEeyje5pP7iZ8Mw"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_R7kNMoLJEeyje5pP7iZ8Mw" name="objective" type="_zUwH0IK7Eeyje5pP7iZ8Mw" association="_R7jmIILJEeyje5pP7iZ8Mw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_R7kNM4LJEeyje5pP7iZ8Mw"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R7kNNILJEeyje5pP7iZ8Mw" value="1"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_ZjnjsILJEeyje5pP7iZ8Mw" name="numQubits">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_lsrAMILJEeyje5pP7iZ8Mw" name="europeanCallQuantumCircuit" type="_ljUP4ILJEeyje5pP7iZ8Mw"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_zyFhoB1zEe6jZ-YZ73F8SQ" name="Grover" type="_ljUP4ILJEeyje5pP7iZ8Mw"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="__bHUUILJEeyje5pP7iZ8Mw" name="getCircuitImage"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_GDIxMILKEeyje5pP7iZ8Mw" name="getEuropeanCallQuantumCircuit">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_GDIxMYLKEeyje5pP7iZ8Mw" type="_ljUP4ILJEeyje5pP7iZ8Mw" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_mCRPAILEEeyje5pP7iZ8Mw" name="qiskit.algorithms.IterativeAmplitudeEstimationResult"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="__osksILGEeyje5pP7iZ8Mw" name="qiskit.Aer"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_ljUP4ILJEeyje5pP7iZ8Mw" name="qiskit.circuit.QuantumCircuit"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DuR7AIK8Eeyje5pP7iZ8Mw" name="App">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ZyuQUILBEeyje5pP7iZ8Mw" name="init"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_ZCyTEIK_Eeyje5pP7iZ8Mw" name="qiskit.circuit.library.LinearAmplitudeFunction"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_eeKEsILBEeyje5pP7iZ8Mw" client="_DuR7AIK8Eeyje5pP7iZ8Mw" supplier="_LEeh8IK7Eeyje5pP7iZ8Mw"/>
+      <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_J0ZaIIK7Eeyje5pP7iZ8Mw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M0XsoB1vEe6jZ-YZ73F8SQ" source="PapyrusVersion">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M0XsoR1vEe6jZ-YZ73F8SQ" key="Version" value="0.1.6"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M0Xsoh1vEe6jZ-YZ73F8SQ" key="Comment" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M0Xsox1vEe6jZ-YZ73F8SQ" key="Copyright" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M0XspB1vEe6jZ-YZ73F8SQ" key="Date" value="2023-03-09"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M0XspR1vEe6jZ-YZ73F8SQ" key="Author" value=""/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_J0aBMIK7Eeyje5pP7iZ8Mw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_zetO0L6NEe24U6R9ykQTQA"/>
+        </eAnnotations>
+        <appliedProfile xmi:type="uml:Profile" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_UyBjIOP7EeubK-rnJ_MIxA"/>
+      </profileApplication>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_gdcOIIK8Eeyje5pP7iZ8Mw" visibility="private" memberEnd="_gdc1MoK8Eeyje5pP7iZ8Mw _gddcQYK8Eeyje5pP7iZ8Mw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gdc1MIK8Eeyje5pP7iZ8Mw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gdc1MYK8Eeyje5pP7iZ8Mw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_gddcQYK8Eeyje5pP7iZ8Mw" type="_LEeh8IK7Eeyje5pP7iZ8Mw" association="_gdcOIIK8Eeyje5pP7iZ8Mw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_iLRo8IK8Eeyje5pP7iZ8Mw" visibility="private" memberEnd="_iLRo84K8Eeyje5pP7iZ8Mw _iLSQAYK8Eeyje5pP7iZ8Mw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iLRo8YK8Eeyje5pP7iZ8Mw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iLRo8oK8Eeyje5pP7iZ8Mw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_iLSQAYK8Eeyje5pP7iZ8Mw" type="_LEeh8IK7Eeyje5pP7iZ8Mw" association="_iLRo8IK8Eeyje5pP7iZ8Mw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_jRFacIK8Eeyje5pP7iZ8Mw" visibility="private" memberEnd="_jRGBgoK8Eeyje5pP7iZ8Mw _jRGBhYK8Eeyje5pP7iZ8Mw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jRGBgIK8Eeyje5pP7iZ8Mw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jRGBgYK8Eeyje5pP7iZ8Mw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_jRGBhYK8Eeyje5pP7iZ8Mw" type="_LEeh8IK7Eeyje5pP7iZ8Mw" association="_jRFacIK8Eeyje5pP7iZ8Mw"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_jRGBgoK8Eeyje5pP7iZ8Mw" type="_v8zUkIK7Eeyje5pP7iZ8Mw" aggregation="composite" association="_jRFacIK8Eeyje5pP7iZ8Mw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_IYXZoIK-Eeyje5pP7iZ8Mw" memberEnd="_IYYAsoK-Eeyje5pP7iZ8Mw _IYdgQIK-Eeyje5pP7iZ8Mw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_IYYAsIK-Eeyje5pP7iZ8Mw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IYYAsYK-Eeyje5pP7iZ8Mw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_IYdgQIK-Eeyje5pP7iZ8Mw" type="_4q-loIK7Eeyje5pP7iZ8Mw" association="_IYXZoIK-Eeyje5pP7iZ8Mw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_SE6-gIK-Eeyje5pP7iZ8Mw" memberEnd="_SE6-g4K-Eeyje5pP7iZ8Mw _SE7lkoK-Eeyje5pP7iZ8Mw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SE6-gYK-Eeyje5pP7iZ8Mw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SE6-goK-Eeyje5pP7iZ8Mw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_SE7lkoK-Eeyje5pP7iZ8Mw" type="_4q-loIK7Eeyje5pP7iZ8Mw" association="_SE6-gIK-Eeyje5pP7iZ8Mw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_sRu3YILDEeyje5pP7iZ8Mw" memberEnd="_sRvecoLDEeyje5pP7iZ8Mw _sR1lEILDEeyje5pP7iZ8Mw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_sRvecILDEeyje5pP7iZ8Mw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sRvecYLDEeyje5pP7iZ8Mw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_sR1lEILDEeyje5pP7iZ8Mw" type="_Iv5awIK8Eeyje5pP7iZ8Mw" association="_sRu3YILDEeyje5pP7iZ8Mw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_tu4f8ILFEeyje5pP7iZ8Mw" memberEnd="_tu5HAoLFEeyje5pP7iZ8Mw _tu_0sILFEeyje5pP7iZ8Mw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tu5HAILFEeyje5pP7iZ8Mw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tu5HAYLFEeyje5pP7iZ8Mw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_tu_0sILFEeyje5pP7iZ8Mw" type="_Iv5awIK8Eeyje5pP7iZ8Mw" association="_tu4f8ILFEeyje5pP7iZ8Mw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Nlb6cILJEeyje5pP7iZ8Mw" memberEnd="_NlchgoLJEeyje5pP7iZ8Mw _NliBEILJEeyje5pP7iZ8Mw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NlchgILJEeyje5pP7iZ8Mw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NlchgYLJEeyje5pP7iZ8Mw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_NliBEILJEeyje5pP7iZ8Mw" type="_mxYG0IK7Eeyje5pP7iZ8Mw" association="_Nlb6cILJEeyje5pP7iZ8Mw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_R7jmIILJEeyje5pP7iZ8Mw" memberEnd="_R7kNMoLJEeyje5pP7iZ8Mw _R7kNNYLJEeyje5pP7iZ8Mw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_R7kNMILJEeyje5pP7iZ8Mw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_R7kNMYLJEeyje5pP7iZ8Mw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_R7kNNYLJEeyje5pP7iZ8Mw" type="_mxYG0IK7Eeyje5pP7iZ8Mw" association="_R7jmIILJEeyje5pP7iZ8Mw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_T607UIMuEey99aHeR9JybQ">
+      <packagedElement xmi:type="uml:Actor" xmi:id="_D7yEsIMuEey99aHeR9JybQ" name="Broker"/>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_Ei2EsIMuEey99aHeR9JybQ" name="UseCase15"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_OemjMIMuEey99aHeR9JybQ" name="Pricing European Call Options App" useCase="_R5f8wIMuEey99aHeR9JybQ _LdD9cIMxEey99aHeR9JybQ _LqDQkIMxEey99aHeR9JybQ _D-uHIIMyEey99aHeR9JybQ">
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_R5f8wIMuEey99aHeR9JybQ" name="Define European Call Option" subject="_OemjMIMuEey99aHeR9JybQ"/>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_LdD9cIMxEey99aHeR9JybQ" name="Define Pricing Objective" subject="_OemjMIMuEey99aHeR9JybQ"/>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_LqDQkIMxEey99aHeR9JybQ" name="Calculate Payoff" subject="_OemjMIMuEey99aHeR9JybQ">
+          <include xmi:type="uml:Include" xmi:id="_mclpgIMyEey99aHeR9JybQ" addition="_D-uHIIMyEey99aHeR9JybQ"/>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_D-uHIIMyEey99aHeR9JybQ" name="Quantum Amplitude Estimation" subject="_OemjMIMuEey99aHeR9JybQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_0zrnsIMuEey99aHeR9JybQ" name="Qiskit Aer Simulator"/>
+      <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_coqOIIMuEey99aHeR9JybQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M03b4B1vEe6jZ-YZ73F8SQ" source="PapyrusVersion">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M03b4R1vEe6jZ-YZ73F8SQ" key="Version" value="0.1.6"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M03b4h1vEe6jZ-YZ73F8SQ" key="Comment" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M03b4x1vEe6jZ-YZ73F8SQ" key="Copyright" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M03b5B1vEe6jZ-YZ73F8SQ" key="Date" value="2023-03-09"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M03b5R1vEe6jZ-YZ73F8SQ" key="Author" value=""/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_corcQIMuEey99aHeR9JybQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_zetO0L6NEe24U6R9ykQTQA"/>
+        </eAnnotations>
+        <appliedProfile xmi:type="uml:Profile" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_UyBjIOP7EeubK-rnJ_MIxA"/>
+      </profileApplication>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_kQTYIIMyEey99aHeR9JybQ" memberEnd="_kQWbcIMyEey99aHeR9JybQ _kQWbcYMyEey99aHeR9JybQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_kQV0YIMyEey99aHeR9JybQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_kQV0YYMyEey99aHeR9JybQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_kQWbcIMyEey99aHeR9JybQ" name="usecase1" type="_R5f8wIMuEey99aHeR9JybQ" association="_kQTYIIMyEey99aHeR9JybQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_kQWbcYMyEey99aHeR9JybQ" name="broker" type="_D7yEsIMuEey99aHeR9JybQ" association="_kQTYIIMyEey99aHeR9JybQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_k7ylIIMyEey99aHeR9JybQ" memberEnd="_k7ylI4MyEey99aHeR9JybQ _k7ylJIMyEey99aHeR9JybQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k7ylIYMyEey99aHeR9JybQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k7ylIoMyEey99aHeR9JybQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_k7ylI4MyEey99aHeR9JybQ" name="usecase2" type="_LdD9cIMxEey99aHeR9JybQ" association="_k7ylIIMyEey99aHeR9JybQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_k7ylJIMyEey99aHeR9JybQ" name="broker" type="_D7yEsIMuEey99aHeR9JybQ" association="_k7ylIIMyEey99aHeR9JybQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_lqsSgIMyEey99aHeR9JybQ" memberEnd="_lqsSg4MyEey99aHeR9JybQ _lqs5kIMyEey99aHeR9JybQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lqsSgYMyEey99aHeR9JybQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lqsSgoMyEey99aHeR9JybQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_lqsSg4MyEey99aHeR9JybQ" name="usecase3" type="_LqDQkIMxEey99aHeR9JybQ" association="_lqsSgIMyEey99aHeR9JybQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_lqs5kIMyEey99aHeR9JybQ" name="broker" type="_D7yEsIMuEey99aHeR9JybQ" association="_lqsSgIMyEey99aHeR9JybQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s9OsAIMyEey99aHeR9JybQ" memberEnd="_s9OsA4MyEey99aHeR9JybQ _s9PTEIMyEey99aHeR9JybQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_s9OsAYMyEey99aHeR9JybQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_s9OsAoMyEey99aHeR9JybQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_s9OsA4MyEey99aHeR9JybQ" name="usecase4" type="_D-uHIIMyEey99aHeR9JybQ" association="_s9OsAIMyEey99aHeR9JybQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_s9PTEIMyEey99aHeR9JybQ" name="qiskit aer simulator" type="_0zrnsIMuEey99aHeR9JybQ" association="_s9OsAIMyEey99aHeR9JybQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Activity" xmi:id="_SG-1wB1vEe6jZ-YZ73F8SQ" name="europeanCallQuantumCircuit" node="_G4GGAB1wEe6jZ-YZ73F8SQ _I2dQIB1wEe6jZ-YZ73F8SQ _J41TIB1wEe6jZ-YZ73F8SQ _KdKvQB1wEe6jZ-YZ73F8SQ _K4FJoB1wEe6jZ-YZ73F8SQ _MY6DMB1wEe6jZ-YZ73F8SQ _OEqaYB1wEe6jZ-YZ73F8SQ _OUMEIB1wEe6jZ-YZ73F8SQ _S14tsB1wEe6jZ-YZ73F8SQ _VYSZAB1wEe6jZ-YZ73F8SQ _YL368B1wEe6jZ-YZ73F8SQ _ZhzzIB1wEe6jZ-YZ73F8SQ _b4iZ8B1wEe6jZ-YZ73F8SQ _cgl4cB1wEe6jZ-YZ73F8SQ _e_pU0B1wEe6jZ-YZ73F8SQ _gd2YMB1wEe6jZ-YZ73F8SQ _iN2WMB1wEe6jZ-YZ73F8SQ _iV77MB1wEe6jZ-YZ73F8SQ _QW_M4B1xEe6jZ-YZ73F8SQ _cHXqsB1xEe6jZ-YZ73F8SQ" group="_6V5wwB1vEe6jZ-YZ73F8SQ _99il0B1vEe6jZ-YZ73F8SQ _Ar6QkB1wEe6jZ-YZ73F8SQ">
+      <ownedRule xmi:type="uml:Constraint" xmi:id="_v7o74B1wEe6jZ-YZ73F8SQ" name="CNOT(q0-q1)" constrainedElement="_S14tsB1wEe6jZ-YZ73F8SQ _VYSZAB1wEe6jZ-YZ73F8SQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_v7qxEB1wEe6jZ-YZ73F8SQ" name="constraintSpec">
+          <language>Natural language</language>
+          <body>CNOT</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:type="uml:Constraint" xmi:id="_30j_8B1wEe6jZ-YZ73F8SQ" name="CNOT(q0-q2)" constrainedElement="_YL368B1wEe6jZ-YZ73F8SQ _e_pU0B1wEe6jZ-YZ73F8SQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_30j_8R1wEe6jZ-YZ73F8SQ" name="constraintSpec">
+          <language>Natural language</language>
+          <body>CNOT</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:type="uml:Constraint" xmi:id="_82PKEB1wEe6jZ-YZ73F8SQ" name="CNOT(q1-q2)" constrainedElement="_ZhzzIB1wEe6jZ-YZ73F8SQ _gd2YMB1wEe6jZ-YZ73F8SQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_82PKER1wEe6jZ-YZ73F8SQ" name="constraintSpec">
+          <language>Natural language</language>
+          <body>CNOT</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:type="uml:Constraint" xmi:id="_Das8oB1xEe6jZ-YZ73F8SQ" name="CNOT(q0-q2)" constrainedElement="_b4iZ8B1wEe6jZ-YZ73F8SQ _iV77MB1wEe6jZ-YZ73F8SQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Das8oR1xEe6jZ-YZ73F8SQ" name="constraintSpec">
+          <language>Natural language</language>
+          <body>CNOT</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:type="uml:Constraint" xmi:id="_H0OhoB1xEe6jZ-YZ73F8SQ" name="CNOT(q1-q2)" constrainedElement="_cgl4cB1wEe6jZ-YZ73F8SQ _iN2WMB1wEe6jZ-YZ73F8SQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_H0OhoR1xEe6jZ-YZ73F8SQ" name="constraintSpec">
+          <language>Natural language</language>
+          <body>CNOT</body>
+        </specification>
+      </ownedRule>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_STjAMB1xEe6jZ-YZ73F8SQ" target="_G4GGAB1wEe6jZ-YZ73F8SQ" source="_QW_M4B1xEe6jZ-YZ73F8SQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_S_CNMB1xEe6jZ-YZ73F8SQ" target="_I2dQIB1wEe6jZ-YZ73F8SQ" source="_G4GGAB1wEe6jZ-YZ73F8SQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_T2kSIB1xEe6jZ-YZ73F8SQ" target="_S14tsB1wEe6jZ-YZ73F8SQ" source="_I2dQIB1wEe6jZ-YZ73F8SQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_UqebUB1xEe6jZ-YZ73F8SQ" inPartition="_6V5wwB1vEe6jZ-YZ73F8SQ" target="_J41TIB1wEe6jZ-YZ73F8SQ" source="_S14tsB1wEe6jZ-YZ73F8SQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_VR6OwB1xEe6jZ-YZ73F8SQ" target="_KdKvQB1wEe6jZ-YZ73F8SQ" source="_J41TIB1wEe6jZ-YZ73F8SQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_WASXsB1xEe6jZ-YZ73F8SQ" target="_K4FJoB1wEe6jZ-YZ73F8SQ" source="_KdKvQB1wEe6jZ-YZ73F8SQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_Wm1aUB1xEe6jZ-YZ73F8SQ" target="_YL368B1wEe6jZ-YZ73F8SQ" source="_K4FJoB1wEe6jZ-YZ73F8SQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_XVblsB1xEe6jZ-YZ73F8SQ" target="_MY6DMB1wEe6jZ-YZ73F8SQ" source="_YL368B1wEe6jZ-YZ73F8SQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_YIn9MB1xEe6jZ-YZ73F8SQ" target="_ZhzzIB1wEe6jZ-YZ73F8SQ" source="_MY6DMB1wEe6jZ-YZ73F8SQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_YxbpoB1xEe6jZ-YZ73F8SQ" target="_OEqaYB1wEe6jZ-YZ73F8SQ" source="_ZhzzIB1wEe6jZ-YZ73F8SQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_Zre3EB1xEe6jZ-YZ73F8SQ" target="_b4iZ8B1wEe6jZ-YZ73F8SQ" source="_OEqaYB1wEe6jZ-YZ73F8SQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_aa46wB1xEe6jZ-YZ73F8SQ" target="_OUMEIB1wEe6jZ-YZ73F8SQ" source="_b4iZ8B1wEe6jZ-YZ73F8SQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_bHhXQB1xEe6jZ-YZ73F8SQ" target="_cgl4cB1wEe6jZ-YZ73F8SQ" source="_OUMEIB1wEe6jZ-YZ73F8SQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_d32w4B1xEe6jZ-YZ73F8SQ" target="_cHXqsB1xEe6jZ-YZ73F8SQ" source="_cgl4cB1wEe6jZ-YZ73F8SQ"/>
+      <group xmi:type="uml:ActivityPartition" xmi:id="_6V5wwB1vEe6jZ-YZ73F8SQ" name="q0" node="_G4GGAB1wEe6jZ-YZ73F8SQ _J41TIB1wEe6jZ-YZ73F8SQ _S14tsB1wEe6jZ-YZ73F8SQ _YL368B1wEe6jZ-YZ73F8SQ _b4iZ8B1wEe6jZ-YZ73F8SQ" edge="_UqebUB1xEe6jZ-YZ73F8SQ"/>
+      <group xmi:type="uml:ActivityPartition" xmi:id="_99il0B1vEe6jZ-YZ73F8SQ" name="q1" node="_I2dQIB1wEe6jZ-YZ73F8SQ _KdKvQB1wEe6jZ-YZ73F8SQ _VYSZAB1wEe6jZ-YZ73F8SQ _ZhzzIB1wEe6jZ-YZ73F8SQ _cgl4cB1wEe6jZ-YZ73F8SQ"/>
+      <group xmi:type="uml:ActivityPartition" xmi:id="_Ar6QkB1wEe6jZ-YZ73F8SQ" name="q2" node="_K4FJoB1wEe6jZ-YZ73F8SQ _MY6DMB1wEe6jZ-YZ73F8SQ _OEqaYB1wEe6jZ-YZ73F8SQ _OUMEIB1wEe6jZ-YZ73F8SQ _e_pU0B1wEe6jZ-YZ73F8SQ _gd2YMB1wEe6jZ-YZ73F8SQ _iN2WMB1wEe6jZ-YZ73F8SQ _iV77MB1wEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_G4GGAB1wEe6jZ-YZ73F8SQ" name="Ry" incoming="_STjAMB1xEe6jZ-YZ73F8SQ" outgoing="_S_CNMB1xEe6jZ-YZ73F8SQ" inPartition="_6V5wwB1vEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_I2dQIB1wEe6jZ-YZ73F8SQ" name="Ry" incoming="_S_CNMB1xEe6jZ-YZ73F8SQ" outgoing="_T2kSIB1xEe6jZ-YZ73F8SQ" inPartition="_99il0B1vEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_J41TIB1wEe6jZ-YZ73F8SQ" name="Ry" incoming="_UqebUB1xEe6jZ-YZ73F8SQ" outgoing="_VR6OwB1xEe6jZ-YZ73F8SQ" inPartition="_6V5wwB1vEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_KdKvQB1wEe6jZ-YZ73F8SQ" name="Ry" incoming="_VR6OwB1xEe6jZ-YZ73F8SQ" outgoing="_WASXsB1xEe6jZ-YZ73F8SQ" inPartition="_99il0B1vEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_K4FJoB1wEe6jZ-YZ73F8SQ" name="Ry" incoming="_WASXsB1xEe6jZ-YZ73F8SQ" outgoing="_Wm1aUB1xEe6jZ-YZ73F8SQ" inPartition="_Ar6QkB1wEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_MY6DMB1wEe6jZ-YZ73F8SQ" name="Ry" incoming="_XVblsB1xEe6jZ-YZ73F8SQ" outgoing="_YIn9MB1xEe6jZ-YZ73F8SQ" inPartition="_Ar6QkB1wEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_OEqaYB1wEe6jZ-YZ73F8SQ" name="Ry" incoming="_YxbpoB1xEe6jZ-YZ73F8SQ" outgoing="_Zre3EB1xEe6jZ-YZ73F8SQ" inPartition="_Ar6QkB1wEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_OUMEIB1wEe6jZ-YZ73F8SQ" name="Ry" incoming="_aa46wB1xEe6jZ-YZ73F8SQ" outgoing="_bHhXQB1xEe6jZ-YZ73F8SQ" inPartition="_Ar6QkB1wEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:SendSignalAction" xmi:id="_S14tsB1wEe6jZ-YZ73F8SQ" name="C" incoming="_T2kSIB1xEe6jZ-YZ73F8SQ" outgoing="_UqebUB1xEe6jZ-YZ73F8SQ" inPartition="_6V5wwB1vEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:AcceptEventAction" xmi:id="_VYSZAB1wEe6jZ-YZ73F8SQ" name="NOT" inPartition="_99il0B1vEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:SendSignalAction" xmi:id="_YL368B1wEe6jZ-YZ73F8SQ" name="C" incoming="_Wm1aUB1xEe6jZ-YZ73F8SQ" outgoing="_XVblsB1xEe6jZ-YZ73F8SQ" inPartition="_6V5wwB1vEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:SendSignalAction" xmi:id="_ZhzzIB1wEe6jZ-YZ73F8SQ" name="C" incoming="_YIn9MB1xEe6jZ-YZ73F8SQ" outgoing="_YxbpoB1xEe6jZ-YZ73F8SQ" inPartition="_99il0B1vEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:SendSignalAction" xmi:id="_b4iZ8B1wEe6jZ-YZ73F8SQ" name="C" incoming="_Zre3EB1xEe6jZ-YZ73F8SQ" outgoing="_aa46wB1xEe6jZ-YZ73F8SQ" inPartition="_6V5wwB1vEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:SendSignalAction" xmi:id="_cgl4cB1wEe6jZ-YZ73F8SQ" name="C" incoming="_bHhXQB1xEe6jZ-YZ73F8SQ" outgoing="_d32w4B1xEe6jZ-YZ73F8SQ" inPartition="_99il0B1vEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:AcceptEventAction" xmi:id="_e_pU0B1wEe6jZ-YZ73F8SQ" name="NOT" inPartition="_Ar6QkB1wEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:AcceptEventAction" xmi:id="_gd2YMB1wEe6jZ-YZ73F8SQ" name="NOT" inPartition="_Ar6QkB1wEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:AcceptEventAction" xmi:id="_iN2WMB1wEe6jZ-YZ73F8SQ" name="NOT" inPartition="_Ar6QkB1wEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:AcceptEventAction" xmi:id="_iV77MB1wEe6jZ-YZ73F8SQ" name="NOT" inPartition="_Ar6QkB1wEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:InitialNode" xmi:id="_QW_M4B1xEe6jZ-YZ73F8SQ" name="" outgoing="_STjAMB1xEe6jZ-YZ73F8SQ"/>
+      <node xmi:type="uml:ActivityFinalNode" xmi:id="_cHXqsB1xEe6jZ-YZ73F8SQ" name="" incoming="_d32w4B1xEe6jZ-YZ73F8SQ"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_oOOgUIKwEeyje5pP7iZ8Mw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M08UYB1vEe6jZ-YZ73F8SQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M087cB1vEe6jZ-YZ73F8SQ" key="Version" value="0.1.6"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M087cR1vEe6jZ-YZ73F8SQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M087ch1vEe6jZ-YZ73F8SQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M087cx1vEe6jZ-YZ73F8SQ" key="Date" value="2023-03-09"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M087dB1vEe6jZ-YZ73F8SQ" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oOQVgIKwEeyje5pP7iZ8Mw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_zel6EL6NEe24U6R9ykQTQA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_TU1zcOP7EeubK-rnJ_MIxA"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_4lx28B1vEe6jZ-YZ73F8SQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4lyeAB1vEe6jZ-YZ73F8SQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_zetO0L6NEe24U6R9ykQTQA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="/QuantumUMLProfile/QuantumUMLProfile.profile.uml#_UyBjIOP7EeubK-rnJ_MIxA"/>
+    </profileApplication>
+  </uml:Model>
+  <QuantumUMLProfile:QuantumRequest xmi:id="_Ok9wsIK8Eeyje5pP7iZ8Mw" base_Class="_LKbjgIK8Eeyje5pP7iZ8Mw"/>
+  <QuantumUMLProfile:QuantumDriver xmi:id="_P4lUsIK8Eeyje5pP7iZ8Mw" base_Class="_Iv5awIK8Eeyje5pP7iZ8Mw"/>
+  <QuantumUMLProfile:Quantum xmi:id="_YVWssIK8Eeyje5pP7iZ8Mw" base_Class="_mxYG0IK7Eeyje5pP7iZ8Mw"/>
+  <QuantumUMLProfile:QuantumRequest xmi:id="_k-rHMILIEeyje5pP7iZ8Mw" base_Operation="_I-oj4ILIEeyje5pP7iZ8Mw"/>
+  <QuantumUMLProfile:Quantum xmi:id="_XPa4kIMuEey99aHeR9JybQ" base_Package="_b-krkIK7Eeyje5pP7iZ8Mw"/>
+  <QuantumUMLProfile:QuantumComputer xmi:id="_WXktwIMyEey99aHeR9JybQ" base_Actor="_0zrnsIMuEey99aHeR9JybQ"/>
+  <QuantumUMLProfile:QuantumRequest xmi:id="_qBabIIMyEey99aHeR9JybQ" base_Include="_mclpgIMyEey99aHeR9JybQ"/>
+  <QuantumUMLProfile:Quantum xmi:id="_r-RwcIMyEey99aHeR9JybQ" base_UseCase="_D-uHIIMyEey99aHeR9JybQ"/>
+  <QuantumUMLProfile:QuantumCircuit xmi:id="_5-bE4B1vEe6jZ-YZ73F8SQ" base_Activity="_SG-1wB1vEe6jZ-YZ73F8SQ"/>
+  <QuantumUMLProfile:Qubit xmi:id="_EqY4UB1wEe6jZ-YZ73F8SQ" base_ActivityPartition="_6V5wwB1vEe6jZ-YZ73F8SQ"/>
+  <QuantumUMLProfile:Qubit xmi:id="_FLtcsB1wEe6jZ-YZ73F8SQ" base_ActivityPartition="_99il0B1vEe6jZ-YZ73F8SQ"/>
+  <QuantumUMLProfile:Qubit xmi:id="_FrfwAB1wEe6jZ-YZ73F8SQ" base_ActivityPartition="_Ar6QkB1wEe6jZ-YZ73F8SQ"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_H8gJUB1wEe6jZ-YZ73F8SQ" base_Action="_G4GGAB1wEe6jZ-YZ73F8SQ" theta="1.43"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_I2j90B1wEe6jZ-YZ73F8SQ" base_Action="_I2dQIB1wEe6jZ-YZ73F8SQ" theta="2.9"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_J48A0B1wEe6jZ-YZ73F8SQ" base_Action="_J41TIB1wEe6jZ-YZ73F8SQ" theta="1.10"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_KdRc8B1wEe6jZ-YZ73F8SQ" base_Action="_KdKvQB1wEe6jZ-YZ73F8SQ" theta="-0.93"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_K4KpMB1wEe6jZ-YZ73F8SQ" base_Action="_K4FJoB1wEe6jZ-YZ73F8SQ" theta="1.47"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_MZBX8B1wEe6jZ-YZ73F8SQ" base_Action="_MY6DMB1wEe6jZ-YZ73F8SQ" theta="-0.10"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_OExvIB1wEe6jZ-YZ73F8SQ" base_Action="_OEqaYB1wEe6jZ-YZ73F8SQ" theta="0.10"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_OUSx0B1wEe6jZ-YZ73F8SQ" base_Action="_OUMEIB1wEe6jZ-YZ73F8SQ" theta="-0.29"/>
+  <QuantumUMLProfile:ControlledQubit xmi:id="_UaAL0B1wEe6jZ-YZ73F8SQ" base_SendSignalAction="_S14tsB1wEe6jZ-YZ73F8SQ"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_XJDMAB1wEe6jZ-YZ73F8SQ" base_AcceptEventAction="_VYSZAB1wEe6jZ-YZ73F8SQ" base_Action="_VYSZAB1wEe6jZ-YZ73F8SQ"/>
+  <QuantumUMLProfile:ControlledQubit xmi:id="_YL_PsB1wEe6jZ-YZ73F8SQ" base_SendSignalAction="_YL368B1wEe6jZ-YZ73F8SQ"/>
+  <QuantumUMLProfile:ControlledQubit xmi:id="_Zh55wB1wEe6jZ-YZ73F8SQ" base_SendSignalAction="_ZhzzIB1wEe6jZ-YZ73F8SQ"/>
+  <QuantumUMLProfile:ControlledQubit xmi:id="_b4ogkB1wEe6jZ-YZ73F8SQ" base_SendSignalAction="_b4iZ8B1wEe6jZ-YZ73F8SQ"/>
+  <QuantumUMLProfile:ControlledQubit xmi:id="_cgrYAB1wEe6jZ-YZ73F8SQ" base_SendSignalAction="_cgl4cB1wEe6jZ-YZ73F8SQ"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_e_u0YB1wEe6jZ-YZ73F8SQ" base_AcceptEventAction="_e_pU0B1wEe6jZ-YZ73F8SQ" base_Action="_e_pU0B1wEe6jZ-YZ73F8SQ"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_gd8e0B1wEe6jZ-YZ73F8SQ" base_AcceptEventAction="_gd2YMB1wEe6jZ-YZ73F8SQ" base_Action="_gd2YMB1wEe6jZ-YZ73F8SQ"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_iN8c0B1wEe6jZ-YZ73F8SQ" base_AcceptEventAction="_iN2WMB1wEe6jZ-YZ73F8SQ" base_Action="_iN2WMB1wEe6jZ-YZ73F8SQ"/>
+  <QuantumUMLProfile:QuantumGate xmi:id="_iWAMpx1wEe6jZ-YZ73F8SQ" base_AcceptEventAction="_iV77MB1wEe6jZ-YZ73F8SQ" base_Action="_iV77MB1wEe6jZ-YZ73F8SQ"/>
+</xmi:XMI>

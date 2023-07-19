@@ -373,8 +373,25 @@ import javafx.stage.Stage;
                 			UMLmodel item = (UMLmodel) getTableRow().getItem();
                             if (item != null) {
                             	String directoryPath = item.getRutaResultado(); // Specify the directory path here
-
-                                if(item.getActividad()) {
+                            	System.out.println(directoryPath);
+                            	if(item.getClase()) {
+                                    File directory = new File(directoryPath.replaceAll("/quantumCircuits", "") + item.getName().replace(".uml", ""));
+	                                if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.OPEN)) {
+	                                    try {
+	                                        Desktop.getDesktop().open(directory);
+	                                    } catch (IOException e) {
+	                                        e.printStackTrace();
+	                                        // Handle the exception appropriately
+	                                    }
+	                                } else {
+	                                	Alert alert = new Alert(AlertType.ERROR);
+	                                    alert.setTitle("Error!");
+	                                    alert.setHeaderText(null);
+	                                    alert.setContentText("No se pudo abrir el directorio.");
+	                                    alert.showAndWait();
+	                                }
+                                }
+                            	else if(item.getActividad()) {
                                 	if (directoryPath != null) {
                                         if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.EDIT)) {
                                             try {
@@ -404,23 +421,7 @@ import javafx.stage.Stage;
     	                                    alert.showAndWait();
                                         }
                                     }
-                                } else if(item.getClase()) {
-                                    File directory = new File(directoryPath + item.getName().replace(".uml", ""));
-	                                if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.OPEN)) {
-	                                    try {
-	                                        Desktop.getDesktop().open(directory);
-	                                    } catch (IOException e) {
-	                                        e.printStackTrace();
-	                                        // Handle the exception appropriately
-	                                    }
-	                                } else {
-	                                	Alert alert = new Alert(AlertType.ERROR);
-	                                    alert.setTitle("Error!");
-	                                    alert.setHeaderText(null);
-	                                    alert.setContentText("No se pudo abrir el directorio.");
-	                                    alert.showAndWait();
-	                                }
-                                }
+                                } 
                             }
                             resButton.setVisible(true);
                         });
