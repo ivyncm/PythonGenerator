@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:QuantumUMLProfile="http://QuantumUMLProfile/schemas/QuantumUMLProfile/_zeqykL6NEe24U6R9ykQTQA/15" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://QuantumUMLProfile/schemas/QuantumUMLProfile/_zeqykL6NEe24U6R9ykQTQA/15 /qsmmt/profile/QuantumUMLProfile.profile.uml#_zetO0L6NEe24U6R9ykQTQA">
+  <uml:Model xmi:id="_SePhUKlrEe6u8tAOZIMdvA" name="AIRBUS-WINGBOX">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_SfhTsKlrEe6u8tAOZIMdvA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Activity" xmi:id="_SetbYKlrEe6u8tAOZIMdvA" name="Activity1"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_UTqK0KlrEe6u8tAOZIMdvA" name="AIRBUS-WINGBOX">
+      <packagedElement xmi:type="uml:Package" xmi:id="_cKx4EKlrEe6u8tAOZIMdvA" name="presentation">
+        <packagedElement xmi:type="uml:Class" xmi:id="_fV5wQKlrEe6u8tAOZIMdvA" name="MainForm"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_g6iLwKlrEe6u8tAOZIMdvA" name="ProblemDefinition"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_jByzMKlrEe6u8tAOZIMdvA" name="ParameterOptForm"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_pEdgQKlrEe6u8tAOZIMdvA" client="_fV5wQKlrEe6u8tAOZIMdvA" supplier="_g6iLwKlrEe6u8tAOZIMdvA"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_peWm8KlrEe6u8tAOZIMdvA" client="_fV5wQKlrEe6u8tAOZIMdvA" supplier="_jByzMKlrEe6u8tAOZIMdvA"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_GAKvsKluEe6u8tAOZIMdvA" client="_g6iLwKlrEe6u8tAOZIMdvA" supplier="_8KhVsKlsEe6u8tAOZIMdvA"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_NrXrYKlvEe6u8tAOZIMdvA" client="_jByzMKlrEe6u8tAOZIMdvA" supplier="_MJp2cKluEe6u8tAOZIMdvA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_s5U5AKlrEe6u8tAOZIMdvA" name="controller">
+        <packagedElement xmi:type="uml:Class" xmi:id="_8KhVsKlsEe6u8tAOZIMdvA" name="WingboxOptimizationProblemController">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_-TcxEKlsEe6u8tAOZIMdvA" name="createProblem"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_tVY4AKltEe6u8tAOZIMdvA" client="_8KhVsKlsEe6u8tAOZIMdvA" supplier="_FuwsEKltEe6u8tAOZIMdvA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_Ca3SYKltEe6u8tAOZIMdvA" name="entities">
+        <packagedElement xmi:type="uml:Class" xmi:id="_FuwsEKltEe6u8tAOZIMdvA" name="WingboxProblem"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_H_MdoKltEe6u8tAOZIMdvA" name="Wingbox">
+          <generalization xmi:type="uml:Generalization" xmi:id="_u4BIYKltEe6u8tAOZIMdvA" general="_FuwsEKltEe6u8tAOZIMdvA"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_JmBRgKltEe6u8tAOZIMdvA" name="thickness_upper_wing_cover"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_NthSYKltEe6u8tAOZIMdvA" name="thickness_lower_wing_cover"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Pe_3EKltEe6u8tAOZIMdvA" name="thickness_spars"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SNvVQKltEe6u8tAOZIMdvA" name="thickness_ribs"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_TgMboKltEe6u8tAOZIMdvA" name="area_stiffers"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Ux4tAKltEe6u8tAOZIMdvA" name="materials"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_X1jSUKltEe6u8tAOZIMdvA" name="Mass">
+          <generalization xmi:type="uml:Generalization" xmi:id="_v0ibAKltEe6u8tAOZIMdvA" general="_FuwsEKltEe6u8tAOZIMdvA"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aFUVgKltEe6u8tAOZIMdvA" name="structural_wing_weight"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cBKXIKltEe6u8tAOZIMdvA" name="engine__man"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_e5DxUKltEe6u8tAOZIMdvA" name="fuel_tank_filling_factor"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_j1X6UKltEe6u8tAOZIMdvA" name="calculate_fuel_tank_filling_Factor"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_lI_eUKltEe6u8tAOZIMdvA" name="LoadingWing">
+          <generalization xmi:type="uml:Generalization" xmi:id="_uYy1wKltEe6u8tAOZIMdvA" general="_FuwsEKltEe6u8tAOZIMdvA"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mxIg0KltEe6u8tAOZIMdvA" name="maneovre_case"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_pCoCUKltEe6u8tAOZIMdvA" name="vertical_gust"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_rF1QMKltEe6u8tAOZIMdvA" name="calculate_gust"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_I4aIIKluEe6u8tAOZIMdvA" name="quantumclassicalbusinesslogic">
+        <packagedElement xmi:type="uml:Class" xmi:id="_MJp2cKluEe6u8tAOZIMdvA" name="WingboxOptimizationProblemDriver">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_P-aFAqlvEe6u8tAOZIMdvA" name="hhl_algorithm" type="_3KQ18KluEe6u8tAOZIMdvA" association="_P-Zd8KlvEe6u8tAOZIMdvA"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_7EgogqlvEe6u8tAOZIMdvA" name="wingboxoptimizationrequest" type="_ROpk4KlvEe6u8tAOZIMdvA" association="_7EgBcKlvEe6u8tAOZIMdvA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_Stf98KluEe6u8tAOZIMdvA" name="wingboxOptimizationDriver" visibility="private">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZnlbMKluEe6u8tAOZIMdvA" name="wingbox_problem" type="_FuwsEKltEe6u8tAOZIMdvA"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_li4IgKluEe6u8tAOZIMdvA" name="setQuantumRequestParams">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_nlzCgKluEe6u8tAOZIMdvA" name="n_shots"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_oYmYcKluEe6u8tAOZIMdvA" name="optimizeWingboxParams"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ROpk4KlvEe6u8tAOZIMdvA" name="WingboxOptimizationRequest">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_VCDlEKlvEe6u8tAOZIMdvA" name="QUANTUM_COMPUTER"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_WJ598KlvEe6u8tAOZIMdvA" name="n_shots"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_igSEwKlvEe6u8tAOZIMdvA" name="setParams"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_lMkr4KlvEe6u8tAOZIMdvA" name="getQuantumInstance"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_vIzrgKlvEe6u8tAOZIMdvA" name="WingboxOptimized">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_0Nl0AKlvEe6u8tAOZIMdvA" name="result"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_1OyyUKlvEe6u8tAOZIMdvA" name="confidence_interval"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_3UJVQKlvEe6u8tAOZIMdvA" name="showResults"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_7r5YoKlvEe6u8tAOZIMdvA" client="_MJp2cKluEe6u8tAOZIMdvA" supplier="_vIzrgKlvEe6u8tAOZIMdvA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_sYptgKluEe6u8tAOZIMdvA" name="quantumlogic">
+        <packagedElement xmi:type="uml:Package" xmi:id="_zAuNsKluEe6u8tAOZIMdvA" name="algorithm">
+          <packagedElement xmi:type="uml:Class" xmi:id="_3KQ18KluEe6u8tAOZIMdvA" name="HHL_Algorithm">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_CZ0eoKlvEe6u8tAOZIMdvA" name="num_qubits"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_D4GagKlvEe6u8tAOZIMdvA" name="quantum_circuit"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_Fp3TEKlvEe6u8tAOZIMdvA" name="getCircuitImage"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+      <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_6_-jQKluEe6u8tAOZIMdvA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6__KUKluEe6u8tAOZIMdvA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="/qsmmt/profile/QuantumUMLProfile.profile.uml#_zel6EL6NEe24U6R9ykQTQA"/>
+        </eAnnotations>
+        <appliedProfile xmi:type="uml:Profile" href="/qsmmt/profile/QuantumUMLProfile.profile.uml#_TU1zcOP7EeubK-rnJ_MIxA"/>
+      </profileApplication>
+      <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_6__xYKluEe6u8tAOZIMdvA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7AAYcKluEe6u8tAOZIMdvA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="/qsmmt/profile/QuantumUMLProfile.profile.uml#_zetO0L6NEe24U6R9ykQTQA"/>
+        </eAnnotations>
+        <appliedProfile xmi:type="uml:Profile" href="/qsmmt/profile/QuantumUMLProfile.profile.uml#_UyBjIOP7EeubK-rnJ_MIxA"/>
+      </profileApplication>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZAOAkKlrEe6u8tAOZIMdvA" name="App">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_a08GgKlrEe6u8tAOZIMdvA" name="init"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_njT2kKlrEe6u8tAOZIMdvA" client="_ZAOAkKlrEe6u8tAOZIMdvA" supplier="_fV5wQKlrEe6u8tAOZIMdvA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_P-Zd8KlvEe6u8tAOZIMdvA" memberEnd="_P-aFAqlvEe6u8tAOZIMdvA _P-asEalvEe6u8tAOZIMdvA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_P-aFAKlvEe6u8tAOZIMdvA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_P-aFAalvEe6u8tAOZIMdvA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_P-asEalvEe6u8tAOZIMdvA" name="wingboxoptimizationproblemdriver" type="_MJp2cKluEe6u8tAOZIMdvA" association="_P-Zd8KlvEe6u8tAOZIMdvA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_7EgBcKlvEe6u8tAOZIMdvA" memberEnd="_7EgogqlvEe6u8tAOZIMdvA _7EhPkKlvEe6u8tAOZIMdvA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7EgogKlvEe6u8tAOZIMdvA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7EgogalvEe6u8tAOZIMdvA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_7EhPkKlvEe6u8tAOZIMdvA" name="wingboxoptimizationproblemdriver" type="_MJp2cKluEe6u8tAOZIMdvA" association="_7EgBcKlvEe6u8tAOZIMdvA"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_SfQN8KlrEe6u8tAOZIMdvA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SfQ1AalrEe6u8tAOZIMdvA" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SfQ1AqlrEe6u8tAOZIMdvA" key="Version" value="0.1.6"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SfQ1A6lrEe6u8tAOZIMdvA" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SfQ1BKlrEe6u8tAOZIMdvA" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SfQ1BalrEe6u8tAOZIMdvA" key="Date" value="2023-03-09"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SfQ1BqlrEe6u8tAOZIMdvA" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SfQ1AKlrEe6u8tAOZIMdvA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="/qsmmt/profile/QuantumUMLProfile.profile.uml#_zel6EL6NEe24U6R9ykQTQA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="/qsmmt/profile/QuantumUMLProfile.profile.uml#_TU1zcOP7EeubK-rnJ_MIxA"/>
+    </profileApplication>
+  </uml:Model>
+  <QuantumUMLProfile:Quantum xmi:id="_-5LCYKluEe6u8tAOZIMdvA" base_Package="_sYptgKluEe6u8tAOZIMdvA"/>
+  <QuantumUMLProfile:Quantum xmi:id="_Jsn94KlvEe6u8tAOZIMdvA" base_Class="_3KQ18KluEe6u8tAOZIMdvA"/>
+  <QuantumUMLProfile:QuantumDriver xmi:id="_o3QN4KlvEe6u8tAOZIMdvA" base_Class="_MJp2cKluEe6u8tAOZIMdvA"/>
+  <QuantumUMLProfile:QuantumRequest xmi:id="_qnjt4KlvEe6u8tAOZIMdvA" base_Class="_ROpk4KlvEe6u8tAOZIMdvA"/>
+</xmi:XMI>

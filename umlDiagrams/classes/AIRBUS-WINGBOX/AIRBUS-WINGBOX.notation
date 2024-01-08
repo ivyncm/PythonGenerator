@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <notation:Diagram xmi:id="_Sek4gKlrEe6u8tAOZIMdvA" type="PapyrusUMLClassDiagram" name="Class Diagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_UTt1MKlrEe6u8tAOZIMdvA" type="Package_Shape">
+      <children xmi:type="notation:DecorationNode" xmi:id="_UTt1MqlrEe6u8tAOZIMdvA" type="Package_NameLabel"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_UTt1M6lrEe6u8tAOZIMdvA" type="Package_PackagedElementCompartment">
+        <children xmi:type="notation:Shape" xmi:id="_cK07YKlrEe6u8tAOZIMdvA" type="Package_Shape_CN">
+          <children xmi:type="notation:DecorationNode" xmi:id="_cK07YqlrEe6u8tAOZIMdvA" type="Package_NameLabel_CN"/>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_cK07Y6lrEe6u8tAOZIMdvA" type="Package_PackagedElementCompartment_CN">
+            <children xmi:type="notation:Shape" xmi:id="_fV-owKlrEe6u8tAOZIMdvA" type="Class_Shape_CN">
+              <children xmi:type="notation:DecorationNode" xmi:id="_fV-owqlrEe6u8tAOZIMdvA" type="Class_NameLabel_CN"/>
+              <children xmi:type="notation:DecorationNode" xmi:id="_fV-ow6lrEe6u8tAOZIMdvA" type="Class_FloatingNameLabel_CN">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_fV-oxKlrEe6u8tAOZIMdvA" y="15"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_fV-oxalrEe6u8tAOZIMdvA" type="Class_AttributeCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_fV-oxqlrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_fV-ox6lrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_fV-oyKlrEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fV-oyalrEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_fV-oyqlrEe6u8tAOZIMdvA" type="Class_OperationCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_fV-oy6lrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_fV-ozKlrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_fV-ozalrEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fV-ozqlrEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_fV-oz6lrEe6u8tAOZIMdvA" type="Class_NestedClassifierCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_fV-o0KlrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_fV-o0alrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_fV-o0qlrEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fV-o06lrEe6u8tAOZIMdvA"/>
+              </children>
+              <element xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_fV5wQKlrEe6u8tAOZIMdvA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fV-owalrEe6u8tAOZIMdvA" x="14" y="12"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_g6pggKlrEe6u8tAOZIMdvA" type="Class_Shape_CN">
+              <children xmi:type="notation:DecorationNode" xmi:id="_g6pggqlrEe6u8tAOZIMdvA" type="Class_NameLabel_CN"/>
+              <children xmi:type="notation:DecorationNode" xmi:id="_g6pgg6lrEe6u8tAOZIMdvA" type="Class_FloatingNameLabel_CN">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_g6pghKlrEe6u8tAOZIMdvA" y="15"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_g6pghalrEe6u8tAOZIMdvA" type="Class_AttributeCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_g6pghqlrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_g6pgh6lrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_g6pgiKlrEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g6pgialrEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_g6pgiqlrEe6u8tAOZIMdvA" type="Class_OperationCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_g6pgi6lrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_g6pgjKlrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_g6pgjalrEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g6pgjqlrEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_g6pgj6lrEe6u8tAOZIMdvA" type="Class_NestedClassifierCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_g6pgkKlrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_g6pgkalrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_g6pgkqlrEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g6pgk6lrEe6u8tAOZIMdvA"/>
+              </children>
+              <element xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_g6iLwKlrEe6u8tAOZIMdvA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g6pggalrEe6u8tAOZIMdvA" x="174" y="12"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_jB12gKlrEe6u8tAOZIMdvA" type="Class_Shape_CN">
+              <children xmi:type="notation:DecorationNode" xmi:id="_jB12gqlrEe6u8tAOZIMdvA" type="Class_NameLabel_CN"/>
+              <children xmi:type="notation:DecorationNode" xmi:id="_jB12g6lrEe6u8tAOZIMdvA" type="Class_FloatingNameLabel_CN">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_jB12hKlrEe6u8tAOZIMdvA" y="15"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_jB12halrEe6u8tAOZIMdvA" type="Class_AttributeCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_jB12hqlrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_jB12h6lrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_jB12iKlrEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jB12ialrEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_jB12iqlrEe6u8tAOZIMdvA" type="Class_OperationCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_jB12i6lrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_jB12jKlrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_jB12jalrEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jB12jqlrEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_jB12j6lrEe6u8tAOZIMdvA" type="Class_NestedClassifierCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_jB12kKlrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_jB12kalrEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_jB12kqlrEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jB12k6lrEe6u8tAOZIMdvA"/>
+              </children>
+              <element xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_jByzMKlrEe6u8tAOZIMdvA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jB12galrEe6u8tAOZIMdvA" x="14" y="152"/>
+            </children>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_cK07ZKlrEe6u8tAOZIMdvA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cK07ZalrEe6u8tAOZIMdvA"/>
+          </children>
+          <element xmi:type="uml:Package" href="AIRBUS-WINGBOX.uml#_cKx4EKlrEe6u8tAOZIMdvA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cK07YalrEe6u8tAOZIMdvA" x="34" y="52" width="341" height="301"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_s5aYkKlrEe6u8tAOZIMdvA" type="Package_Shape_CN">
+          <children xmi:type="notation:DecorationNode" xmi:id="_s5aYkqlrEe6u8tAOZIMdvA" type="Package_NameLabel_CN"/>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_s5aYk6lrEe6u8tAOZIMdvA" type="Package_PackagedElementCompartment_CN">
+            <children xmi:type="notation:Shape" xmi:id="_8Kjx8KlsEe6u8tAOZIMdvA" type="Class_Shape_CN">
+              <children xmi:type="notation:DecorationNode" xmi:id="_8Kjx8qlsEe6u8tAOZIMdvA" type="Class_NameLabel_CN"/>
+              <children xmi:type="notation:DecorationNode" xmi:id="_8Kjx86lsEe6u8tAOZIMdvA" type="Class_FloatingNameLabel_CN">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_8Kjx9KlsEe6u8tAOZIMdvA" y="15"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_8Kjx9alsEe6u8tAOZIMdvA" type="Class_AttributeCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_8Kjx9qlsEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_8Kjx96lsEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_8Kjx-KlsEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8Kjx-alsEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_8Kjx-qlsEe6u8tAOZIMdvA" type="Class_OperationCompartment_CN">
+                <children xmi:type="notation:Shape" xmi:id="_-TkF0KlsEe6u8tAOZIMdvA" type="Operation_ClassOperationLabel">
+                  <element xmi:type="uml:Operation" href="AIRBUS-WINGBOX.uml#_-TcxEKlsEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_-Tks4KlsEe6u8tAOZIMdvA"/>
+                </children>
+                <styles xmi:type="notation:TitleStyle" xmi:id="_8Kjx-6lsEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_8Kjx_KlsEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_8Kjx_alsEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8Kjx_qlsEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_8Kjx_6lsEe6u8tAOZIMdvA" type="Class_NestedClassifierCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_8KjyAKlsEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_8KjyAalsEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_8KjyAqlsEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8KjyA6lsEe6u8tAOZIMdvA"/>
+              </children>
+              <element xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_8KhVsKlsEe6u8tAOZIMdvA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8Kjx8alsEe6u8tAOZIMdvA" x="14" y="14"/>
+            </children>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_s5aYlKlrEe6u8tAOZIMdvA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s5aYlalrEe6u8tAOZIMdvA"/>
+          </children>
+          <element xmi:type="uml:Package" href="AIRBUS-WINGBOX.uml#_s5U5AKlrEe6u8tAOZIMdvA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s5aYkalrEe6u8tAOZIMdvA" x="734" y="52"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_Ca8x8KltEe6u8tAOZIMdvA" type="Package_Shape_CN">
+          <children xmi:type="notation:DecorationNode" xmi:id="_Ca8x8qltEe6u8tAOZIMdvA" type="Package_NameLabel_CN"/>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_Ca8x86ltEe6u8tAOZIMdvA" type="Package_PackagedElementCompartment_CN">
+            <children xmi:type="notation:Shape" xmi:id="_Fu3ZwKltEe6u8tAOZIMdvA" type="Class_Shape_CN">
+              <children xmi:type="notation:DecorationNode" xmi:id="_Fu3ZwqltEe6u8tAOZIMdvA" type="Class_NameLabel_CN"/>
+              <children xmi:type="notation:DecorationNode" xmi:id="_Fu3Zw6ltEe6u8tAOZIMdvA" type="Class_FloatingNameLabel_CN">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_Fu3ZxKltEe6u8tAOZIMdvA" y="15"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_Fu3ZxaltEe6u8tAOZIMdvA" type="Class_AttributeCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_Fu3ZxqltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_Fu3Zx6ltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_Fu3ZyKltEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fu3ZyaltEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_Fu3ZyqltEe6u8tAOZIMdvA" type="Class_OperationCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_Fu3Zy6ltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_Fu3ZzKltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_Fu3ZzaltEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fu3ZzqltEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_Fu3Zz6ltEe6u8tAOZIMdvA" type="Class_NestedClassifierCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_Fu3Z0KltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_Fu3Z0altEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_Fu3Z0qltEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fu3Z06ltEe6u8tAOZIMdvA"/>
+              </children>
+              <element xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_FuwsEKltEe6u8tAOZIMdvA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fu3ZwaltEe6u8tAOZIMdvA" x="14" y="52"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_H_TLUKltEe6u8tAOZIMdvA" type="Class_Shape_CN">
+              <children xmi:type="notation:DecorationNode" xmi:id="_H_TLUqltEe6u8tAOZIMdvA" type="Class_NameLabel_CN"/>
+              <children xmi:type="notation:DecorationNode" xmi:id="_H_TLU6ltEe6u8tAOZIMdvA" type="Class_FloatingNameLabel_CN">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_H_TLVKltEe6u8tAOZIMdvA" y="15"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_H_TLValtEe6u8tAOZIMdvA" type="Class_AttributeCompartment_CN">
+                <children xmi:type="notation:Shape" xmi:id="_JmMQoKltEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                  <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_JmBRgKltEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_JmMQoaltEe6u8tAOZIMdvA"/>
+                </children>
+                <children xmi:type="notation:Shape" xmi:id="_Nt3QoKltEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                  <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_NthSYKltEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_Nt3QoaltEe6u8tAOZIMdvA"/>
+                </children>
+                <children xmi:type="notation:Shape" xmi:id="_PfPusKltEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                  <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_Pe_3EKltEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_PfPusaltEe6u8tAOZIMdvA"/>
+                </children>
+                <children xmi:type="notation:Shape" xmi:id="_SN_M4KltEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                  <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_SNvVQKltEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_SN_M4altEe6u8tAOZIMdvA"/>
+                </children>
+                <children xmi:type="notation:Shape" xmi:id="_Tgf9oKltEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                  <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_TgMboKltEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_Tgf9oaltEe6u8tAOZIMdvA"/>
+                </children>
+                <children xmi:type="notation:Shape" xmi:id="_UyLA4KltEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                  <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_Ux4tAKltEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_UyLA4altEe6u8tAOZIMdvA"/>
+                </children>
+                <styles xmi:type="notation:TitleStyle" xmi:id="_H_TLVqltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_H_TLV6ltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_H_TLWKltEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H_TLWaltEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_H_TLWqltEe6u8tAOZIMdvA" type="Class_OperationCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_H_TLW6ltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_H_TLXKltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_H_TLXaltEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H_TLXqltEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_H_TLX6ltEe6u8tAOZIMdvA" type="Class_NestedClassifierCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_H_TLYKltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_H_TLYaltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_H_TLYqltEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H_TLY6ltEe6u8tAOZIMdvA"/>
+              </children>
+              <element xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_H_MdoKltEe6u8tAOZIMdvA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H_TLUaltEe6u8tAOZIMdvA" x="274" y="12"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_X1rOIKltEe6u8tAOZIMdvA" type="Class_Shape_CN">
+              <children xmi:type="notation:DecorationNode" xmi:id="_X1rOIqltEe6u8tAOZIMdvA" type="Class_NameLabel_CN"/>
+              <children xmi:type="notation:DecorationNode" xmi:id="_X1rOI6ltEe6u8tAOZIMdvA" type="Class_FloatingNameLabel_CN">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_X1rOJKltEe6u8tAOZIMdvA" y="15"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_X1rOJaltEe6u8tAOZIMdvA" type="Class_AttributeCompartment_CN">
+                <children xmi:type="notation:Shape" xmi:id="_aFqTwKltEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                  <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_aFUVgKltEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_aFqTwaltEe6u8tAOZIMdvA"/>
+                </children>
+                <children xmi:type="notation:Shape" xmi:id="_cBdSEKltEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                  <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_cBKXIKltEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_cBdSEaltEe6u8tAOZIMdvA"/>
+                </children>
+                <children xmi:type="notation:Shape" xmi:id="_e5WsQKltEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                  <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_e5DxUKltEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_e5WsQaltEe6u8tAOZIMdvA"/>
+                </children>
+                <styles xmi:type="notation:TitleStyle" xmi:id="_X1rOJqltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_X1rOJ6ltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_X1rOKKltEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X1rOKaltEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_X1rOKqltEe6u8tAOZIMdvA" type="Class_OperationCompartment_CN">
+                <children xmi:type="notation:Shape" xmi:id="_j14QoKltEe6u8tAOZIMdvA" type="Operation_ClassOperationLabel">
+                  <element xmi:type="uml:Operation" href="AIRBUS-WINGBOX.uml#_j1X6UKltEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_j14QoaltEe6u8tAOZIMdvA"/>
+                </children>
+                <styles xmi:type="notation:TitleStyle" xmi:id="_X1rOK6ltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_X1rOLKltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_X1rOLaltEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X1rOLqltEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_X1rOL6ltEe6u8tAOZIMdvA" type="Class_NestedClassifierCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_X1rOMKltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_X1rOMaltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_X1rOMqltEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X1rOM6ltEe6u8tAOZIMdvA"/>
+              </children>
+              <element xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_X1jSUKltEe6u8tAOZIMdvA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X1rOIaltEe6u8tAOZIMdvA" x="274" y="212"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_lJJPUKltEe6u8tAOZIMdvA" type="Class_Shape_CN">
+              <children xmi:type="notation:DecorationNode" xmi:id="_lJJPUqltEe6u8tAOZIMdvA" type="Class_NameLabel_CN"/>
+              <children xmi:type="notation:DecorationNode" xmi:id="_lJJPU6ltEe6u8tAOZIMdvA" type="Class_FloatingNameLabel_CN">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_lJJPVKltEe6u8tAOZIMdvA" y="15"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_lJJ2YKltEe6u8tAOZIMdvA" type="Class_AttributeCompartment_CN">
+                <children xmi:type="notation:Shape" xmi:id="_mxYYcKltEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                  <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_mxIg0KltEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_mxYYcaltEe6u8tAOZIMdvA"/>
+                </children>
+                <children xmi:type="notation:Shape" xmi:id="_pC8LYKltEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                  <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_pCoCUKltEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_pC8LYaltEe6u8tAOZIMdvA"/>
+                </children>
+                <styles xmi:type="notation:TitleStyle" xmi:id="_lJJ2YaltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_lJJ2YqltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_lJJ2Y6ltEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lJJ2ZKltEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_lJJ2ZaltEe6u8tAOZIMdvA" type="Class_OperationCompartment_CN">
+                <children xmi:type="notation:Shape" xmi:id="_rGORwKltEe6u8tAOZIMdvA" type="Operation_ClassOperationLabel">
+                  <element xmi:type="uml:Operation" href="AIRBUS-WINGBOX.uml#_rF1QMKltEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_rGORwaltEe6u8tAOZIMdvA"/>
+                </children>
+                <styles xmi:type="notation:TitleStyle" xmi:id="_lJJ2ZqltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_lJJ2Z6ltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_lJJ2aKltEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lJJ2aaltEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_lJJ2aqltEe6u8tAOZIMdvA" type="Class_NestedClassifierCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_lJJ2a6ltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_lJJ2bKltEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_lJJ2baltEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lJJ2bqltEe6u8tAOZIMdvA"/>
+              </children>
+              <element xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_lI_eUKltEe6u8tAOZIMdvA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lJJPUaltEe6u8tAOZIMdvA" x="14" y="212"/>
+            </children>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_Ca8x9KltEe6u8tAOZIMdvA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ca8x9altEe6u8tAOZIMdvA"/>
+          </children>
+          <element xmi:type="uml:Package" href="AIRBUS-WINGBOX.uml#_Ca3SYKltEe6u8tAOZIMdvA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ca8x8altEe6u8tAOZIMdvA" x="734" y="292" width="621" height="381"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_I4j5IKluEe6u8tAOZIMdvA" type="Package_Shape_CN">
+          <children xmi:type="notation:DecorationNode" xmi:id="_I4j5IqluEe6u8tAOZIMdvA" type="Package_NameLabel_CN"/>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_I4j5I6luEe6u8tAOZIMdvA" type="Package_PackagedElementCompartment_CN">
+            <children xmi:type="notation:Shape" xmi:id="_MJyZUKluEe6u8tAOZIMdvA" type="Class_Shape_CN">
+              <children xmi:type="notation:DecorationNode" xmi:id="_MJyZUqluEe6u8tAOZIMdvA" type="Class_NameLabel_CN"/>
+              <children xmi:type="notation:DecorationNode" xmi:id="_MJyZU6luEe6u8tAOZIMdvA" type="Class_FloatingNameLabel_CN">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_MJyZVKluEe6u8tAOZIMdvA" y="15"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_MJyZValuEe6u8tAOZIMdvA" type="Class_AttributeCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_MJyZVqluEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_MJyZV6luEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_MJyZWKluEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MJyZWaluEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_MJyZWqluEe6u8tAOZIMdvA" type="Class_OperationCompartment_CN">
+                <children xmi:type="notation:Shape" xmi:id="_StyR0KluEe6u8tAOZIMdvA" type="Operation_ClassOperationLabel">
+                  <element xmi:type="uml:Operation" href="AIRBUS-WINGBOX.uml#_Stf98KluEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_StyR0aluEe6u8tAOZIMdvA"/>
+                </children>
+                <children xmi:type="notation:Shape" xmi:id="_ljOt0KluEe6u8tAOZIMdvA" type="Operation_ClassOperationLabel">
+                  <element xmi:type="uml:Operation" href="AIRBUS-WINGBOX.uml#_li4IgKluEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_ljOt0aluEe6u8tAOZIMdvA"/>
+                </children>
+                <children xmi:type="notation:Shape" xmi:id="_oY0a4KluEe6u8tAOZIMdvA" type="Operation_ClassOperationLabel">
+                  <element xmi:type="uml:Operation" href="AIRBUS-WINGBOX.uml#_oYmYcKluEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_oY0a4aluEe6u8tAOZIMdvA"/>
+                </children>
+                <styles xmi:type="notation:TitleStyle" xmi:id="_MJyZW6luEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_MJyZXKluEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_MJyZXaluEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MJyZXqluEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_MJyZX6luEe6u8tAOZIMdvA" type="Class_NestedClassifierCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_MJyZYKluEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_MJyZYaluEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_MJyZYqluEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MJyZY6luEe6u8tAOZIMdvA"/>
+              </children>
+              <element xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_MJp2cKluEe6u8tAOZIMdvA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MJyZUaluEe6u8tAOZIMdvA" x="14" y="32" width="460"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_ROz88KlvEe6u8tAOZIMdvA" type="Class_Shape_CN">
+              <children xmi:type="notation:DecorationNode" xmi:id="_ROz88qlvEe6u8tAOZIMdvA" type="Class_NameLabel_CN"/>
+              <children xmi:type="notation:DecorationNode" xmi:id="_ROz886lvEe6u8tAOZIMdvA" type="Class_FloatingNameLabel_CN">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_ROz89KlvEe6u8tAOZIMdvA" y="15"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_ROz89alvEe6u8tAOZIMdvA" type="Class_AttributeCompartment_CN">
+                <children xmi:type="notation:Shape" xmi:id="_VCd0wKlvEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                  <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_VCDlEKlvEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_VCd0walvEe6u8tAOZIMdvA"/>
+                </children>
+                <children xmi:type="notation:Shape" xmi:id="_WKJOgKlvEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                  <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_WJ598KlvEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_WKJOgalvEe6u8tAOZIMdvA"/>
+                </children>
+                <styles xmi:type="notation:TitleStyle" xmi:id="_ROz89qlvEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_ROz896lvEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_ROz8-KlvEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ROz8-alvEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_ROz8-qlvEe6u8tAOZIMdvA" type="Class_OperationCompartment_CN">
+                <children xmi:type="notation:Shape" xmi:id="_ige5EKlvEe6u8tAOZIMdvA" type="Operation_ClassOperationLabel">
+                  <element xmi:type="uml:Operation" href="AIRBUS-WINGBOX.uml#_igSEwKlvEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_ige5EalvEe6u8tAOZIMdvA"/>
+                </children>
+                <children xmi:type="notation:Shape" xmi:id="_lNFCMKlvEe6u8tAOZIMdvA" type="Operation_ClassOperationLabel">
+                  <element xmi:type="uml:Operation" href="AIRBUS-WINGBOX.uml#_lMkr4KlvEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_lNFCMalvEe6u8tAOZIMdvA"/>
+                </children>
+                <styles xmi:type="notation:TitleStyle" xmi:id="_ROz8-6lvEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_ROz8_KlvEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_ROz8_alvEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ROz8_qlvEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_ROz8_6lvEe6u8tAOZIMdvA" type="Class_NestedClassifierCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_ROz9AKlvEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_ROz9AalvEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_ROz9AqlvEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ROz9A6lvEe6u8tAOZIMdvA"/>
+              </children>
+              <element xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_ROpk4KlvEe6u8tAOZIMdvA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ROz88alvEe6u8tAOZIMdvA" x="14" y="252"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_o33496lvEe6u8tAOZIMdvA" type="StereotypeComment">
+              <styles xmi:type="notation:TitleStyle" xmi:id="_o34gAKlvEe6u8tAOZIMdvA"/>
+              <styles xmi:type="notation:EObjectValueStyle" xmi:id="_o34gAqlvEe6u8tAOZIMdvA" name="BASE_ELEMENT">
+                <eObjectValue xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_MJp2cKluEe6u8tAOZIMdvA"/>
+              </styles>
+              <element xsi:nil="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_o34gAalvEe6u8tAOZIMdvA" x="214" y="32"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_qoJjxKlvEe6u8tAOZIMdvA" type="StereotypeComment">
+              <styles xmi:type="notation:TitleStyle" xmi:id="_qoJjxalvEe6u8tAOZIMdvA"/>
+              <styles xmi:type="notation:EObjectValueStyle" xmi:id="_qoJjx6lvEe6u8tAOZIMdvA" name="BASE_ELEMENT">
+                <eObjectValue xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_ROpk4KlvEe6u8tAOZIMdvA"/>
+              </styles>
+              <element xsi:nil="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qoJjxqlvEe6u8tAOZIMdvA" x="234" y="232"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_vJBG4KlvEe6u8tAOZIMdvA" type="Class_Shape_CN">
+              <children xmi:type="notation:DecorationNode" xmi:id="_vJBG4qlvEe6u8tAOZIMdvA" type="Class_NameLabel_CN"/>
+              <children xmi:type="notation:DecorationNode" xmi:id="_vJBG46lvEe6u8tAOZIMdvA" type="Class_FloatingNameLabel_CN">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_vJBG5KlvEe6u8tAOZIMdvA" y="15"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_vJBG5alvEe6u8tAOZIMdvA" type="Class_AttributeCompartment_CN">
+                <children xmi:type="notation:Shape" xmi:id="_0N4u8KlvEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                  <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_0Nl0AKlvEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_0N4u8alvEe6u8tAOZIMdvA"/>
+                </children>
+                <children xmi:type="notation:Shape" xmi:id="_1PIJgKlvEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                  <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_1OyyUKlvEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_1PIJgalvEe6u8tAOZIMdvA"/>
+                </children>
+                <styles xmi:type="notation:TitleStyle" xmi:id="_vJBG5qlvEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_vJBG56lvEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_vJBG6KlvEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vJBG6alvEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_vJBG6qlvEe6u8tAOZIMdvA" type="Class_OperationCompartment_CN">
+                <children xmi:type="notation:Shape" xmi:id="_3Un2YKlvEe6u8tAOZIMdvA" type="Operation_ClassOperationLabel">
+                  <element xmi:type="uml:Operation" href="AIRBUS-WINGBOX.uml#_3UJVQKlvEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_3Un2YalvEe6u8tAOZIMdvA"/>
+                </children>
+                <styles xmi:type="notation:TitleStyle" xmi:id="_vJBG66lvEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_vJBG7KlvEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_vJBG7alvEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vJBG7qlvEe6u8tAOZIMdvA"/>
+              </children>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_vJBG76lvEe6u8tAOZIMdvA" type="Class_NestedClassifierCompartment_CN">
+                <styles xmi:type="notation:TitleStyle" xmi:id="_vJBG8KlvEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_vJBG8alvEe6u8tAOZIMdvA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_vJBG8qlvEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vJBG86lvEe6u8tAOZIMdvA"/>
+              </children>
+              <element xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_vIzrgKlvEe6u8tAOZIMdvA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vJBG4alvEe6u8tAOZIMdvA" x="339" y="232"/>
+            </children>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_I4j5JKluEe6u8tAOZIMdvA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I4j5JaluEe6u8tAOZIMdvA"/>
+          </children>
+          <element xmi:type="uml:Package" href="AIRBUS-WINGBOX.uml#_I4aIIKluEe6u8tAOZIMdvA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I4j5IaluEe6u8tAOZIMdvA" x="34" y="392" width="600" height="460"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_sY0FkKluEe6u8tAOZIMdvA" type="Package_Shape_CN">
+          <children xmi:type="notation:DecorationNode" xmi:id="_sY0FkqluEe6u8tAOZIMdvA" type="Package_NameLabel_CN"/>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_sY0Fk6luEe6u8tAOZIMdvA" type="Package_PackagedElementCompartment_CN">
+            <children xmi:type="notation:Shape" xmi:id="_zA4lwKluEe6u8tAOZIMdvA" type="Package_Shape_CN">
+              <children xmi:type="notation:DecorationNode" xmi:id="_zA4lwqluEe6u8tAOZIMdvA" type="Package_NameLabel_CN"/>
+              <children xmi:type="notation:BasicCompartment" xmi:id="_zA4lw6luEe6u8tAOZIMdvA" type="Package_PackagedElementCompartment_CN">
+                <children xmi:type="notation:Shape" xmi:id="_3KdqQKluEe6u8tAOZIMdvA" type="Class_Shape_CN">
+                  <children xmi:type="notation:DecorationNode" xmi:id="_3KdqQqluEe6u8tAOZIMdvA" type="Class_NameLabel_CN"/>
+                  <children xmi:type="notation:DecorationNode" xmi:id="_3KdqQ6luEe6u8tAOZIMdvA" type="Class_FloatingNameLabel_CN">
+                    <layoutConstraint xmi:type="notation:Location" xmi:id="_3KdqRKluEe6u8tAOZIMdvA" y="15"/>
+                  </children>
+                  <children xmi:type="notation:BasicCompartment" xmi:id="_3KdqRaluEe6u8tAOZIMdvA" type="Class_AttributeCompartment_CN">
+                    <children xmi:type="notation:Shape" xmi:id="_CaIAoKlvEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                      <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_CZ0eoKlvEe6u8tAOZIMdvA"/>
+                      <layoutConstraint xmi:type="notation:Location" xmi:id="_CaIAoalvEe6u8tAOZIMdvA"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_D4gqMKlvEe6u8tAOZIMdvA" type="Property_ClassAttributeLabel">
+                      <element xmi:type="uml:Property" href="AIRBUS-WINGBOX.uml#_D4GagKlvEe6u8tAOZIMdvA"/>
+                      <layoutConstraint xmi:type="notation:Location" xmi:id="_D4gqMalvEe6u8tAOZIMdvA"/>
+                    </children>
+                    <styles xmi:type="notation:TitleStyle" xmi:id="_3KdqRqluEe6u8tAOZIMdvA"/>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_3KdqR6luEe6u8tAOZIMdvA"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_3KdqSKluEe6u8tAOZIMdvA"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3KdqSaluEe6u8tAOZIMdvA"/>
+                  </children>
+                  <children xmi:type="notation:BasicCompartment" xmi:id="_3KdqSqluEe6u8tAOZIMdvA" type="Class_OperationCompartment_CN">
+                    <children xmi:type="notation:Shape" xmi:id="_FqEHYKlvEe6u8tAOZIMdvA" type="Operation_ClassOperationLabel">
+                      <element xmi:type="uml:Operation" href="AIRBUS-WINGBOX.uml#_Fp3TEKlvEe6u8tAOZIMdvA"/>
+                      <layoutConstraint xmi:type="notation:Location" xmi:id="_FqEHYalvEe6u8tAOZIMdvA"/>
+                    </children>
+                    <styles xmi:type="notation:TitleStyle" xmi:id="_3KdqS6luEe6u8tAOZIMdvA"/>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_3KdqTKluEe6u8tAOZIMdvA"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_3KdqTaluEe6u8tAOZIMdvA"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3KdqTqluEe6u8tAOZIMdvA"/>
+                  </children>
+                  <children xmi:type="notation:BasicCompartment" xmi:id="_3KdqT6luEe6u8tAOZIMdvA" type="Class_NestedClassifierCompartment_CN">
+                    <styles xmi:type="notation:TitleStyle" xmi:id="_3KdqUKluEe6u8tAOZIMdvA"/>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_3KdqUaluEe6u8tAOZIMdvA"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_3KdqUqluEe6u8tAOZIMdvA"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3KdqU6luEe6u8tAOZIMdvA"/>
+                  </children>
+                  <element xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_3KQ18KluEe6u8tAOZIMdvA"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3KdqQaluEe6u8tAOZIMdvA" x="14" y="13"/>
+                </children>
+                <children xmi:type="notation:Shape" xmi:id="_JtPB56lvEe6u8tAOZIMdvA" type="StereotypeComment">
+                  <styles xmi:type="notation:TitleStyle" xmi:id="_JtPB6KlvEe6u8tAOZIMdvA"/>
+                  <styles xmi:type="notation:EObjectValueStyle" xmi:id="_JtPB6qlvEe6u8tAOZIMdvA" name="BASE_ELEMENT">
+                    <eObjectValue xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_3KQ18KluEe6u8tAOZIMdvA"/>
+                  </styles>
+                  <element xsi:nil="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JtPB6alvEe6u8tAOZIMdvA" x="214" y="13"/>
+                </children>
+                <styles xmi:type="notation:TitleStyle" xmi:id="_zA4lxKluEe6u8tAOZIMdvA"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zA4lxaluEe6u8tAOZIMdvA"/>
+              </children>
+              <element xmi:type="uml:Package" href="AIRBUS-WINGBOX.uml#_zAuNsKluEe6u8tAOZIMdvA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zA4lwaluEe6u8tAOZIMdvA" x="94" y="15" width="260"/>
+            </children>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_sY0FlKluEe6u8tAOZIMdvA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sY0FlaluEe6u8tAOZIMdvA"/>
+          </children>
+          <element xmi:type="uml:Package" href="AIRBUS-WINGBOX.uml#_sYptgKluEe6u8tAOZIMdvA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sY0FkaluEe6u8tAOZIMdvA" x="654" y="712" width="480" height="260"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_-5tN56luEe6u8tAOZIMdvA" type="StereotypeComment">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_-5tN6KluEe6u8tAOZIMdvA"/>
+          <styles xmi:type="notation:EObjectValueStyle" xmi:id="_-5tN6qluEe6u8tAOZIMdvA" name="BASE_ELEMENT">
+            <eObjectValue xmi:type="uml:Package" href="AIRBUS-WINGBOX.uml#_sYptgKluEe6u8tAOZIMdvA"/>
+          </styles>
+          <element xsi:nil="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-5tN6aluEe6u8tAOZIMdvA" x="274" y="692"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_UTt1NKlrEe6u8tAOZIMdvA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UTt1NalrEe6u8tAOZIMdvA"/>
+      </children>
+      <element xmi:type="uml:Package" href="AIRBUS-WINGBOX.uml#_UTqK0KlrEe6u8tAOZIMdvA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UTt1MalrEe6u8tAOZIMdvA" x="120" y="60" width="1421" height="981"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_ZAPOsKlrEe6u8tAOZIMdvA" type="Class_Shape">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ZAPOsqlrEe6u8tAOZIMdvA" type="Class_NameLabel"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_ZAPOs6lrEe6u8tAOZIMdvA" type="Class_FloatingNameLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ZAPOtKlrEe6u8tAOZIMdvA" y="15"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_ZAPOtalrEe6u8tAOZIMdvA" type="Class_AttributeCompartment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_ZAPOtqlrEe6u8tAOZIMdvA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_ZAPOt6lrEe6u8tAOZIMdvA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_ZAPOuKlrEe6u8tAOZIMdvA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZAPOualrEe6u8tAOZIMdvA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_ZAPOuqlrEe6u8tAOZIMdvA" type="Class_OperationCompartment">
+        <children xmi:type="notation:Shape" xmi:id="_a1DbQKlrEe6u8tAOZIMdvA" type="Operation_ClassOperationLabel">
+          <element xmi:type="uml:Operation" href="AIRBUS-WINGBOX.uml#_a08GgKlrEe6u8tAOZIMdvA"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_a1DbQalrEe6u8tAOZIMdvA"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_ZAPOu6lrEe6u8tAOZIMdvA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_ZAPOvKlrEe6u8tAOZIMdvA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_ZAPOvalrEe6u8tAOZIMdvA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZAPOvqlrEe6u8tAOZIMdvA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_ZAPOv6lrEe6u8tAOZIMdvA" type="Class_NestedClassifierCompartment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_ZAPOwKlrEe6u8tAOZIMdvA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_ZAPOwalrEe6u8tAOZIMdvA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_ZAPOwqlrEe6u8tAOZIMdvA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZAPOw6lrEe6u8tAOZIMdvA"/>
+      </children>
+      <element xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_ZAOAkKlrEe6u8tAOZIMdvA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZAPOsalrEe6u8tAOZIMdvA" x="20" y="160"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_Sek4galrEe6u8tAOZIMdvA" name="diagram_compatibility_version" stringValue="1.4.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_Sek4gqlrEe6u8tAOZIMdvA"/>
+    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_Sek4g6lrEe6u8tAOZIMdvA" diagramKindId="org.eclipse.papyrus.uml.diagram.class">
+      <owner xmi:type="uml:Model" href="AIRBUS-WINGBOX.uml#_SePhUKlrEe6u8tAOZIMdvA"/>
+    </styles>
+    <element xmi:type="uml:Model" href="AIRBUS-WINGBOX.uml#_SePhUKlrEe6u8tAOZIMdvA"/>
+    <edges xmi:type="notation:Connector" xmi:id="_njYvEKlrEe6u8tAOZIMdvA" type="Dependency_Edge" source="_ZAPOsKlrEe6u8tAOZIMdvA" target="_fV-owKlrEe6u8tAOZIMdvA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_njYvE6lrEe6u8tAOZIMdvA" type="Dependency_NameLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_nzF_AKlrEe6u8tAOZIMdvA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_njYvFKlrEe6u8tAOZIMdvA" y="38"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_njYvFalrEe6u8tAOZIMdvA" type="Dependency_StereotypeLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_nzLekKlrEe6u8tAOZIMdvA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_njYvFqlrEe6u8tAOZIMdvA" x="1" y="59"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_njYvEalrEe6u8tAOZIMdvA"/>
+      <element xmi:type="uml:Dependency" href="AIRBUS-WINGBOX.uml#_njT2kKlrEe6u8tAOZIMdvA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_njYvEqlrEe6u8tAOZIMdvA" points="[80, 160, -643984, -643984]$[200, 200, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_njk8UKlrEe6u8tAOZIMdvA" id="(1.0,0.4)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_njk8UalrEe6u8tAOZIMdvA" id="(0.0,0.4)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_pEgjkKlrEe6u8tAOZIMdvA" type="Dependency_Edge" source="_fV-owKlrEe6u8tAOZIMdvA" target="_g6pggKlrEe6u8tAOZIMdvA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_pEgjk6lrEe6u8tAOZIMdvA" type="Dependency_NameLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_t9ymsKlrEe6u8tAOZIMdvA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pEgjlKlrEe6u8tAOZIMdvA" y="40"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_pEgjlalrEe6u8tAOZIMdvA" type="Dependency_StereotypeLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_t95UYKlrEe6u8tAOZIMdvA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pEgjlqlrEe6u8tAOZIMdvA" y="60"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_pEgjkalrEe6u8tAOZIMdvA"/>
+      <element xmi:type="uml:Dependency" href="AIRBUS-WINGBOX.uml#_pEdgQKlrEe6u8tAOZIMdvA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pEgjkqlrEe6u8tAOZIMdvA" points="[245, 175, -643984, -643984]$[345, 215, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pEsw0KlrEe6u8tAOZIMdvA" id="(1.0,0.4)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pEsw0alrEe6u8tAOZIMdvA" id="(0.0,0.4)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_pea4YKlrEe6u8tAOZIMdvA" type="Dependency_Edge" source="_fV-owKlrEe6u8tAOZIMdvA" target="_jB12gKlrEe6u8tAOZIMdvA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_pea4Y6lrEe6u8tAOZIMdvA" type="Dependency_NameLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_t-B3QKlrEe6u8tAOZIMdvA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pea4ZKlrEe6u8tAOZIMdvA" y="40"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_pea4ZalrEe6u8tAOZIMdvA" type="Dependency_StereotypeLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_t-E6kKlrEe6u8tAOZIMdvA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pea4ZqlrEe6u8tAOZIMdvA" y="60"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_pea4YalrEe6u8tAOZIMdvA"/>
+      <element xmi:type="uml:Dependency" href="AIRBUS-WINGBOX.uml#_peWm8KlrEe6u8tAOZIMdvA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pea4YqlrEe6u8tAOZIMdvA" points="[245, 275, -643984, -643984]$[245, 315, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pekpYKlrEe6u8tAOZIMdvA" id="(0.6,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pekpYalrEe6u8tAOZIMdvA" id="(0.45112781954887216,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_tVry8KltEe6u8tAOZIMdvA" type="Dependency_Edge" source="_8Kjx8KlsEe6u8tAOZIMdvA" target="_Fu3ZwKltEe6u8tAOZIMdvA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_tVry86ltEe6u8tAOZIMdvA" type="Dependency_NameLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_tVry9KltEe6u8tAOZIMdvA" y="40"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_tVry9altEe6u8tAOZIMdvA" type="Dependency_StereotypeLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_tVry9qltEe6u8tAOZIMdvA" y="60"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_tVry8altEe6u8tAOZIMdvA"/>
+      <element xmi:type="uml:Dependency" href="AIRBUS-WINGBOX.uml#_tVY4AKltEe6u8tAOZIMdvA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tVry8qltEe6u8tAOZIMdvA" points="[900, 296, -643984, -643984]$[900, 455, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tWBKIKltEe6u8tAOZIMdvA" id="(0.32653061224489793,0.9933333333333332)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tWBKIaltEe6u8tAOZIMdvA" id="(0.6451612903225806,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_uZA4MKltEe6u8tAOZIMdvA" type="Generalization_Edge" source="_lJJPUKltEe6u8tAOZIMdvA" target="_Fu3ZwKltEe6u8tAOZIMdvA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_uZA4M6ltEe6u8tAOZIMdvA" type="Generalization_StereotypeLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_uZA4NKltEe6u8tAOZIMdvA" y="40"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_uZA4MaltEe6u8tAOZIMdvA"/>
+      <element xmi:type="uml:Generalization" href="AIRBUS-WINGBOX.uml#_uYy1wKltEe6u8tAOZIMdvA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_uZA4MqltEe6u8tAOZIMdvA" points="[920, 615, -643984, -643984]$[920, 555, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_uZVBQKltEe6u8tAOZIMdvA" id="(0.45662100456621,0.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_uZVBQaltEe6u8tAOZIMdvA" id="(0.8064516129032258,1.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_u4UDUKltEe6u8tAOZIMdvA" type="Generalization_Edge" source="_H_TLUKltEe6u8tAOZIMdvA" target="_Fu3ZwKltEe6u8tAOZIMdvA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_u4UDU6ltEe6u8tAOZIMdvA" type="Generalization_StereotypeLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_u4UDVKltEe6u8tAOZIMdvA" y="40"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_u4UDUaltEe6u8tAOZIMdvA"/>
+      <element xmi:type="uml:Generalization" href="AIRBUS-WINGBOX.uml#_u4BIYKltEe6u8tAOZIMdvA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_u4UDUqltEe6u8tAOZIMdvA" points="[1080, 495, -643984, -643984]$[820, 495, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_u4tE4KltEe6u8tAOZIMdvA" id="(0.0,0.45454545454545453)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_u4tE4altEe6u8tAOZIMdvA" id="(1.0,0.4)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_v0xrkKltEe6u8tAOZIMdvA" type="Generalization_Edge" source="_X1rOIKltEe6u8tAOZIMdvA" target="_Fu3ZwKltEe6u8tAOZIMdvA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_v0xrk6ltEe6u8tAOZIMdvA" type="Generalization_StereotypeLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_v0xrlKltEe6u8tAOZIMdvA" y="40"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_v0xrkaltEe6u8tAOZIMdvA"/>
+      <element xmi:type="uml:Generalization" href="AIRBUS-WINGBOX.uml#_v0ibAKltEe6u8tAOZIMdvA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_v0xrkqltEe6u8tAOZIMdvA" points="[1140, 615, -643984, -643984]$[944, 535, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_v1KtIKltEe6u8tAOZIMdvA" id="(0.23166023166023167,0.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_v1KtIaltEe6u8tAOZIMdvA" id="(1.0,0.8)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_GAUgsKluEe6u8tAOZIMdvA" type="Dependency_Edge" source="_g6pggKlrEe6u8tAOZIMdvA" target="_8Kjx8KlsEe6u8tAOZIMdvA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_GAUgs6luEe6u8tAOZIMdvA" type="Dependency_NameLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GAUgtKluEe6u8tAOZIMdvA" y="40"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_GAUgtaluEe6u8tAOZIMdvA" type="Dependency_StereotypeLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GAUgtqluEe6u8tAOZIMdvA" y="60"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_GAUgsaluEe6u8tAOZIMdvA"/>
+      <element xmi:type="uml:Dependency" href="AIRBUS-WINGBOX.uml#_GAKvsKluEe6u8tAOZIMdvA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GAUgsqluEe6u8tAOZIMdvA" points="[473, 215, -643984, -643984]$[625, 235, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GAopwKluEe6u8tAOZIMdvA" id="(1.0,0.4)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GAopwaluEe6u8tAOZIMdvA" id="(0.0,0.38)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_-5tN66luEe6u8tAOZIMdvA" type="StereotypeCommentLink" source="_sY0FkKluEe6u8tAOZIMdvA" target="_-5tN56luEe6u8tAOZIMdvA">
+      <styles xmi:type="notation:FontStyle" xmi:id="_-5tN7KluEe6u8tAOZIMdvA"/>
+      <styles xmi:type="notation:EObjectValueStyle" xmi:id="_-5tN8KluEe6u8tAOZIMdvA" name="BASE_ELEMENT">
+        <eObjectValue xmi:type="uml:Package" href="AIRBUS-WINGBOX.uml#_sYptgKluEe6u8tAOZIMdvA"/>
+      </styles>
+      <element xsi:nil="true"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-5tN7aluEe6u8tAOZIMdvA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-5tN7qluEe6u8tAOZIMdvA"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-5tN76luEe6u8tAOZIMdvA"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_JtPB66lvEe6u8tAOZIMdvA" type="StereotypeCommentLink" source="_3KdqQKluEe6u8tAOZIMdvA" target="_JtPB56lvEe6u8tAOZIMdvA">
+      <styles xmi:type="notation:FontStyle" xmi:id="_JtPB7KlvEe6u8tAOZIMdvA"/>
+      <styles xmi:type="notation:EObjectValueStyle" xmi:id="_JtPB8KlvEe6u8tAOZIMdvA" name="BASE_ELEMENT">
+        <eObjectValue xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_3KQ18KluEe6u8tAOZIMdvA"/>
+      </styles>
+      <element xsi:nil="true"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JtPB7alvEe6u8tAOZIMdvA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JtPB7qlvEe6u8tAOZIMdvA"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JtPB76lvEe6u8tAOZIMdvA"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_NrjRkKlvEe6u8tAOZIMdvA" type="Dependency_Edge" source="_jB12gKlrEe6u8tAOZIMdvA" target="_MJyZUKluEe6u8tAOZIMdvA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_NrjRk6lvEe6u8tAOZIMdvA" type="Dependency_NameLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_PEezYKlvEe6u8tAOZIMdvA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_NrjRlKlvEe6u8tAOZIMdvA" y="40"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_NrjRlalvEe6u8tAOZIMdvA" type="Dependency_StereotypeLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_PEyVYKlvEe6u8tAOZIMdvA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_NrjRlqlvEe6u8tAOZIMdvA" y="60"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_NrjRkalvEe6u8tAOZIMdvA"/>
+      <element xmi:type="uml:Dependency" href="AIRBUS-WINGBOX.uml#_NrXrYKlvEe6u8tAOZIMdvA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_NrjRkqlvEe6u8tAOZIMdvA" points="[245, 395, -643984, -643984]$[245, 515, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Nr-IUKlvEe6u8tAOZIMdvA" id="(0.45112781954887216,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Nr-IUalvEe6u8tAOZIMdvA" id="(0.14130434782608695,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_P-m5UKlvEe6u8tAOZIMdvA" type="Association_Edge" source="_MJyZUKluEe6u8tAOZIMdvA" target="_3KdqQKluEe6u8tAOZIMdvA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_P-m5U6lvEe6u8tAOZIMdvA" type="Association_StereotypeLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_rTrNAKlvEe6u8tAOZIMdvA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_P-m5VKlvEe6u8tAOZIMdvA" x="1" y="-18"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_P-m5ValvEe6u8tAOZIMdvA" type="Association_NameLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_rT8SwKlvEe6u8tAOZIMdvA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_P-m5VqlvEe6u8tAOZIMdvA" y="19"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_P-m5V6lvEe6u8tAOZIMdvA" type="Association_TargetRoleLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_rUJHEKlvEe6u8tAOZIMdvA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_P-m5WKlvEe6u8tAOZIMdvA" x="74" y="-19"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_P-m5WalvEe6u8tAOZIMdvA" type="Association_SourceRoleLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_rUV7YKlvEe6u8tAOZIMdvA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_P-m5WqlvEe6u8tAOZIMdvA" x="-77" y="19"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_P-m5W6lvEe6u8tAOZIMdvA" type="Association_SourceMultiplicityLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_rUivsKlvEe6u8tAOZIMdvA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_P-m5XKlvEe6u8tAOZIMdvA" x="50" y="19"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_P-m5XalvEe6u8tAOZIMdvA" type="Association_TargetMultiplicityLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_rUyAQKlvEe6u8tAOZIMdvA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_P-m5XqlvEe6u8tAOZIMdvA" x="-74" y="49"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_P-m5UalvEe6u8tAOZIMdvA"/>
+      <element xmi:type="uml:Association" href="AIRBUS-WINGBOX.uml#_P-Zd8KlvEe6u8tAOZIMdvA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_P-m5UqlvEe6u8tAOZIMdvA" points="[605, 515, -643984, -643984]$[945, 875, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P_GBgKlvEe6u8tAOZIMdvA" id="(1.0,0.5555555555555556)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P_GBgalvEe6u8tAOZIMdvA" id="(0.26905829596412556,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_o34gA6lvEe6u8tAOZIMdvA" type="StereotypeCommentLink" source="_MJyZUKluEe6u8tAOZIMdvA" target="_o33496lvEe6u8tAOZIMdvA">
+      <styles xmi:type="notation:FontStyle" xmi:id="_o34gBKlvEe6u8tAOZIMdvA"/>
+      <styles xmi:type="notation:EObjectValueStyle" xmi:id="_o34gCKlvEe6u8tAOZIMdvA" name="BASE_ELEMENT">
+        <eObjectValue xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_MJp2cKluEe6u8tAOZIMdvA"/>
+      </styles>
+      <element xsi:nil="true"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_o34gBalvEe6u8tAOZIMdvA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_o34gBqlvEe6u8tAOZIMdvA"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_o34gB6lvEe6u8tAOZIMdvA"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_qoJjyKlvEe6u8tAOZIMdvA" type="StereotypeCommentLink" source="_ROz88KlvEe6u8tAOZIMdvA" target="_qoJjxKlvEe6u8tAOZIMdvA">
+      <styles xmi:type="notation:FontStyle" xmi:id="_qoJjyalvEe6u8tAOZIMdvA"/>
+      <styles xmi:type="notation:EObjectValueStyle" xmi:id="_qoKK0KlvEe6u8tAOZIMdvA" name="BASE_ELEMENT">
+        <eObjectValue xmi:type="uml:Class" href="AIRBUS-WINGBOX.uml#_ROpk4KlvEe6u8tAOZIMdvA"/>
+      </styles>
+      <element xsi:nil="true"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qoJjyqlvEe6u8tAOZIMdvA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qoJjy6lvEe6u8tAOZIMdvA"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qoJjzKlvEe6u8tAOZIMdvA"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_7Es1wKlvEe6u8tAOZIMdvA" type="Association_Edge" source="_MJyZUKluEe6u8tAOZIMdvA" target="_ROz88KlvEe6u8tAOZIMdvA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_7Es1w6lvEe6u8tAOZIMdvA" type="Association_StereotypeLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7Es1xKlvEe6u8tAOZIMdvA" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_7Es1xalvEe6u8tAOZIMdvA" type="Association_NameLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7Es1xqlvEe6u8tAOZIMdvA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_7Es1x6lvEe6u8tAOZIMdvA" type="Association_TargetRoleLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7Es1yKlvEe6u8tAOZIMdvA" x="13" y="-101"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_7Es1yalvEe6u8tAOZIMdvA" type="Association_SourceRoleLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7Es1yqlvEe6u8tAOZIMdvA" y="-143"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_7Es1y6lvEe6u8tAOZIMdvA" type="Association_SourceMultiplicityLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7Es1zKlvEe6u8tAOZIMdvA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_7Es1zalvEe6u8tAOZIMdvA" type="Association_TargetMultiplicityLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7Es1zqlvEe6u8tAOZIMdvA" y="-20"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_7Es1walvEe6u8tAOZIMdvA"/>
+      <element xmi:type="uml:Association" href="AIRBUS-WINGBOX.uml#_7EgBcKlvEe6u8tAOZIMdvA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7Es1wqlvEe6u8tAOZIMdvA" points="[260, 664, -643984, -643984]$[260, 740, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7FPoUKlvEe6u8tAOZIMdvA" id="(0.17391304347826086,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7FPoUalvEe6u8tAOZIMdvA" id="(0.30303030303030304,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_7sFl4KlvEe6u8tAOZIMdvA" type="Dependency_Edge" source="_MJyZUKluEe6u8tAOZIMdvA" target="_vJBG4KlvEe6u8tAOZIMdvA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_7sFl46lvEe6u8tAOZIMdvA" type="Dependency_NameLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7sFl5KlvEe6u8tAOZIMdvA" y="40"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_7sFl5alvEe6u8tAOZIMdvA" type="Dependency_StereotypeLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7sFl5qlvEe6u8tAOZIMdvA" y="60"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_7sFl4alvEe6u8tAOZIMdvA"/>
+      <element xmi:type="uml:Dependency" href="AIRBUS-WINGBOX.uml#_7r5YoKlvEe6u8tAOZIMdvA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7sFl4qlvEe6u8tAOZIMdvA" points="[500, 664, -643984, -643984]$[560, 720, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7skHAKlvEe6u8tAOZIMdvA" id="(0.6956521739130435,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7skHAalvEe6u8tAOZIMdvA" id="(0.22821576763485477,0.0)"/>
+    </edges>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_SeupgKlrEe6u8tAOZIMdvA" type="PapyrusUMLActivityDiagram" name="Activity Diagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_SeupgalrEe6u8tAOZIMdvA" type="Activity_Shape">
+      <children xmi:type="notation:DecorationNode" xmi:id="_SeupgqlrEe6u8tAOZIMdvA" type="Activity_NameLabel"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Seupg6lrEe6u8tAOZIMdvA" type="Activity_KeywordLabel"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_SeuphKlrEe6u8tAOZIMdvA" type="Activity_ParameterCompartment">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_SeuphalrEe6u8tAOZIMdvA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_SeuphqlrEe6u8tAOZIMdvA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Seuph6lrEe6u8tAOZIMdvA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_SeupiKlrEe6u8tAOZIMdvA" type="Activity_PreconditionCompartment">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_SeupialrEe6u8tAOZIMdvA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_SeupiqlrEe6u8tAOZIMdvA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Seupi6lrEe6u8tAOZIMdvA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_SeupjKlrEe6u8tAOZIMdvA" type="Activity_PostconditionCompartment">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_SeupjalrEe6u8tAOZIMdvA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_SeupjqlrEe6u8tAOZIMdvA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Seupj6lrEe6u8tAOZIMdvA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_SeupkKlrEe6u8tAOZIMdvA" type="Activity_ActivityNodeCompartment">
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SeupkalrEe6u8tAOZIMdvA"/>
+      </children>
+      <element xmi:type="uml:Activity" href="AIRBUS-WINGBOX.uml#_SetbYKlrEe6u8tAOZIMdvA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SeupkqlrEe6u8tAOZIMdvA"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_Seupk6lrEe6u8tAOZIMdvA" name="diagram_compatibility_version" stringValue="1.4.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_SeuplKlrEe6u8tAOZIMdvA"/>
+    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_SeuplalrEe6u8tAOZIMdvA" diagramKindId="org.eclipse.papyrus.uml.diagram.activity">
+      <owner xmi:type="uml:Model" href="AIRBUS-WINGBOX.uml#_SePhUKlrEe6u8tAOZIMdvA"/>
+    </styles>
+    <element xmi:type="uml:Activity" href="AIRBUS-WINGBOX.uml#_SetbYKlrEe6u8tAOZIMdvA"/>
+  </notation:Diagram>
+</xmi:XMI>
